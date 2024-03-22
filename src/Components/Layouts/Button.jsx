@@ -1,5 +1,6 @@
 
 
+// eslint-disable-next-line react/prop-types
 function Button({children, variant, type, isDisabled, onClick}) {
   return (
     <>

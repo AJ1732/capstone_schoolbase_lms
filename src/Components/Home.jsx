@@ -14,10 +14,12 @@ function Home() {
                 <p>Login / Register to get started</p>
           </div>
     </div>
-</div> 
-     <Admin />
+   </div> 
+        <Admin />
+
     </>
   )
 }
 
 export default Home
+

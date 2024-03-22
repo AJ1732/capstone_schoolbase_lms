@@ -29,13 +29,20 @@ body {
 }
 
 .btn-secondary {
-  background: #ff6a95;
+  background: rgb(229 231 235);
 }
 
 .btn:hover {
+  background-color: #333;
+  color: #fff;
   transform: scale(0.98);
   opacity: 0.9;
 } 
+
+.btn:active {
+  background-color: #333;
+  color: #fff;
+}
 
 .btn:disabled {
   background-color: #cccccc;
@@ -46,5 +53,16 @@ body {
 .btn:disabled:hover {
   transform: scale(1);
   opacity: 1;
+} 
+
+.container1 { 
+  position: fixed;
+  background-color: white;
+  padding: 20px;
+  margin: 2rem;
+  border-radius: 5px;
+  width: 500px;
+  height: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 } 
 
