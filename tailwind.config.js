@@ -10,6 +10,10 @@ export default {
         'dark-gray': '#B2B2B2',
         'light-gray': '#E8E8E8',
       },
+      fontFamily: {
+        generalSans: ['General Sans', 'sans-serif'],
+        manrope: ['Manrope', 'sans-serif'],
+      }
     },
   },
   plugins: [],
