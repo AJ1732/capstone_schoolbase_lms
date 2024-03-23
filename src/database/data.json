@@ -1,0 +1,22 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
+      "heading": "Student Information System (SIS)",
+      "title": "Comprehensive Student Profiles and Admissions",
+      "content": "Manage student profiles with personal details, academic records, attendance, and medical history. Streamline admissions with features for application submission, document verification, and enrollment tracking."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "img": "https://i.imghippo.com/files/e84GL1711215750.png",
+      "author": {
+        "name": "Mrs. Adeyemi Olalekan",
+        "title": "School Principal"
+      },
+      "content": "I've been amazed by the transformative impact of this Learning Management System on our school. It has revolutionized the way we manage academic and administrative tasks, from curriculum planning to student attendance tracking. Our teachers are more engaged, our students are more motivated, and our parents are more informed than ever before. This project is truly a game-changer for K-12 education in Nigeria!"
+    }
+  ]
+}
