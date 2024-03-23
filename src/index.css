@@ -81,3 +81,10 @@
 .content-grid > .full-width {
   grid-column: full-width;
 }
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
