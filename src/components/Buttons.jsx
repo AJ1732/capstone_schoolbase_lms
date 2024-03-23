@@ -41,7 +41,7 @@ export const TransButton = ({ children, className }) => {
   return (
     <button className={`
     text-white text-sm bg-transparent border border-white
-    py-[10.5px] px-[70px] rounded-sm
+    py-[10.5px] px-[50px] rounded-sm
       ${className}
     `}>
       {children}
