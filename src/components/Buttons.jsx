@@ -1,0 +1,63 @@
+import React from 'react'
+
+export const DarkButton = ({ children, className }) => {
+  return (
+    <button className={`
+      text-black text-sm bg-[#B2B2B2] 
+      py-[10.5px] px-[70px] rounded-[10px] 
+      ${className}
+    `}>
+      {children}
+    </button>
+  )
+}
+
+export const LightButton = ({ children, className }) => {
+  return (
+    <button className={`
+      text-black text-sm bg-[#E8E8E8] 
+      py-[10.5px] px-[70px] rounded-[10px] 
+      ${className}
+    `}>
+      {children}
+    </button>
+  )
+}
+
+export const WhiteButton = ({ children, className }) => {
+  return (
+    <button className={`
+      text-black text-sm bg-[#FFFFFF] 
+      py-[12.5px] px-[70px] rounded-[10px] 
+      ${className}
+    `}>
+      {children}
+    </button>
+  )
+}
+
+
+export const TransButton = ({ children, className }) => {
+  return (
+    <button className={`
+    text-white text-sm bg-transparent border border-white
+    py-[10.5px] px-[70px] rounded-sm
+      ${className}
+    `}>
+      {children}
+    </button>
+  )
+}
+
+export const BorderButton = ({ children, className }) => {
+  return (
+    <button className={`
+    text-black text-sm bg-white border border-black
+    py-[10.5px] px-[70px] rounded-[10px]
+      ${className}
+    `}>
+      {children}
+    </button>
+  )
+}
+
