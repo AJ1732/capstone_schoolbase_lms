@@ -27,7 +27,7 @@ export const LightButton = ({ children, className }) => {
 export const WhiteButton = ({ children, className }) => {
   return (
     <button className={`
-      text-black text-sm bg-white 
+      text-black text-xl bg-white 
       py-[12.5px] px-[70px] rounded-[10px] 
       ${className}
     `}>
