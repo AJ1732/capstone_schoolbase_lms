@@ -3,7 +3,7 @@ import React from 'react'
 export const DarkButton = ({ children, className }) => {
   return (
     <button className={`
-      text-black text-sm bg-[#B2B2B2] 
+      text-black text-sm bg-dark-gray
       py-[10.5px] px-[70px] rounded-[10px] 
       ${className}
     `}>
@@ -15,7 +15,7 @@ export const DarkButton = ({ children, className }) => {
 export const LightButton = ({ children, className }) => {
   return (
     <button className={`
-      text-black text-sm bg-[#E8E8E8] 
+      text-black text-sm bg-light-gray 
       py-[10.5px] px-[70px] rounded-[10px] 
       ${className}
     `}>
@@ -27,7 +27,7 @@ export const LightButton = ({ children, className }) => {
 export const WhiteButton = ({ children, className }) => {
   return (
     <button className={`
-      text-black text-sm bg-[#FFFFFF] 
+      text-black text-sm bg-white 
       py-[12.5px] px-[70px] rounded-[10px] 
       ${className}
     `}>

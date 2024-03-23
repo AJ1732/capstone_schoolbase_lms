@@ -10,7 +10,6 @@ export default {
         'dark-gray': '#B2B2B2',
         'light-gray': '#E8E8E8',
       },
-      font
     },
   },
   plugins: [],
