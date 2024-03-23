@@ -18,5 +18,15 @@
       },
       "content": "I've been amazed by the transformative impact of this Learning Management System on our school. It has revolutionized the way we manage academic and administrative tasks, from curriculum planning to student attendance tracking. Our teachers are more engaged, our students are more motivated, and our parents are more informed than ever before. This project is truly a game-changer for K-12 education in Nigeria!"
     }
+  ],
+  "teamMembers": [
+    {
+      "id": 1,
+      "img": "https://i.imghippo.com/files/5wtTC1711219160.png",
+      "author": {
+        "name": "Solomon Marvelous",
+        "title": "Brief Overview"
+      }
+    }
   ]
 }

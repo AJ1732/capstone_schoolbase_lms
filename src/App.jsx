@@ -1,10 +1,8 @@
 import { BorderButton, DarkButton, LightButton, TransButton, WhiteButton } from "./components/Buttons"
-import { FeatureCard, TestimonialCard } from "./components/Cards"
+import { FeatureCard, TeamCard, TestimonialCard } from "./components/Cards"
 import data from './database/data.json'
 
-const { features, testimonials } = data;
-console.log(features[0].img);
-console.log(testimonials);
+const { features, testimonials, teamMembers } = data;
 
 function App() {
 
@@ -17,8 +15,8 @@ function App() {
           <DarkButton>Subscribe</DarkButton>
           <LightButton>Subscribe</LightButton>
           <WhiteButton>Subscribe</WhiteButton>
-          <TransButton>Subscribe</TransButton>
           <BorderButton>Subscribe</BorderButton>
+          <TransButton>Subscribe</TransButton>
         </div>
       </div>
 
@@ -49,6 +47,18 @@ function App() {
               img={testimonial.img} 
               author={testimonial.author} 
               content={testimonial.content}
+            />
+          ))}
+        </div>
+
+        {/* Testimonial Cards */}
+        <h2 className="text-xl font-bold py-3">Team Card</h2>
+        <div>
+          {teamMembers.map( teamMember => (
+            <TeamCard 
+              key={teamMember.id}
+              img={teamMember.img} 
+              author={teamMember.author} 
             />
           ))}
         </div>
