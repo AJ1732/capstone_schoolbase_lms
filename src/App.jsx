@@ -45,13 +45,13 @@ function App() {
         <Divider />
 
         {/* DOWNLOAD */}
-        <section className="content | w-full min-h-[420px]  border border-black flex-center">
+        <section className="content | w-full min-h-[420px] border border-black flex-center">
           <h1 className="text-3xl font-bold">DOWNLOAD</h1>
         </section>
         <Divider />
 
         {/* CALL TO ACTION */}
-        <section className="full-width content-grid | min-h-[150px] bg-blacker-gray border border-black">
+        <section className="full-width content-grid | min-h-[150px] bg-black bg-opacity-80 border border-black">
           <div className="content | size-full | border border-black flex-center">
             <h1 className="text-3xl font-bold">CALL TO ACTION</h1>
           </div>
