@@ -1,10 +1,4 @@
-import { BorderButton, DarkButton, LightButton, TransButton, WhiteButton } from "./components/Buttons"
-import { FeatureCard, TeamCard, TestimonialCard } from "./components/Cards"
 import Divider from "./components/Divider";
-import { HeroForm, NewsForm } from "./components/Forms";
-import data from './database/data.json'
-
-const { features, testimonials, teamMembers } = data;
 
 function App() {
 
