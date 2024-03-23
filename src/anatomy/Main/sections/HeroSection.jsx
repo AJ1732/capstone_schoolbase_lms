@@ -4,8 +4,8 @@ import { TransButton } from '../../../components/Buttons'
 
 const HeroSection = () => {
   return (
-    <section className="full-width content-grid | w-full min-h-[515px] text-white bg-black bg-opacity-80 border border-black">
-      <div className="content | size-full | border border-black flex justify-between items-center">
+    <section className="full-width content-grid | w-full min-h-[515px] text-white bg-black bg-opacity-80">
+      <div className="content | size-full | flex justify-between items-center">
         <div className='flex flex-col justify-center items-start gap-5'>
           <h2 className='font-semibold text-2xl'>Transforming Education with our Versatile Learning Management System</h2>
           <p className='font-medium text-xl'>Empowering K-12 Education for the Digital Age</p>
