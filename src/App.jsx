@@ -9,7 +9,7 @@ console.log(testimonials);
 function App() {
 
   return (
-    <div className="p-10 space-y-10">
+    <div className="font-manrope p-10 space-y-10">
       {/* BUTTONS */}
       <div>
         <h2 className="text-2xl font-bold py-3">Buttons</h2>

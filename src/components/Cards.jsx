@@ -21,7 +21,7 @@ export const FeatureCard = ({ img, heading, title, content, className}) => {
 
 export const TestimonialCard = ({ img, author, content, className }) => {
   return (
-    <article className='max-w-[428px] bg-white text-black text-sm p-5 space-y-5'>
+    <article className='max-w-[428px] bg-white font-generalSans text-black text-sm p-5 space-y-5'>
       <figure className='size-6 py-[6px] px-[4px]'>
         <img src={testimonial_icon} />
       </figure>
