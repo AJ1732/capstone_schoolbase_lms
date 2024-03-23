@@ -1,0 +1,17 @@
+input {
+  width: 100%;
+  color: black;
+  font-size: 10px;
+  border: 1px #B2B2B2 solid;
+  border-radius: 1px;
+  background-color: white;
+}
+
+input:focus {
+  outline: 1px solid #B2B2B2;
+  
+}
+
+input::placeholder {
+  color: #B2B2B2;
+}

@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const DarkButton = ({ children, className }) => {
+export const DarkButton = ({ children, className, disabled, type }) => {
   return (
-    <button className={`
+    <button type={type} disabled={disabled} className={`
       text-black text-sm bg-dark-gray
       py-[10.5px] px-[70px] rounded-[10px] 
       ${className}
