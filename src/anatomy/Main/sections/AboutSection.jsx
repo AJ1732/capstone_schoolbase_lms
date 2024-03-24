@@ -16,11 +16,11 @@ const AboutSection = () => {
         <div className='flex justify-between items-center gap-[190px]'>
           <div className='text-center space-y-5'>
             <h4 className='heading'>Mission</h4>
-            <p>Our Vision We envision a world where education is accessible, inclusive, and enriching for all. Through continued innovation and unwavering dedication, we aim to be a driving force in shaping the future of education.</p>
+            <p>Our Mission To empower educational institutions with cutting-edge tools that foster collaboration, enhance communication and ultimately elevate the learning process.</p>
           </div>
 
           <div className='text-center space-y-5'>
-            <h4 className='heading'>Mission</h4>
+            <h4 className='heading'>Vision</h4>
             <p>Our Vision We envision a world where education is accessible, inclusive, and enriching for all. Through continued innovation and unwavering dedication, we aim to be a driving force in shaping the future of education.</p>
           </div>
         </div>
