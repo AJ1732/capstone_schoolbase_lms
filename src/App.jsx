@@ -1,9 +1,9 @@
 import { BorderButton, DarkButton, LightButton, TransButton, WhiteButton } from "./components/Buttons"
-import { FeatureCard, TeamCard, TestimonialCard } from "./components/Cards"
+import { ChooseCard, FeatureCard, TeamCard, TestimonialCard } from "./components/Cards"
 import { HeroForm, NewsForm } from "./components/Forms";
 import data from './database/data.json'
 
-const { features, testimonials, teamMembers } = data;
+const { features, testimonials, teamMembers, chooses } = data;
 
 function App() {
 
@@ -61,6 +61,19 @@ function App() {
               key={teamMember.id}
               img={teamMember.img} 
               author={teamMember.author} 
+            />
+          ))}
+        </div>
+
+        {/* Choose Cards */}
+        <h2 className="text-xl font-bold py-3">Choose Card</h2>
+        <div>
+          {chooses.map( choose => (
+            <ChooseCard 
+              key={choose.id}
+              img={choose.img}
+              heading={choose.heading}
+              content={choose.content}
             />
           ))}
         </div>

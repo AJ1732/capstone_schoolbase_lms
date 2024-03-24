@@ -12,7 +12,7 @@ export const FeatureCard = ({ img, heading, title, content, className}) => {
       <div className='flex flex-col justify-start items-start gap-3'>
         <h3 className='font-bold'>{heading}</h3>
         <p className='text-sm'>
-          <span className='font-semibold'>{title}</span>: {content}
+          <span className='font-semibold'>{title}</span> {content}
         </p>
       </div>
     </article>
@@ -56,3 +56,18 @@ export const TeamCard = ({ img, author, className }) => {
   )
 }
 
+export const ChooseCard = ({ img, heading, content, className}) => {
+  return (
+    <article className={`w-[615px] h-[130px] font-generalSans flex justify-start items-center gap-5 ${className}`}>
+      <figure className='w-[215px] h-full'>
+        <img src={img} alt="choose image" />
+      </figure>
+      <div className='w-[390px] flex flex-col gap-3'>
+        <h3 className='font-semibold'>{heading}</h3>
+        <p className='text-sm'>
+          {content}
+        </p>
+      </div>
+    </article>
+  )
+}
