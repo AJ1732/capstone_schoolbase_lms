@@ -5,7 +5,7 @@ import testimonial_icon from '../assets/testimonial_icon.png'
 
 export const FeatureCard = ({ img, heading, title, content, className}) => {
   return (
-    <article className={`max-w-[610px] w-full flex justify-start items-center gap-8 ${className}`}>
+    <article className={`max-w-[610px] w-full text-left flex justify-start items-center gap-8 ${className}`}>
       <figure className='min-w-[300px] h-[225px] bg-dark-gray'>
         <img src={img} alt="feature image" />
       </figure>
@@ -21,7 +21,7 @@ export const FeatureCard = ({ img, heading, title, content, className}) => {
 
 export const TestimonialCard = ({ img, author, content, className }) => {
   return (
-    <article className='max-w-[428px] bg-white font-generalSans text-black text-sm p-5 space-y-5'>
+    <article className='max-w-[428px] bg-white font-generalSans text-black text-left text-sm p-5 space-y-5'>
       <figure className='size-6 py-[6px] px-[4px]'>
         <img src={testimonial_icon} />
       </figure>
@@ -43,7 +43,7 @@ export const TestimonialCard = ({ img, author, content, className }) => {
 
 export const TeamCard = ({ img, author, className }) => {
   return (
-    <article className='w-[354px] bg-white font-generalSans text-black text-sm pb-5 space-y-4'>
+    <article className='w-[354px] bg-white font-generalSans text-black text-left text-sm pb-5 space-y-4'>
       <figure className='w-full h-[237px]'>
         <img src={img} alt="author image" />
       </figure>
@@ -58,7 +58,7 @@ export const TeamCard = ({ img, author, className }) => {
 
 export const ChooseCard = ({ img, heading, content, className}) => {
   return (
-    <article className={`w-[615px] h-[130px] font-generalSans flex justify-start items-center gap-5 ${className}`}>
+    <article className={`w-[615px] h-[130px] font-generalSans text-left flex justify-start items-center gap-5 ${className}`}>
       <figure className='w-[215px] h-full'>
         <img src={img} alt="choose image" />
       </figure>
