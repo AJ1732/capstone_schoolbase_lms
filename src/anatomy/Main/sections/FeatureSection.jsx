@@ -4,7 +4,7 @@ import { FeatureCard } from '../../../components/Cards'
 
 
 const FeatureSection = () => {
-  const { features, testimonials, teamMembers } = data;
+  const { features } = data;
 
   return (
     <section id='features' className="content | w-full min-h-[1000px] py-12">
