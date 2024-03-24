@@ -7,6 +7,7 @@ import AboutSection from './sections/AboutSection'
 import ChooseSection from './sections/ChooseSection'
 import DownloadSection from './sections/DownloadSection'
 import CallToSection from './sections/CallToSection'
+import './main.css'
 
 const Main = () => {
   return (
