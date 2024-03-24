@@ -77,7 +77,7 @@ export const HeroForm = () => {
             />
           </div>
 
-          <DarkButton type={`submit`} disabled={!getIsFormValid()} className={`w-full`}>Submit</DarkButton>
+          <DarkButton type={`submit`} disabled={!getIsFormValid()} className={`w-full bg-light-gray`}>Submit</DarkButton>
       </fieldset>
     </form>
   )
