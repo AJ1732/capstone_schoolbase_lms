@@ -3,8 +3,8 @@ import React from 'react'
 export const DarkButton = ({ children, className, disabled, type }) => {
   return (
     <button type={type} disabled={disabled} className={`
-      text-black text-sm bg-dark-gray
-      py-[10.5px] px-[70px] rounded-[10px] 
+      text-black text-sm bg-blacker-gray
+      py-[10.5px] px-8 rounded-[10px] 
       ${className}
     `}>
       {children}
