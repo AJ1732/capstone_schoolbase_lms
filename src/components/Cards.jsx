@@ -5,7 +5,7 @@ import testimonial_icon from '../assets/testimonial_icon.png'
 
 export const FeatureCard = ({ img, heading, title, content, className}) => {
   return (
-    <article className={`max-w-[610px] w-full text-left flex justify-start items-center gap-8 ${className}`}>
+    <article className={`max-w-[610px] w-full text-left flex justify-start items-center gap-7 ${className}`}>
       <figure className='min-w-[300px] h-[225px] bg-dark-gray'>
         <img src={img} alt="feature image" />
       </figure>

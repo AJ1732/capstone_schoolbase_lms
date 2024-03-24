@@ -7,10 +7,10 @@ const FeatureSection = () => {
   const { features, testimonials, teamMembers } = data;
 
   return (
-    <section id='features' className="content | w-full min-h-[1000px] border border-black">
-      <div>
-        <h1 className="text-3xl font-bold">FEATURES</h1>
-        <div className='grid grid-cols-2 gap=x-6 gap-y-12'>
+    <section id='features' className="content | w-full min-h-[1000px] py-12">
+      <div className='space-y-7'>
+        <h1 className="text-2xl font-semibold font-generalSans">Key Features</h1>
+        <div className='grid grid-cols-2 gap-x-6 gap-y-12'>
           {features.map( feature => (
             <FeatureCard
               key={feature.id}
