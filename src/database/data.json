@@ -6,6 +6,41 @@
       "heading": "Student Information System (SIS)",
       "title": "Comprehensive Student Profiles and Admissions",
       "content": "Manage student profiles with personal details, academic records, attendance, and medical history. Streamline admissions with features for application submission, document verification, and enrollment tracking."
+    },
+    {
+      "id": 2,
+      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
+      "heading": "Attendance Management",
+      "title": "Student and Staff Attendance Tracking",
+      "content": "Easily track daily student attendance, generate reports, and notify parents of absenteeism. Record and manage staff attendance to ensure organizational efficiency."
+    },
+    {
+      "id": 3,
+      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
+      "heading": "Communication and Collaboration",
+      "title": "Parent-Teacher Communication and Announcements",
+      "content": "Facilitate seamless communication between parents and teachers through messaging and appointment scheduling. Share important school announcements, news, and events. Create online forums for engaging student and teacher discussions to foster collaboration and knowledge sharing."
+    },
+    {
+      "id": 4,
+      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
+      "heading": "Academic Management",
+      "title": "Efficient Curriculum and Grade Management",
+      "content": "Define and organize the school's curriculum, courses, subjects, and class schedules. Record grades, calculate GPAs, and generate transcripts seamlessly within the system. Manage exams, assignments, and quizzes efficiently."
+    },
+    {
+      "id": 5,
+      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
+      "heading": "Examination and Assessment",
+      "title": "Seamless Exam Scheduling and Assessment",
+      "content": "Create exam timetables, assign venues, and manage the examination process smoothly. Provide various assessment methods, including online quizzes and assignments, to gauge student understanding. Analyze and distribute exam results to students and parents."
+    },
+    {
+      "id": 6,
+      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
+      "heading": "Security and Access Control",
+      "title": "Parent-Teacher Communication and Announcements",
+      "content": "Facilitate seamless communication between parents and teachers through messaging and appointment scheduling. Share important school announcements, news, and events. Create online forums for engaging student and teacher discussions to foster collaboration and knowledge sharing."
     }
   ],
   "testimonials": [
@@ -17,6 +52,24 @@
         "title": "School Principal"
       },
       "content": "I've been amazed by the transformative impact of this Learning Management System on our school. It has revolutionized the way we manage academic and administrative tasks, from curriculum planning to student attendance tracking. Our teachers are more engaged, our students are more motivated, and our parents are more informed than ever before. This project is truly a game-changer for K-12 education in Nigeria!"
+    },
+    {
+      "id": 2,
+      "img": "https://i.imghippo.com/files/eBNut1711236265.png",
+      "author": {
+        "name": "Miss Sarah Daniels",
+        "title": "High School Student"
+      },
+      "content": "As a high school student, I never imagined learning could be this fun and interactive! With the help of the Learning Management System, I can access engaging course materials, collaborate with classmates on projects, and track my progress in real-time. It's empowered me to take ownership of my learning and explore new opportunities for growth. This project has truly revolutionized my educational experience!"
+    },
+    {
+      "id": 3,
+      "img": "https://i.imghippo.com/files/4n3VN1711236377.png",
+      "author": {
+        "name": "Mr. Ibrahim Haruna",
+        "title": "Parent"
+      },
+      "content": "As a parent, I've always been concerned about my child's education and how I can support their learning journey. Thanks to this innovative Learning Management System, I can now stay connected with my child's progress, access their grades and assignments, and communicate directly with their teachers. It's made parenting during these challenging times much easier and more fulfilling. I'm grateful for the positive impact it's had on my family."
     }
   ],
   "teamMembers": [
@@ -27,6 +80,40 @@
         "name": "Solomon Marvelous",
         "title": "Brief Overview"
       }
+    },
+    {
+      "id": 2,
+      "img": "https://i.imghippo.com/files/tjc0n1711236485.png",
+      "author": {
+        "name": "Desmond Augustus",
+        "title": "Brief Overview"
+      }
+    }
+  ],
+  "chooses": [
+    {
+      "id": 1,
+      "img": "https://i.imghippo.com/files/wTp5k1711236572.png",
+      "heading": "Cutting-Edge Technology",
+      "content": "We are committed to staying at the forefront of technological advancements. Our team of experts is constantly exploring new ways to enhance the learning experience, ensuring our platform evolves with the needs of modern education."
+    },
+    {
+      "id": 2,
+      "img": "https://i.imghippo.com/files/wTp5k1711236572.png",
+      "heading": "Data Security and Privacy",
+      "content": "We understand the sensitivity of educational data. Our platform employs state-of-the-art security measures to safeguard your information, giving you peace of mind."
+    },
+    {
+      "id": 3,
+      "img": "https://i.imghippo.com/files/DlZkf1711236651.png",
+      "heading": "Customer-Centric Approach",
+      "content": " Your success is our success. We are dedicated to providing exceptional customer service, ensuring that you receive the support you need every step of the way."
+    },
+    {
+      "id": 4,
+      "img": "https://i.imghippo.com/files/DlZkf1711236651.png",
+      "heading": "Tailored Solutions",
+      "content": "We understand that every educational institution is unique. That’s why we offer customizable solutions to meet specific needs. Whether you're a small primary school or a sprawling university, our platform adapts to your requirements."
     }
   ]
 }
