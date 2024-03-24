@@ -8,7 +8,7 @@ function Header() {
   const navigate = useNavigate();
   return (
     <>
-      <header className="flex items-center justify-between bg-gray-200 p-4">
+      <header className="flex fixed items-center w-full justify-between bg-gray-200 p-4">
         <h1>LOGO</h1>
         <nav>
           <Button type="button" variant="primary" onClick={() => navigate("/login")}>LOGIN</Button>
