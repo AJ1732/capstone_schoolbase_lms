@@ -4,7 +4,7 @@ import { WhiteButton } from '../../../components/Buttons'
 const CallToSection = () => {
   return (
     <section className="full-width content-grid | min-h-[150px] bg-black bg-opacity-80">
-      <div className="content | font-generalSans text-white size-full flex justify-between items-center">
+      <div className="content | font-generalSans py-10 text-white size-full flex justify-between items-center">
         <div className='flex flex-col items-start justify-center gap-2'>
           <h4 className='heading'>Subscribe to Our Newsletter</h4>
           <p className='text-sm'>Subscribe to our Newsletter to receive our blog post, offers, promotions, etc.</p>
