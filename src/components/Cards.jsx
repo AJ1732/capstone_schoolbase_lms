@@ -43,7 +43,7 @@ export const TestimonialCard = ({ img, author, content, className }) => {
 
 export const TeamCard = ({ img, author, className }) => {
   return (
-    <article className='w-[354px] bg-white font-generalSans text-black text-left text-sm pb-5 space-y-4'>
+    <article className='w-[354px] font-generalSans text-black text-left text-sm pb-5 space-y-4'>
       <figure className='w-full h-[237px]'>
         <img src={img} alt="author image" />
       </figure>
