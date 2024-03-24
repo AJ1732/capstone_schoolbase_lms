@@ -8,5 +8,61 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body {
 
+
+}
+
+.btn {
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  color: black;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+.btn-primary {
+  background-color: white;
+}
+
+.btn-secondary {
+  background: rgb(229 231 235);
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+  transform: scale(0.98);
+  opacity: 0.9;
+} 
+
+.btn:active {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  color: #333;
+  cursor: auto;
+}
+
+.btn:disabled:hover {
+  transform: scale(1);
+  opacity: 1;
+} 
+
+.container1 { 
+  background-color: white;
+  padding: 20px;
+  margin: 2rem;
+  border-radius: 5px;
+  width: 500px;
+  height: auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+} 
 
