@@ -8,7 +8,7 @@ export const DarkButton = ({ children, className, disabled, type, onClick }) => 
       onClick={onClick}
       className={`
       text-black text-sm bg-dark-gray
-      py-[10.5px] px-[70px] rounded-[10px] 
+      py-[10.5px] px-8 rounded-[10px] 
       ${className}
     `}>
       {children}
@@ -22,7 +22,7 @@ export const LightButton = ({ children, className, onClick }) => {
       onClick={onClick}
       className={`
       text-black text-sm bg-light-gray 
-      py-[10.5px] px-[70px] rounded-[10px] 
+      py-[10.5px] px-8 rounded-[10px] 
       ${className}
     `}>
       {children}
@@ -36,7 +36,7 @@ export const WhiteButton = ({ children, className, onClick }) => {
       onClick={onClick}
       className={`
       text-black text-sm bg-white 
-      py-[12.5px] px-[70px] rounded-[10px] 
+      py-[12.5px] px-8 rounded-[10px] 
       ${className}
     `}>
       {children}
@@ -50,7 +50,7 @@ export const TransButton = ({ children, className, onClick }) => {
       onClick={onClick}
         className={`
         text-white text-sm bg-transparent border border-white
-        py-[10.5px] px-[70px] rounded-sm
+        py-[10.5px] px-8 rounded-sm
         ${className}
     `}>
       {children}
@@ -64,7 +64,7 @@ export const BorderButton = ({ children, className, onClick }) => {
       onClick={onClick}
       className={`
       text-black text-sm bg-white border border-black
-      py-[10.5px] px-[70px] rounded-[10px]
+      py-[10.5px] px-8 rounded-[10px]
         ${className}
     `}>
       {children}
