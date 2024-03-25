@@ -17,7 +17,7 @@ const Header = () => {
             </ul>
           </nav>
 
-          <WhiteButton>Download</WhiteButton>
+          <WhiteButton className={`px-[70px]`}>Download</WhiteButton>
         </div>
 
       </div>
