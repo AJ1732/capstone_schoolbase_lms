@@ -10,9 +10,17 @@ export const validateEmail = (email) => {
     );
 };
 
+// export const validateEmail2 = (email) => {
+//   return String(email)
+//     .toLowerCase()
+//     .match(
+//       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+//     );
+// };
+
 
 export const LogInForm = () => {
-  const [fullName, setFullName] = useState("");
+  // STATE
   const [email, setEmail] = useState({
     value: "",
     isTouched: false,
@@ -21,7 +29,9 @@ export const LogInForm = () => {
     value: "",
     isTouched: false,
   });
+  const [remember, setRemember] = useState(false);
 
+  // ERROR MESSAGES
   const EmailErrorMessage = () => {
     return (
       <p className="field-error">Please enter a valid Email Adresss</p>
@@ -34,27 +44,35 @@ export const LogInForm = () => {
     );
   };
 
+  const SubmitErrorMessage = () => {
+    return (
+      <p className="field-error">Please complete the form above</p>
+    );
+  };
+
+  // SUBMISSION FUNCTIONS
   const getIsFormValid = () => { 
     return ( 
-      fullName && 
-      validateEmail(email) && 
+      validateEmail(email.value) && 
       password.value.length >= 8 
     ); 
   }; 
   
   const clearForm = () => {
-    setFullName("");
-    setEmail("");
+    setEmail({
+      value: "",
+      isTouched: false,
+    });
     setPassword({
       value: "",
       isTouched: false,
-    })
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert("Account created!");
+    alert("Login successful!");
     clearForm();
   };
 
@@ -64,32 +82,17 @@ export const LogInForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          min-w-[630px] bg-white text-black p-[60px] drop-shadow-lg
+          min-w-[630px] bg-white text-black p-12 drop-shadow-lg
         `}
       >
         <fieldset className='flex flex-col gap-5'>
-          {/* NAME */}
-          <div className='field'>
-            <div>
-              <label htmlFor="fullName">Name </label>
-            </div>
-            <input 
-              id='fullName'
-              type="text" 
-              value={fullName}
-              placeholder='Enter Full Name'
-              required
-              onChange={(e) => setFullName(e.target.value)}
-            />
-          </div>
-
           {/* EMAIL */}
           <div className='field'>
             <div>
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="loginEmail">Email:</label>
             </div>
             <input 
-              id='email'
+              id='loginEmail'
               type="email" 
               value={email.value}
               placeholder='Email Address'
@@ -101,7 +104,7 @@ export const LogInForm = () => {
               }} 
             />
             {
-              email.isTouched && validateEmail(email) == null ? 
+              email.isTouched && validateEmail(email.value) == null ? 
               ( <EmailErrorMessage /> ) :
               null
             } 
@@ -110,10 +113,10 @@ export const LogInForm = () => {
           {/* PASSWORD */}
           <div className='field'>
             <div>
-              <label htmlFor="password">Password </label>
+              <label htmlFor="signupPassword">Password </label>
             </div>
             <input 
-              id='password'
+              id='signupPassword'
               type="password" 
               value={password.value}
               placeholder='Password'
@@ -131,15 +134,33 @@ export const LogInForm = () => {
               null
             } 
           </div>
+
+          {/* CHECKBOX */}
+          <div className='flex gap-[10px]'>
+            <input
+              id='remember'
+              type="checkbox"
+              checked={remember}
+              onChange={(e) => {
+                setRemember(e.target.checked);
+              }}
+            />
+            <label htmlFor="remember" className='font-semibold text-[#595959]'>Remember me</label>
+          </div>
           
-          {/* SUBMIT BUTTON */}
-          <FormButton disabled={!getIsFormValid()} className={`w-[150px] mt-[20px] self-end`}>SIGN UP</ FormButton>
+          <div className='mt-[20px] self-end flex justify-center items-center gap-6'>
+            <p className='font-semibold text-[#595959]'>Forgot your password?</p>
+
+            {/* SUBMIT BUTTON */}
+            <FormButton disabled={!getIsFormValid()} className={`w-[150px] `}>SIGN UP</ FormButton>
+          </div>
         </fieldset>
       </form>
     </div>
   )
 }
 
+// SIGNUP FORM
 export const SignUpForm = () => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState({
@@ -166,14 +187,17 @@ export const SignUpForm = () => {
   const getIsFormValid = () => { 
     return ( 
       fullName && 
-      validateEmail(email) && 
+      validateEmail(email.value) && 
       password.value.length >= 8 
     ); 
   }; 
   
   const clearForm = () => {
     setFullName("");
-    setEmail("");
+    setEmail({
+      value: "",
+      isTouched: false,
+    });
     setPassword({
       value: "",
       isTouched: false,
@@ -193,7 +217,7 @@ export const SignUpForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          min-w-[630px] bg-white text-black p-[60px] drop-shadow-lg
+          min-w-[630px] bg-white text-black p-12 drop-shadow-lg
         `}
       >
         <fieldset className='flex flex-col gap-5'>
@@ -230,7 +254,7 @@ export const SignUpForm = () => {
               }} 
             />
             {
-              email.isTouched && validateEmail(email) == null ? 
+              email.isTouched && validateEmail(email.value) == null ? 
               ( <EmailErrorMessage /> ) :
               null
             } 

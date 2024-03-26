@@ -27,6 +27,10 @@
   padding: 15px 10px;
 }
 
+fieldset input[type="checkbox"] {
+  background-color: white;
+}
+
 .field input:focus {
   outline: 1px solid #B2B2B2;
 }
