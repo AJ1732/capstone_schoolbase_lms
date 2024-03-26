@@ -1,8 +1,8 @@
-import Home from "./Components/Home"
+import Home from "./anatomy/Home"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Login from "./Components/Pages/Login"
-import SignUp from "./Components/Pages/SignUp"
-import Dashboard from "./Components/Pages/Dashboard"
+import Login from "./anatomy/Pages/Login"
+import SignUp from "./anatomy/Pages/SignUp"
+import Dashboard from "./anatomy/Pages/Dashboard"
 function App() {
 
   return (

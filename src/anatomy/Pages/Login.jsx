@@ -1,5 +1,5 @@
-import Header from "../Layouts/Header"
-import Button from '../Layouts/Button';
+import Header from "../../anatomy/Layouts/Header"
+import Button from '../../anatomy/Layouts/Button';
 import { Link } from 'react-router-dom';
 import { useState } from "react"
 import { auth } from "../../fireBase"

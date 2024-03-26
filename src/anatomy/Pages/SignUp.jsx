@@ -1,5 +1,5 @@
-import Button from "../Layouts/Button"
-import Header from "../Layouts/Header"
+import Button from "../../anatomy/Layouts/Button"
+import Header from "../../anatomy/Layouts/Header"
 import { useState } from "react"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../fireBase"
