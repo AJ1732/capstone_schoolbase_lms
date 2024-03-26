@@ -10,15 +10,7 @@ export const validateEmail = (email) => {
     );
 };
 
-// export const validateEmail2 = (email) => {
-//   return String(email)
-//     .toLowerCase()
-//     .match(
-//       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-//     );
-// };
-
-
+// LOGIN FORM
 export const LogInForm = () => {
   // STATE
   const [email, setEmail] = useState({
@@ -292,3 +284,29 @@ export const SignUpForm = () => {
     </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export const validateEmail2 = (email) => {
+//   return String(email)
+//     .toLowerCase()
+//     .match(
+//       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+//     );
+// };
