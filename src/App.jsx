@@ -3,6 +3,7 @@ import { FormButton, NavButton } from "./components/Button/Buttons"
 import { LogInForm, SignUpForm } from "./components/Form/Forms"
 import avatarImg from './assets/avatarImg.png'
 import { MonthCalender, WeekCalender } from "./components/Calender/Calender"
+import TodoList from "./components/TodoList/TodoList"
 
 function App() {
 
@@ -62,6 +63,12 @@ function App() {
             <WeekCalender />
           </div>
         </div>
+      </div>
+
+      {/* TO DO LIST */}
+      <div>
+        <h2 className="text-3xl font-bold py-3">To Do List</h2>
+        <TodoList />
       </div>
     </div>
   )
