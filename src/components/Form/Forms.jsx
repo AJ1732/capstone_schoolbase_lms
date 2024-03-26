@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Form.css'
+import { FormButton } from '../Buttons';
 
 export const validateEmail = (email) => {
   return String(email)
@@ -20,13 +21,13 @@ export const SignUpForm = () => {
 
   const EmailErrorMessage = () => {
     return (
-      <p className="FieldError">Please enter a valid Email Adresss</p>
+      <p className="field-error">Please enter a valid Email Adresss</p>
     );
   };
 
   const PasswordErrorMessage = () => {
     return (
-      <p className="FieldError">Password should have at least 8 characters</p>
+      <p className="field-error">Password should have at least 8 characters</p>
     );
   };
 
@@ -60,10 +61,10 @@ export const SignUpForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          min-w-[630px] bg-white p-[60px] text-black
+          min-w-[630px] bg-white text-black p-[60px] drop-shadow-lg
         `}
       >
-        <fieldset className='space-y-5'>
+        <fieldset className='flex flex-col gap-5'>
           {/* NAME */}
           <div className='field'>
             <div>
@@ -92,7 +93,7 @@ export const SignUpForm = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             {
-              validateEmail(email) ? 
+              validateEmail(email) == null ? 
               ( <EmailErrorMessage /> ) :
               null
             } 
@@ -122,10 +123,9 @@ export const SignUpForm = () => {
               null
             } 
           </div>
-
-          <button type="submit" disabled={!getIsFormValid()}>
-            SIGN UP
-          </button>
+          
+          {/* SUBMIT BUTTON */}
+          <FormButton disabled={!getIsFormValid()} className={`w-[150px] mt-[20px] self-end`}>SIGN UP</ FormButton>
         </fieldset>
       </form>
     </div>
