@@ -78,7 +78,7 @@ const TodoList = () => {
       <h3 className='text-lg'>To Do List</h3>
 
       {/* TODO LIST */}
-      <ul className='text-sm space-y-2'>
+      <ul className='text-sm space-y-3'>
         {todos.map(({ id, task, subject, time, completed }) => (
           <li key={id} className={`${completed && 'line-through'}`} onDoubleClick={() => handleDelete(id)}>
             <div className='flex justify-start items-start gap-3'>
