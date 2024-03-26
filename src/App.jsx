@@ -1,4 +1,4 @@
-import { FormButton, NavButton } from "./components/Buttons"
+import { FormButton, NavButton } from "./components/Button/Buttons"
 import { SignUpForm } from "./components/Form/Forms"
 
 function App() {

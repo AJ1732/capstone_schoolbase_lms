@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Form.css'
-import { FormButton } from '../Buttons';
+import { FormButton } from '../Button/Buttons';
 
 export const validateEmail = (email) => {
   return String(email)
@@ -41,8 +41,6 @@ export const SignUpForm = () => {
       password.value.length >= 8 
     ); 
   }; 
-
-  console.log(getIsFormValid());
   
   const clearForm = () => {
     setFullName("");
