@@ -1,5 +1,7 @@
+import { HeaderAvatar, ProfileAvatar } from "./components/Avatar"
 import { FormButton, NavButton } from "./components/Button/Buttons"
 import { LogInForm, SignUpForm } from "./components/Form/Forms"
+import avatarImg from './assets/avatarImg.png'
 
 function App() {
 
@@ -29,6 +31,19 @@ function App() {
 
           <h2 className="text-xl font-bold py-3">Sign Up Form</h2>
           <SignUpForm />
+        </div>
+      </div>
+
+      {/* AVATAR */}
+      <div>
+        <h2 className="text-3xl font-bold py-3">Avatars</h2>
+
+        <div className="flex flex-col justify-start items-start gap-2">
+          <h2 className="text-xl font-bold py-3">Header Avatar</h2>
+          <HeaderAvatar src={avatarImg} />
+
+          <h2 className="text-xl font-bold py-3">Profile Avatar</h2>
+          <ProfileAvatar src={avatarImg} name={`Sarah Daniels`} title={`Student`} />
         </div>
       </div>
     </div>
