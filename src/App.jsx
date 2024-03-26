@@ -2,6 +2,7 @@ import { HeaderAvatar, ProfileAvatar } from "./components/Avatar"
 import { FormButton, NavButton } from "./components/Button/Buttons"
 import { LogInForm, SignUpForm } from "./components/Form/Forms"
 import avatarImg from './assets/avatarImg.png'
+import { MonthCalender, WeekCalender } from "./components/Calender/Calender"
 
 function App() {
 
@@ -44,6 +45,22 @@ function App() {
 
           <h2 className="text-xl font-bold py-3">Profile Avatar</h2>
           <ProfileAvatar src={avatarImg} name={`Sarah Daniels`} title={`Student`} />
+        </div>
+      </div>
+
+      {/* CALENDER */}
+      <div>
+        <h2 className="text-3xl font-bold py-3">Calender</h2>
+        <div className="flex flex-col justify-start items-start gap-20">
+          <div>
+            <h2 className="text-xl font-bold py-3">Month Calender</h2>
+            <MonthCalender />
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold py-5">Week Calender</h2>
+            <WeekCalender />
+          </div>
         </div>
       </div>
     </div>
