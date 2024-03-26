@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
     <Header />
-    <div className="flex flex-col items-center justify-center h-screen w-full">
+    <div className="flex flex-col items-center justify-center h-full w-full">
         <div className="inline-block mt-20">
             <h1 className="text-4xl font-normal mb-5">Welcome to School Base's LMS</h1>
               <div className="grid grid-cols gap-4">
@@ -14,7 +14,7 @@ function Home() {
                     <p>Login / Register to get started</p>
               </div>
         </div>
-          <div className="mt-40 ml-[_-_200rem] flex justify-end">
+        <div className="mt-40 ml-[_-_200rem]">
             <Admin />
           </div>
       </div> 
