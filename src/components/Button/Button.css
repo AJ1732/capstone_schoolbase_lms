@@ -1,0 +1,4 @@
+button:active {
+  scale: 0.98;
+  transition: all 75ms ease-in;
+}
