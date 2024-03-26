@@ -13,3 +13,17 @@ export const NavButton = ({ children, className, onClick }) => {
     </button>
   )
 }
+
+export const FormButton = ({ children, className, onClick }) => {
+  return (
+    <button 
+      onClick={onClick}
+      className={`
+      min-w-[150px] | text-black text-sm bg-dark-gray | py-2.5 px-8 rounded-[10px] 
+      active:bg-black-gray active:text-white
+      ${className}
+    `}>
+      {children}
+    </button>
+  )
+}
