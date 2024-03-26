@@ -12,8 +12,11 @@ export const validateEmail = (email) => {
 
 
 export const SignUpForm = () => {
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState({
+    value: "",
+    isTouched: false,
+  });
   const [password, setPassword] = useState({
     value: "",
     isTouched: false,
@@ -33,14 +36,16 @@ export const SignUpForm = () => {
 
   const getIsFormValid = () => { 
     return ( 
-      firstName && 
+      fullName && 
       validateEmail(email) && 
       password.value.length >= 8 
     ); 
   }; 
 
+  console.log(getIsFormValid());
+  
   const clearForm = () => {
-    setFirstName("");
+    setFullName("");
     setEmail("");
     setPassword({
       value: "",
@@ -68,15 +73,15 @@ export const SignUpForm = () => {
           {/* NAME */}
           <div className='field'>
             <div>
-              <label htmlFor="firstName">Name </label>
+              <label htmlFor="fullName">Name </label>
             </div>
             <input 
-              id='firstName'
+              id='fullName'
               type="text" 
-              value={firstName}
+              value={fullName}
               placeholder='Enter Full Name'
               required
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => setFullName(e.target.value)}
             />
           </div>
 
@@ -88,12 +93,17 @@ export const SignUpForm = () => {
             <input 
               id='email'
               type="email" 
-              value={email}
+              value={email.value}
               placeholder='Email Address'
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => { 
+                setEmail({ ...email, value: e.target.value }); 
+              }} 
+              onBlur={() => { 
+                setEmail({ ...email, isTouched: true }); 
+              }} 
             />
             {
-              validateEmail(email) == null ? 
+              email.isTouched && validateEmail(email) == null ? 
               ( <EmailErrorMessage /> ) :
               null
             } 

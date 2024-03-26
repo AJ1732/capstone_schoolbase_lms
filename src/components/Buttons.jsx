@@ -14,12 +14,13 @@ export const NavButton = ({ children, className, onClick }) => {
   )
 }
 
-export const FormButton = ({ children, className, onClick }) => {
+export const FormButton = ({ children, className, onClick, disabled }) => {
   return (
     <button 
+      disabled={disabled}
       onClick={onClick}
       className={`
-      min-w-[150px] | text-black text-sm bg-dark-gray | py-2.5 px-8 rounded-[10px] 
+      min-w-[150px] | text-black text-sm bg-[#E0E0E0] | py-2.5 px-8 rounded-[10px] 
       active:bg-black-gray active:text-white
       ${className}
     `}>
