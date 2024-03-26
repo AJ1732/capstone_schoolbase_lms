@@ -238,6 +238,7 @@ export const SignUpForm = () => {
               type="email" 
               value={email.value}
               placeholder='Email Address'
+              required
               onChange={(e) => { 
                 setEmail({ ...email, value: e.target.value }); 
               }} 
