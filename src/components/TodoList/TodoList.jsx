@@ -110,6 +110,7 @@ const TodoList = () => {
       {/* INPUT FORM */}
       <form onSubmit={handleSubmit} className='flex'>
         <input 
+          id='taskInput'
           type="text"
           placeholder='Add Todo' 
           value={input}

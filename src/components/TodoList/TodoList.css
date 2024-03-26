@@ -1,4 +1,4 @@
-input[type="text"] {
+form input[id='taskInput'] {
   background-color: white;
   width: 100%;
   color: black;
