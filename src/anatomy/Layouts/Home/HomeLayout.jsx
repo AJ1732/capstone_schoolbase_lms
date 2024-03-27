@@ -4,7 +4,7 @@ import { HomePageHeader } from '../../../components/Header.jsx/Headers'
 
 const HomeLayout = () => {
   return (
-    <div>
+    <div className='content-grid | min-h-dvh'>
       <HomePageHeader />
       <Outlet />
     </div>
