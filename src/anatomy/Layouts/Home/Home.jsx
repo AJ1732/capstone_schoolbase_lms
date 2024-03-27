@@ -1,6 +1,4 @@
 import Admin from "../Admin"
-import Header from "../Header"
-
 
 function Home() {
   return (

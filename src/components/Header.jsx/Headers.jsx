@@ -1,11 +1,10 @@
-import { Button } from "../../components/Button/Buttons";
+import React from 'react'
 import { useNavigate } from "react-router-dom"
+import { Button } from "../Button/Buttons";
 
-
-
-function Header() {
-
+export const HomePageHeader = () => {
   const navigate = useNavigate();
+
   return (
     <header className="full-width content-grid | w-full max-h-[110px] bg-gray-200 p-4">
       <div className="content | flex items-center justify-between">
@@ -18,6 +17,3 @@ function Header() {
     </header>
   )
 }
-
-export default Header
-

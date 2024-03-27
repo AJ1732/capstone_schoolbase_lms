@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from '../Header'
 import { Outlet } from 'react-router'
+import { HomePageHeader } from '../../../components/Header.jsx/Headers'
 
 const HomeLayout = () => {
   return (
     <div>
-      <Header />
+      <HomePageHeader />
       <Outlet />
     </div>
   )

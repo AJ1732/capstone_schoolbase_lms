@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { Link } from 'react-router-dom';
 
-import Header from "../../anatomy/Layouts/Header"
 import { Button } from '../../components/Button/Buttons';
 
 import { signInWithEmailAndPassword } from "firebase/auth"

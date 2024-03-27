@@ -1,7 +1,6 @@
 import { useState } from "react"
 
 import { Button } from "../../components/Button/Buttons"
-import Header from "../../anatomy/Layouts/Header"
 
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../fireBase"
@@ -25,8 +24,6 @@ const SignUp = () => {
     }).catch((error) => {
       console.log(error)
     })
-
-
   } 
 
 
