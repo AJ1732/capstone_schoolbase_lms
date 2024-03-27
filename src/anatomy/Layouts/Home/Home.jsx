@@ -1,4 +1,4 @@
-import Admin from "../Admin"
+import { Link } from "react-router-dom"
 
 function Home() {
   return (
@@ -10,6 +10,10 @@ function Home() {
             <p>Revolutionizing education through innovative technology</p>
             <p>Login / Register to get started</p>
           </div>
+        </div>
+
+        <div className="flex justify-end mb-8">
+          <Link>Administrator ? Sign in</Link>
         </div>
 
         {/* <div className="mt-40 ml-[_-_200rem]">
