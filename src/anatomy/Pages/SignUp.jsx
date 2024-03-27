@@ -28,8 +28,8 @@ const SignUp = () => {
 
 
   return (
-    <form onSubmit={submitHandler} className="flex flex-col items-center justify-center h-full w-full mt--20">
-      <div className="text-center mt-32">
+    <form onSubmit={submitHandler} className="content | h-[calc(100vh_-_100px)] flex flex-col items-center justify-center ">
+      <div className="text-center">
           <h1 className="text-4xl font-normal mb-4">CREATE ACCOUNT</h1>
           <h3>SIGN UP HERE</h3>
       </div>

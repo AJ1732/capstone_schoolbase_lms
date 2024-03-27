@@ -25,9 +25,9 @@ const Login = () => {
   }
 
   return (
-    <form onSubmit={submitHandler}  className="flex flex-col items-center justify-center min-h-screen">
-      <div className="text-center mt-32">
-          <h1 className="text-4xl font-normal mb-4">WELCOME BACK!</h1>
+    <form onSubmit={submitHandler}  className="content | min-h-[calc(100vh_-_100px)] flex flex-col items-center justify-center">
+      <div className="text-center">
+          <h1 className="text-4xl font-normal">WELCOME BACK!</h1>
           <h3>LOGIN HERE</h3>
       </div>
 
