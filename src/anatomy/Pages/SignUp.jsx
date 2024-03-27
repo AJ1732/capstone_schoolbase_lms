@@ -1,6 +1,8 @@
-import Button from "../../anatomy/Layouts/Button"
-import Header from "../../anatomy/Layouts/Header"
 import { useState } from "react"
+
+import { Button } from "../../components/Button/Buttons"
+import Header from "../../anatomy/Layouts/Header"
+
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../fireBase"
 
@@ -29,30 +31,25 @@ const SignUp = () => {
 
 
   return (
-    <>
-       <Header />
-          <form onSubmit={submitHandler} className="flex flex-col items-center justify-center h-full w-full mt--20">
-              <div className="text-center mt-32">
-                  <h1 className="text-4xl font-normal mb-4">CREATE ACCOUNT</h1>
-                  <h3>SIGN UP HERE</h3>
-              </div>
+    <form onSubmit={submitHandler} className="flex flex-col items-center justify-center h-full w-full mt--20">
+      <div className="text-center mt-32">
+          <h1 className="text-4xl font-normal mb-4">CREATE ACCOUNT</h1>
+          <h3>SIGN UP HERE</h3>
+      </div>
 
-           <div className="container1">
-              <h3 className="mb-2">Name</h3>
-              <input type="text" name="name" placeholder="Enter Full Name" className="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" value={name} onChange={changeHandler} required />
-              <h3 className="mb-2">Email</h3>
-              <input type="email" name="email" placeholder="Email Address" className="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" value={email} onChange={changeHandler} required />
-              <h3 className="mb-2">Password</h3>
-              <input type="password" name="password" placeholder="Password" className="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" value={password} onChange={changeHandler} required />
+      <div className="container1">
+        <h3 className="mb-2">Name</h3>
+        <input type="text" name="name" placeholder="Enter Full Name" className="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" value={name} onChange={changeHandler} required />
+        <h3 className="mb-2">Email</h3>
+        <input type="email" name="email" placeholder="Email Address" className="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" value={email} onChange={changeHandler} required />
+        <h3 className="mb-2">Password</h3>
+        <input type="password" name="password" placeholder="Password" className="w-full px-3 py-2 border border-gray-300 rounded-md mb-3" value={password} onChange={changeHandler} required />
 
-              <div className="flex justify-end mb-5 mt-3">
-                <Button type="submit" variant="secondary" >SIGNUP</Button>
-              </div>
-
-
-           </div>
-          </form>
-    </>
+        <div className="flex justify-end mb-5 mt-3">
+          <Button type="submit" variant="secondary" >SIGNUP</Button>
+        </div>
+      </div>
+    </form>
   )
 }
 

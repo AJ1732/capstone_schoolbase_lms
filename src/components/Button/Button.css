@@ -2,3 +2,45 @@ button:active {
   scale: 0.98;
   transition: all 75ms ease-in;
 }
+
+.btn {
+  border: 0;
+  border-radius: 8px;
+  color: black;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+.btn.btn-primary {
+  background-color: white;
+}
+
+.btn.btn-secondary {
+  background: rgb(229 231 235);
+}
+
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+  transform: scale(0.98);
+  opacity: 0.9;
+} 
+
+.btn:active {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  color: #333;
+  cursor: auto;
+}
+
+.btn:disabled:hover {
+  transform: scale(1);
+  opacity: 1;
+} 
