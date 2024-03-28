@@ -9,6 +9,7 @@ import User from "./anatomy/Pages/User/User"
 import Lessons from "./anatomy/Pages/Lessons/Lessons"
 import Notes from "./anatomy/Pages/Notes/Notes"
 import Assignments from "./anatomy/Pages/Assignments/Assignments"
+import Results from "./anatomy/Pages/Results/Results"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/software/lessons" element={<Lessons />}/>
             <Route path="/software/notes" element={<Notes />}/>
             <Route path="/software/assignments" element={<Assignments />}/>
+            <Route path="/software/results" element={<Results />}/>
           </Route>
         </Routes>
       </Router>
