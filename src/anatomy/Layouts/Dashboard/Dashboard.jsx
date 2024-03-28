@@ -3,8 +3,8 @@ import CoursesSection from "./sections/CoursesSection"
 import NotesSection from "./sections/NotesSection"
 import WelcomeSection from "./sections/WelcomeSection"
 
-import { WeekCalender } from '../../../components/Calender/Calender'
-import TodoList from "../../../components/TodoList/TodoList"
+import { WeekCalender } from '../../../Components/Calender/Calender'
+import TodoList from "../../../Components/TodoList/TodoList"
 
 function Dashboard() {
   return (
