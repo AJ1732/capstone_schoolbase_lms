@@ -23,8 +23,8 @@ export const HomePageHeader = () => {
 export const DashboardHeader = () => {
 
   return (
-    <header className="col-span-2 | max-h-[6.9375rem] w-full bg-gray-200 flex justify-center items-center">
-      <div className="content | w-full px-9 py-5 flex items-center justify-between cursor-default">
+    <header className="col-span-2 | max-h-[6.9375rem] w-full bg-gray-200 flex justify-start items-center">
+      <div className="content | max-w-[79rem] w-full px-9 py-5 flex items-center justify-between cursor-default">
         <div className='size-6 bg-[#1A1A1A]'>
 
         </div>
