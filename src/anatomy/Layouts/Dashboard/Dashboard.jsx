@@ -2,7 +2,7 @@
 function Dashboard() {
  
   return (
-    <div className="full-width">
+    <div>
       <h2>Hello Dashboard hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</h2>
     </div>
   )
