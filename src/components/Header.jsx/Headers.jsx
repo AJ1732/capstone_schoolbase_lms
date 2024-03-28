@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
 import { Button } from "../Button/Buttons";
+import { HeaderAvatar } from '../Avatar';
 
 export const HomePageHeader = () => {
   const navigate = useNavigate();
@@ -22,8 +23,21 @@ export const DashboardHeader = () => {
 
   return (
     <header className="dashboard__header | max-h-[6.9375rem] w-full bg-gray-200 flex justify-center items-center">
-      <div className="content | p-8 flex items-center justify-between cursor-default">
-        Header
+      <div className="content | w-full p-9 flex items-center justify-between cursor-default">
+        <div className='size-6 bg-[#1A1A1A]'>
+
+        </div>
+
+        <div className='text-[1A1A1A] flex justify-center items-center gap-20'>
+          <p>CBT</p>
+          <p>Communication</p>
+        </div>
+
+        <div className='flex justify-center items-center gap-6'>
+          <div className='size-6 bg-[#1A1A1A]'></div>
+          <div className='size-6 bg-[#1A1A1A]'></div>
+          <HeaderAvatar />
+        </div>
       </div>
     </header>
   )

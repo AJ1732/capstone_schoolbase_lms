@@ -9,7 +9,9 @@ const DashboardLayout = () => {
     <div className='layout | min-h-dvh |  '>
       <DashboardHeader />
       <Sidebar />
-      <Outlet />
+      <div className='p-4'>
+        <Outlet />
+      </div>
     </div>
   )
 }
