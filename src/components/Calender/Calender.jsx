@@ -58,7 +58,7 @@ export const MonthCalender = () => {
 
 export const WeekCalender = () => {
   return (
-    <div className='bg-[#F8F8F8] size-fit p-3 text-black rounded-3xl'>
+    <div className='bg-[#F8F8F8] size-fit py-4 px-2 text-black rounded-3xl'>
       {/* MONTH */}
       <div className='flex justify-between items-center px-3 mb-4'>
         <div className='size-2 rounded-full bg-[#1A1A1A]'></div>
