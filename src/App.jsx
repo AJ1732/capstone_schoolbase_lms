@@ -12,6 +12,7 @@ import Assignments from "./anatomy/Pages/Assignments/Assignments"
 import Results from "./anatomy/Pages/Results/Results"
 import Classroom from "./anatomy/Pages/Classroom/Classroom"
 import Attendance from "./anatomy/Pages/Attendance/Attendance"
+import Calendar from "./anatomy/Pages/Calendar/Calendar"
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
             <Route path="/software/results" element={<Results />}/>
             <Route path="/software/classroom" element={<Classroom />}/>
             <Route path="/software/attendance" element={<Attendance />}/>
+            <Route path="/software/calendar" element={<Calendar />}/>
           </Route>
         </Routes>
       </Router>
