@@ -3,7 +3,7 @@ import React from 'react'
 const Sidebar = () => {
   return (
     <aside className='
-      max-w-24 min-h-[calc(100dvh_-_90px)] | bg-[#E8E8E8] py-12 
+      max-w-24 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll no-scrollbar | bg-[#E8E8E8] py-12 
       text-center flex justify-center items-start
     '>
       <ul className='flex flex-col gap-10'>

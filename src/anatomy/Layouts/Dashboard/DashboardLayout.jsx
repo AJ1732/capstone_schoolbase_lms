@@ -9,7 +9,7 @@ const DashboardLayout = () => {
     <div className='min-h-dvh | font-manrope grid grid-cols-[6rem_1fr]'>
       <DashboardHeader />
       <Sidebar />
-      <div className='max-w-[72rem] p-4 pr-12'>
+      <div className='max-w-[72rem] max-h-[calc(100dvh_-_90px)] | p-4 pr-12 | overflow-y-scroll no-scrollbar'>
         <Outlet />
       </div>
     </div>
