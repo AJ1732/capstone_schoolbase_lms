@@ -17,3 +17,14 @@ export const HomePageHeader = () => {
     </header>
   )
 }
+
+export const DashboardHeader = () => {
+
+  return (
+    <header className="dashboard__header | max-h-[6.9375rem] w-full bg-gray-200 flex justify-center items-center">
+      <div className="content | p-8 flex items-center justify-between cursor-default">
+        Header
+      </div>
+    </header>
+  )
+}

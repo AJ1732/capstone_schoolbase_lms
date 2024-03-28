@@ -3,10 +3,9 @@
 function Dashboard() {
  
   return (
-    <>
-    <div className="">welcom</div>
-      
-    </>
+    <div className="full-width">
+      <h2>Hello Dashboard hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</h2>
+    </div>
   )
 }
 
