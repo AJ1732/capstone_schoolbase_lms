@@ -31,8 +31,7 @@ const SignUp = () => {
       alert(errorCode, errorMessage);
     });
   } 
-
-
+  
   return (
     <form onSubmit={submitHandler} className="content | h-[calc(100vh_-_100px)] flex flex-col items-center justify-center mt-12 mb-5">
       <div className="text-center">
