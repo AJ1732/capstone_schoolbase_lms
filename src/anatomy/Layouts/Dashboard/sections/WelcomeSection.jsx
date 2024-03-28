@@ -5,7 +5,7 @@ import dashboardHero from "../../../../assets/dashboardHero.png"
 
 const WelcomeSection = () => {
   return (
-    <section className="bg-[#F0F0F0] w-full h-[14.3125rem] px-12 flex justify-between items-center rounded-lg">
+    <section className="col-span-3 | bg-[#F0F0F0] max-w-[72rem] w-full h-[14.3125rem] px-12 flex justify-between items-center rounded-lg">
       <div className="flex justify-start items-start gap-6">
         <HeaderAvatar src={avatarImg} />
         <div className="space-y-2">
