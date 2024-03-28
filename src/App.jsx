@@ -1,9 +1,10 @@
 import { HeaderAvatar, ProfileAvatar } from "./components/Avatar"
 import { FormButton, NavButton } from "./components/Button/Buttons"
 import { LogInForm, SignUpForm } from "./components/Form/Forms"
-import avatarImg from './assets/avatarImg.png'
 import { MonthCalender, WeekCalender } from "./components/Calender/Calender"
+import { HomePageHeader } from "./components/Header/Headers"
 import TodoList from "./components/TodoList/TodoList"
+import avatarImg from './assets/avatarImg.png'
 
 function App() {
 
@@ -69,6 +70,12 @@ function App() {
       <div>
         <h2 className="text-3xl font-bold py-3">To Do List</h2>
         <TodoList />
+      </div>
+      
+      {/* HEADERS */}
+      <div>
+        <h2 className="text-3xl font-bold py-3">To Do List</h2>
+        <HomePageHeader />
       </div>
     </div>
   )
