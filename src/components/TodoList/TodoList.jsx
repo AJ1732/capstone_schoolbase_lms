@@ -126,7 +126,7 @@ const TodoList = () => {
           className='bg-white border text-xs border-[#959595]'
         > 
           {subjects.map( subject => (
-            <option value={subject}>{subject}</option> 
+            <option key={subject} value={subject}>{subject}</option> 
           ))}
         </select> 
         <button type='submit' className='bg-[#1A1A1A] text-white text-xs px-5 py-2 rounded-r-md'>Add</button>
