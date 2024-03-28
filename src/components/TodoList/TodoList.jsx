@@ -74,38 +74,41 @@ const TodoList = () => {
   }
 
   return (
-    <div className='min-w-[280px] w-fit bg-white text-[#42404C] p-3 space-y-3 rounded-md'>
-      <h3 className='text-lg'>To Do List</h3>
+    <div className='min-w-[280px] min-h-[21rem] w-fit h-full bg-white text-[#42404C] p-3 flex flex-col justify-between items-start gap-4 rounded-md'>
+      <div className='space-y-4'>
+        <h3 className='text-lg'>To Do List</h3>
 
-      {/* TODO LIST */}
-      <ul className='text-sm space-y-3'>
-        {todos.map(({ id, task, subject, time, completed }) => (
-          <li key={id} className={`${completed && 'line-through'}`} onDoubleClick={() => handleDelete(id)}>
-            <div className='flex justify-start items-start gap-3'>
-              {/* checkbox */}
-              <input 
-                id={`Todo${id}`} 
-                type="checkbox"
-                className='mt-1' 
-                checked={completed}
-                onChange={() => handleCheck(id)}
-              /> 
+        {/* TODO LIST */}
+        <ul className='max-h-64 h-full | text-sm space-y-3 | overflow-y-scroll no-scrollbar'>
+          {todos.map(({ id, task, subject, time, completed }) => (
+            <li key={id} className={`${completed && 'line-through'}`} onDoubleClick={() => handleDelete(id)}>
+              <div className='flex justify-start items-start gap-3'>
+                {/* checkbox */}
+                <input 
+                  id={`Todo${id}`} 
+                  type="checkbox"
+                  className='mt-1' 
+                  checked={completed}
+                  onChange={() => handleCheck(id)}
+                /> 
 
-              {/* task content */}
-              <div className='text-sm flex flex-col'>
-                {/* task title */}
-                <label htmlFor={`Todo${id}`} className='text-[#42404C]'>{task}</label>
-                
-                {/* task specifications */}
-                <div className='flex divide-x-2'>
-                  <p className='text-[#676767] pr-2'>{subject}</p>
-                  <p className='text-[#959595] pl-2'>{time}</p>
-                </div>
-              </div> 
-            </div>
-          </li>
-        ))}
-      </ul>
+                {/* task content */}
+                <div className='text-sm flex flex-col'>
+                  {/* task title */}
+                  <label htmlFor={`Todo${id}`} className='text-[#42404C]'>{task}</label>
+                  
+                  {/* task specifications */}
+                  <div className='flex divide-x-2'>
+                    <p className='text-[#676767] pr-2'>{subject}</p>
+                    <p className='text-[#959595] pl-2'>{time}</p>
+                  </div>
+                </div> 
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
 
       {/* INPUT FORM */}
       <form onSubmit={handleSubmit} className='flex'>
@@ -123,7 +126,7 @@ const TodoList = () => {
           className='bg-white border text-xs border-[#959595]'
         > 
           {subjects.map( subject => (
-            <option value={subject}>{subject}</option> 
+            <option key={subject} value={subject}>{subject}</option> 
           ))}
         </select> 
         <button type='submit' className='bg-[#1A1A1A] text-white text-xs px-5 py-2 rounded-r-md'>Add</button>
