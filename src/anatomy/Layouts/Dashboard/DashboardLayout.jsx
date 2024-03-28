@@ -9,7 +9,7 @@ const DashboardLayout = () => {
     <div className='min-h-dvh | font-manrope grid grid-cols-[6rem_1fr]'>
       <DashboardHeader />
       <Sidebar />
-      <div className='p-4'>
+      <div className='p-4 pr-12'>
         <Outlet />
       </div>
     </div>
