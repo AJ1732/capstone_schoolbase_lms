@@ -52,7 +52,7 @@ export const generateDate = ( month = dayjs().month(), year = dayjs().year() ) =
   }
 }
 
-export const generateWeekDate = ( day = dayjs().day(), week = dayjs().week(), month = dayjs().month(), year = dayjs().year() ) => {  
+export const generateWeekDate = ( week = dayjs().week(), month = dayjs().month(), year = dayjs().year() ) => {  
   const firstDateOfWeek = dayjs().year(year).month(month).week(week).startOf("week");
   const lastDateOfWeek = dayjs().year(year).month(month).week(week).endOf("week");
 

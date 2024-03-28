@@ -58,14 +58,16 @@ export const MonthCalender = () => {
 
 export const WeekCalender = () => {
   return (
-    <div className='bg-[#F8F8F8] size-fit p-5 text-black rounded-3xl'>
+    <div className='bg-[#F8F8F8] size-fit p-3 text-black rounded-3xl'>
       {/* MONTH */}
-      <div>
-        <h3 className='font-semibold text-[#1A1A1A] text-center mb-4'>{months[currentMonthIndex]}, {currentYear}</h3>
+      <div className='flex justify-between items-center px-3 mb-4'>
+        <div className='size-2 rounded-full bg-[#1A1A1A]'></div>
+        <h3 className='font-semibold text-[#1A1A1A] text-center'>{months[currentMonthIndex]}, {currentYear}</h3>
+        <div className='size-2 rounded-full bg-[#1A1A1A]'></div>
       </div>
 
       {/* DAYS */}
-      <div className='w-full grid grid-cols-7 gap-3'>
+      <div className='w-full grid grid-cols-7 gap-1.5'>
         {days.map((day, index) => (
           <div key={index} className={`calender_day_tiles ${cn(dayjs().day() === index && "bg-[#1A1A1A] rounded-b-none")}`}>
             <p className={`${cn(dayjs().day() === index? "text-white": "text-[#676767]")}`}>{day}</p>
@@ -74,7 +76,7 @@ export const WeekCalender = () => {
       </div>
 
       {/* DATES */}
-      <div className='size-full grid grid-cols-7 gap-3'>
+      <div className='size-full grid grid-cols-7 gap-1.5'>
         {generateWeekDate().arrayOfWeekDate.map(({ date, today }, index) => {
           return (
             <div key={index} className={`calender_date_tiles ${cn(today && "bg-[#1A1A1A] rounded-t-none" )}`}>
