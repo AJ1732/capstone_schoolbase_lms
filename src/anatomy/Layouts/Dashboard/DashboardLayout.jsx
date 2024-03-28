@@ -6,7 +6,7 @@ import './Dashboard.css'
 
 const DashboardLayout = () => {
   return (
-    <div className='layout | min-h-dvh |  '>
+    <div className='layout | min-h-dvh | font-manrope '>
       <DashboardHeader />
       <Sidebar />
       <div className='p-4'>
