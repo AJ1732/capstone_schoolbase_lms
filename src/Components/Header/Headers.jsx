@@ -20,7 +20,7 @@ export const HomePageHeader = () => {
   )
 }
 
-export const DashboardHeader = () => {
+export const SoftwareHeader = () => {
 
   return (
     <header className="col-span-2 | max-h-[6.9375rem] w-full bg-gray-200 flex justify-start items-center">

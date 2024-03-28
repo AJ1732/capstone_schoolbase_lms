@@ -2,9 +2,11 @@ import Home from "./anatomy/Layouts/Home/Home"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Login from "./anatomy/Pages/Login"
 import SignUp from "./anatomy/Pages/SignUp"
-import Dashboard from "./anatomy/Layouts/Dashboard/Dashboard"
+import Dashboard from "./anatomy/Pages/Dashboard/Dashboard"
 import HomeLayout from "./anatomy/Layouts/Home/HomeLayout"
-import DashboardLayout from "./anatomy/Layouts/Dashboard/DashboardLayout"
+import SoftwareLayout from "./anatomy/Layouts/Software/SoftwareLayout"
+// import Sodt from "./anatomy/Layouts/Software/SoftwareLayout"
+import User from "./anatomy/Pages/User"
 
 
 function App() {
@@ -17,8 +19,9 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
           </Route>
-          <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route path="/software" element={<SoftwareLayout />}>
             <Route index element={<Dashboard/>}/>
+            <Route path="/software/user" element={<User/>}/>
           </Route>
         </Routes>
       </Router>
