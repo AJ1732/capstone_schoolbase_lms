@@ -6,7 +6,7 @@ import './Dashboard.css'
 
 const DashboardLayout = () => {
   return (
-    <div className='layout | min-h-dvh | font-manrope '>
+    <div className='min-h-dvh | font-manrope grid grid-cols-[6rem_1fr]'>
       <DashboardHeader />
       <Sidebar />
       <div className='p-4'>
