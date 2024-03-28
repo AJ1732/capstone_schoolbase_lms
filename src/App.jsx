@@ -5,7 +5,6 @@ import SignUp from "./anatomy/Pages/SignUp"
 import Dashboard from "./anatomy/Pages/Dashboard/Dashboard"
 import HomeLayout from "./anatomy/Layouts/Home/HomeLayout"
 import SoftwareLayout from "./anatomy/Layouts/Software/SoftwareLayout"
-// import Sodt from "./anatomy/Layouts/Software/SoftwareLayout"
 import User from "./anatomy/Pages/User"
 
 
