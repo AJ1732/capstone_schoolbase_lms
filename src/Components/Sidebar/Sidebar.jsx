@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   return (
@@ -7,12 +8,20 @@ const Sidebar = () => {
       text-center flex justify-center items-start
     '>
       <ul className='flex flex-col gap-10'>
-        <li>
-          <div className='size-6 bg-dark-gray rounded-full'>1</div>
-        </li>
-        <li>
-          <div className='size-6 bg-dark-gray rounded-full'>2</div>
-        </li>
+        {/* DASHBOARD LINK */}
+        <Link to={`/software`}>
+          <li>
+            <div className='size-6 bg-dark-gray rounded-full'>1</div>
+          </li>
+        </Link>
+
+        {/* USER LINK */}
+        <Link to={`/software/user`}>
+          <li>
+            <div className='size-6 bg-dark-gray rounded-full'>2</div>
+          </li>
+        </Link>
+        
         <li>
           <div className='size-6 bg-dark-gray rounded-full'>3</div>
         </li>
