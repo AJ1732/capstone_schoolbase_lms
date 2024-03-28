@@ -17,7 +17,9 @@ const Header = () => {
             </ul>
           </nav>
 
-          <WhiteButton className={`px-[70px]`}>Download</WhiteButton>
+          <a href="https://schoolbase-lms.netlify.app/" target='_blank'>
+            <WhiteButton className={`px-[70px]`}>Download</WhiteButton>
+          </a>
         </div>
 
       </div>

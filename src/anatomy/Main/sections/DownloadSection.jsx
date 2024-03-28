@@ -15,14 +15,18 @@ const DownloadSection = () => {
             <figure className='size-[136px] bg-dark-gray'>
               {/* <img src={window} alt="" /> */}
             </figure>
-            <BorderButton>Download for Windows</BorderButton>
+            <a href="https://schoolbase-lms.netlify.app/" target='_blank'>
+              <BorderButton>Download for Windows</BorderButton>
+            </a>
           </div>
 
           <div className='flex-center flex-col gap-4'>
             <figure className='size-[136px] bg-dark-gray'>
               {/* <img src={window} alt="" /> */}
             </figure>
-            <BorderButton>Download for MacOS</BorderButton>
+            <a href="https://schoolbase-lms.netlify.app/" target='_blank'>
+              <BorderButton>Download for MacOS</BorderButton>
+            </a>
           </div>
         </div>
       </div>
