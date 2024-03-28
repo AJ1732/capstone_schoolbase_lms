@@ -18,7 +18,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      navigate("/dashboard")
+      navigate("/software")
       console.log(user)
     }).catch((error) => {
       const errorCode = error.code;
