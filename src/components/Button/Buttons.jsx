@@ -1,6 +1,14 @@
 import React from 'react'
 import './Button.css'
 
+export function Button({children, variant, type, isDisabled, onClick}) {
+  return (
+    <button type={type} disabled={isDisabled} onClick={onClick} className={`btn btn-${variant}`}>
+      {children}
+    </button> 
+  )
+}
+
 export const NavButton = ({ children, className, onClick }) => {
   return (
     <button 
