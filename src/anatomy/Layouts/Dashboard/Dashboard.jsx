@@ -1,11 +1,9 @@
 
-
 function Dashboard() {
  
   return (
     <>
-    <div className="">welcom</div>
-      
+      <h1>Welcome to Dashboard</h1>      
     </>
   )
 }
