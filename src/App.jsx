@@ -8,6 +8,7 @@ import SoftwareLayout from "./anatomy/Layouts/Software/SoftwareLayout"
 import User from "./anatomy/Pages/User/User"
 import Lessons from "./anatomy/Pages/Lessons/Lessons"
 import Notes from "./anatomy/Pages/Notes/Notes"
+import Assignments from "./anatomy/Pages/Assignments/Assignments"
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/software/user" element={<User/>}/>
             <Route path="/software/lessons" element={<Lessons />}/>
             <Route path="/software/notes" element={<Notes />}/>
+            <Route path="/software/assignments" element={<Assignments />}/>
           </Route>
         </Routes>
       </Router>
