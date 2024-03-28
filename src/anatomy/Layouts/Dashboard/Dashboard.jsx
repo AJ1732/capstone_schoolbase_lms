@@ -1,4 +1,5 @@
 import CBTSection from "./sections/CBTSection"
+import CoursesSection from "./sections/CoursesSection"
 import NotesSection from "./sections/NotesSection"
 import WelcomeSection from "./sections/WelcomeSection"
 
@@ -8,6 +9,7 @@ function Dashboard() {
       <WelcomeSection />
       <NotesSection />
       <CBTSection />
+      <CoursesSection />
     </div>
   )
 }
