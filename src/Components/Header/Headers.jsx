@@ -1,8 +1,10 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom"
+import { useValueContext } from '../../context/ContextProvider';
 import { Button } from "../Button/Buttons";
 import { HeaderAvatar } from '../Avatar';
 import avatarImg from '../../assets/avatarImg.png'
+
 
 export const HomePageHeader = () => {
   const navigate = useNavigate();
@@ -21,13 +23,15 @@ export const HomePageHeader = () => {
 }
 
 export const SoftwareHeader = () => {
+  const { setExpand } = useValueContext();
 
   return (
     <header className="col-span-2 | max-h-[6.9375rem] w-full bg-gray-200 flex justify-start items-center">
       <div className="content | max-w-[79rem] w-full px-9 py-5 flex items-center justify-between cursor-default">
-        <div className='size-6 bg-[#1A1A1A]'>
-
-        </div>
+        
+        <button onClick={() => setExpand(prev => !prev)}>
+          <div className='size-6 bg-[#1A1A1A]'></div>
+        </button>
 
         <div className='text-[1A1A1A] ml-32 flex justify-center items-center gap-20'>
           <p>CBT</p>
