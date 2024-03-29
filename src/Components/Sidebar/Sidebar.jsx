@@ -1,83 +1,73 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { useValueContext } from '../../context/ContextProvider'
+
+const SidebarItem = ({ children, to, text, active, alert }) => {
+  const { expand, setExpand } = useValueContext();
+  console.log(expand);
+
+  return (
+    <NavLink to={to} className={({ isActive }) => isActive? 'text-black': 'hover:text-black'}>
+      <li onClick={() => setExpand(prev => !prev)} className={`space-x-4`}>
+        <span className='bg-dark-gray p-2 rounded-full'>{children}</span>
+        <span className={`overflow-hidden ${!expand && ' opacity-0'}`}>{text}</span>
+      </li>
+    </NavLink>
+  )
+  
+}
+
+// ${!expand && 'absolute opacity-0'}
 
 const Sidebar = () => {
+  const { expand, setExpand } = useValueContext();
+
   return (
-    <aside className='
-      max-w-24 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll no-scrollbar | bg-[#E8E8E8] py-12 
-      text-center flex justify-center items-start
-    '>
+    <aside className={`
+      w-24 transition-[width] duration-500 ease-in-out ${expand && 'w-52'}
+      z-10 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll no-scrollbar | 
+      bg-[#E8E8E8] py-12 px-9 | font-semibold text-[#616161] 
+      flex flex-col justify-start items-start gap-40
+    `}>
       <nav>
-        <ul className='flex flex-col gap-10'>
+        <ul className='flex flex-col justify-center items-start gap-10'>
           {/* DASHBOARD LINK */}
-          <Link to={`/software`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>1</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software`} text={`Dashboard`}>1</SidebarItem>
 
           {/* USER LINK */}
-          <Link to={`/software/user`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>2</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/user`} text={`User`}>2</SidebarItem>
 
           {/* LESSONS LINK */}
-          <Link to={`/software/lessons`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>3</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/lessons`} text={`Lesson`}>3</SidebarItem>
 
           {/* NOTES LINK */}
-          <Link to={`/software/notes`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>4</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/notes`} text={`Notes`}>4</SidebarItem>
 
           {/* ASSIGNMENT LINK */}
-          <Link to={`/software/assignments`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>5</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/assignments`} text={`Assignment`}>5</SidebarItem>
 
           {/* RESULTS LINK */}
-          <Link to={`/software/results`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>6</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/results`} text={`Results`}>6</SidebarItem>
           
           {/* CLASSROOM LINK */}
-          <Link to={`/software/classroom`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>7</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/classroom`} text={`Classroom`}>7</SidebarItem>
           
           {/* ATTENDANCE LINK */}
-          <Link to={`/software/attendance`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>8</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/attendance`} text={`Attendance`}>8</SidebarItem>
           
           {/* CALENDAR LINK */}
-          <Link to={`/software/calendar`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>9</div>
-            </li>
-          </Link>
-          
-        
-          <li className='mt-20'>
-            <div className='size-6 bg-dark-gray rounded-full'>0</div>
-          </li>
+          <SidebarItem to={`/software/calendar`} text={`Calendar`}>9</SidebarItem>
         </ul>
       </nav>
+
+      <div>
+        <div onClick={() => setExpand(prev => !prev)} className={`
+          relative | space-x-4 transition-colors cursor-pointer
+        `}>
+          <span className='bg-dark-gray p-2 rounded-full'>0</span>
+          <span className={`overflow-hidden ${!expand && ' opacity-0'}`}>Logout</span>
+        </div>
+      </div>
     </aside>
   )
 }
