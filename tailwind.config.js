@@ -17,6 +17,21 @@ export default {
       fontFamily: {
         generalSans: ['General Sans', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
+      },
+      keyframes: {
+        view: {
+          '0%': { 
+            opacity: 0, 
+            transform: 'translateY(-5px) scale(0.99)' 
+          },
+          '100%': { 
+            opacity: 1, 
+            transform: 'translateY(0px) scale(1)' 
+          },
+        }
+      },
+      animation: {
+        view: 'view 500ms ease-in-out 1',
       }
     },
   },
