@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useValueContext } from '../../context/ContextProvider'
 
 const SidebarItem = ({ children, to }) => {
   return (
@@ -10,6 +11,8 @@ const SidebarItem = ({ children, to }) => {
 }
 
 const Sidebar = () => {
+  const { expand, setExpand } = useValueContext();
+
   return (
     <aside className='
       z-10 w-fit max-h-[calc(100dvh_-_90px)] | overflow-y-scroll no-scrollbar | 
