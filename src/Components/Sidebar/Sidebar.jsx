@@ -7,11 +7,8 @@ const SidebarItem = ({ children, to, text, active, alert }) => {
   console.log(expand);
 
   return (
-    <NavLink to={to}>
-      <li onClick={() => setExpand(prev => !prev)} className={`
-        group | space-x-4 
-        ${active? "text-red-600": "hover:text-blue-600"}
-      `}>
+    <NavLink to={to} className={({ isActive }) => isActive? 'text-black': 'hover:text-black'}>
+      <li onClick={() => setExpand(prev => !prev)} className={`space-x-4`}>
         <span className='bg-dark-gray p-2 rounded-full'>{children}</span>
         <span className={`overflow-hidden ${!expand && ' opacity-0'}`}>{text}</span>
       </li>
