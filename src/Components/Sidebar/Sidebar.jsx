@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 const Sidebar = () => {
   return (
     <aside className='
-      max-w-24 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll no-scrollbar | bg-[#E8E8E8] py-12 
-      text-center flex justify-center items-start
+      z-10 w-fit max-h-[calc(100dvh_-_90px)] | overflow-y-scroll no-scrollbar | 
+      bg-[#E8E8E8] py-12 px-9 | text-center flex justify-start items-start
     '>
       <nav>
         <ul className='flex flex-col gap-10'>
