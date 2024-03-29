@@ -1,6 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+const SidebarItem = ({ children, to }) => {
+  return (
+    <Link to={to}>
+      <li className='size-6 bg-dark-gray rounded-full'>{children}</li>
+    </Link>
+  )
+}
+
 const Sidebar = () => {
   return (
     <aside className='
@@ -10,67 +18,31 @@ const Sidebar = () => {
       <nav>
         <ul className='flex flex-col gap-10'>
           {/* DASHBOARD LINK */}
-          <Link to={`/software`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>1</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software`}>1</SidebarItem>
 
           {/* USER LINK */}
-          <Link to={`/software/user`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>2</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/user`}>2</SidebarItem>
 
           {/* LESSONS LINK */}
-          <Link to={`/software/lessons`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>3</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/lessons`}>3</SidebarItem>
 
           {/* NOTES LINK */}
-          <Link to={`/software/notes`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>4</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/notes`}>4</SidebarItem>
 
           {/* ASSIGNMENT LINK */}
-          <Link to={`/software/assignments`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>5</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/assignments`}>5</SidebarItem>
 
           {/* RESULTS LINK */}
-          <Link to={`/software/results`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>6</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/results`}>6</SidebarItem>
           
           {/* CLASSROOM LINK */}
-          <Link to={`/software/classroom`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>7</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/classroom`}>7</SidebarItem>
           
           {/* ATTENDANCE LINK */}
-          <Link to={`/software/attendance`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>8</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/attendance`}>8</SidebarItem>
           
           {/* CALENDAR LINK */}
-          <Link to={`/software/calendar`}>
-            <li>
-              <div className='size-6 bg-dark-gray rounded-full'>9</div>
-            </li>
-          </Link>
+          <SidebarItem to={`/software/calendar`}>9</SidebarItem>
           
         
           <li className='mt-20'>
