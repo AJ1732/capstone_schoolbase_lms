@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-import './Form.css'
+import { useNavigate } from 'react-router-dom';
+import { auth } from "../../fireBase"
+import { signInWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword } from "firebase/auth"
 import { FormButton } from '../Button/Buttons';
+import './Form.css'
 
 export const validateEmail = (email) => {
   return String(email)
@@ -22,6 +26,7 @@ export const LogInForm = () => {
     isTouched: false,
   });
   const [remember, setRemember] = useState(false);
+  const navigate = useNavigate()
 
   // ERROR MESSAGES
   const EmailErrorMessage = () => {
@@ -63,8 +68,19 @@ export const LogInForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    signInWithEmailAndPassword(auth, email.value, password.value)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      alert("Login successful!");
+      navigate("/software")
+      console.log(user)
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorCode, errorMessage)
+      console.log(errorCode, errorMessage)
+    })
 
-    alert("Login successful!");
     clearForm();
   };
 
@@ -144,7 +160,7 @@ export const LogInForm = () => {
             <p className='font-semibold text-[#595959]'>Forgot your password?</p>
 
             {/* SUBMIT BUTTON */}
-            <FormButton disabled={!getIsFormValid()} className={`w-[150px] `}>SIGN UP</ FormButton>
+            <FormButton disabled={!getIsFormValid()} className={`w-[150px] `}>LOGIN</ FormButton>
           </div>
         </fieldset>
       </form>
@@ -196,10 +212,22 @@ export const SignUpForm = () => {
     })
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    alert("Account created!");
+    await createUserWithEmailAndPassword(auth, email.value, password.value)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log(user);
+      alert("Sign up successfull.! Login")
+      navigate("/login")
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+      alert(errorCode, errorMessage);
+    });
+
     clearForm();
   };
 
