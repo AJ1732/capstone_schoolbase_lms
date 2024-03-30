@@ -15,7 +15,6 @@ import logout from "../../assets/move_item.png"
 
 const SidebarItem = ({ children, to, text }) => {
   const { expand, setExpand } = useValueContext();
-  console.log(expand);
 
   return (
     <NavLink to={to} className={({ isActive }) => isActive? 'text-black': 'hover:text-black'}>
