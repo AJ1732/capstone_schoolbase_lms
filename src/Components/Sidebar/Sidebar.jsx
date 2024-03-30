@@ -19,7 +19,7 @@ const SidebarItem = ({ children, to, text, active, alert }) => {
 
   return (
     <NavLink to={to} className={({ isActive }) => isActive? 'text-black': 'hover:text-black'}>
-      <li onClick={() => setExpand(prev => !prev)} className={`space-x-4`}>
+      <li onClick={() => setExpand(prev => !prev)} className={`size-6 space-x-4`}>
         <span className='bg-dark-gray p-2 rounded-full'>{children}</span>
         <span className={`overflow-hidden ${!expand && ' opacity-0'}`}>{text}</span>
       </li>
