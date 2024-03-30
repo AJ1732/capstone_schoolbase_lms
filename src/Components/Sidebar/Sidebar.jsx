@@ -13,15 +13,14 @@ import calender from "../../assets/calendar_month.png"
 import logout from "../../assets/move_item.png"
 
 
-// eslint-disable-next-line react/prop-types
-const SidebarItem = ({ children, to, text, active, alert }) => {
+const SidebarItem = ({ children, to, text }) => {
   const { expand, setExpand } = useValueContext();
   console.log(expand);
 
   return (
     <NavLink to={to} className={({ isActive }) => isActive? 'text-black': 'hover:text-black'}>
-      <li onClick={() => setExpand(prev => !prev)} className={`flex items-center justify-center gap-4`}>
-        <span className='rounded-full size-6'>{children}</span>
+      <li onClick={() => setExpand(prev => !prev)} className={`w-full flex items-center justify-center gap-4`}>
+        <span className='rounded-full size-6  text-xs text-[#616161]'>{children}</span>
         <span className={`overflow-hidden ${!expand && ' opacity-0'}`}>{text}</span>
       </li>
     </NavLink>
@@ -36,13 +35,13 @@ const Sidebar = () => {
 
   return (
     <aside className={`
-      w-24 transition-[width] duration-500 ease-in-out ${expand && 'w-52'}
-      z-10 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll | 
-      bg-[#E8E8E8] py-12 px-9 | font-semibold text-[#616161] 
+      w-24 transition-[width] duration-500 ease-in-out ${expand && 'w-64'}
+      z-10 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll overflow-x-hidden | 
+      bg-[#E8E8E8] py-12 px-8 | font-semibold text-[#616161] 
       flex flex-col justify-start items-start gap-40
     `}>
       <nav>
-        <ul className='flex flex-col justify-center items-start gap-10'>
+        <ul className='w-64 flex flex-col justify-center items-start gap-10'>
           {/* DASHBOARD LINK */}
           <SidebarItem to={`/software`} text={`Dashboard`} >
             <img src={dashBoard} alt="speed" />
