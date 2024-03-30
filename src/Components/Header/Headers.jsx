@@ -42,8 +42,12 @@ export const SoftwareHeader = () => {
         </div>
 
         <div className='flex justify-center items-center gap-6'>
-          <div className='size-6'><img src={box} alt="" /></div>
-          <div className='size-6'><img src={alert} alt="notifications" /></div>
+          <figure className='size-[18px]'>
+            <img src={box} alt="" />
+          </figure>
+          <figure className='size-[18px] mb-1'>
+            <img src={alert} alt="notifications" />
+          </figure>
           <HeaderAvatar src={avatarImg} />
         </div>
       </div>
