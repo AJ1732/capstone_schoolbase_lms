@@ -14,6 +14,7 @@ import Classroom from "./anatomy/Pages/Classroom/Classroom"
 import Attendance from "./anatomy/Pages/Attendance/Attendance"
 import Calendar from "./anatomy/Pages/Calendar/Calendar"
 import Communication from "./anatomy/Pages/Communication/Communication"
+import CBT from "./anatomy/Pages/CBT/CBT"
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <Route path="/software/classroom" element={<Classroom />}/>
             <Route path="/software/attendance" element={<Attendance />}/>
             <Route path="/software/calendar" element={<Calendar />}/>
+            <Route path="/software/cbt" element={<CBT />}/>
             <Route path="/software/communication" element={<Communication />}/>
           </Route>
         </Routes>
