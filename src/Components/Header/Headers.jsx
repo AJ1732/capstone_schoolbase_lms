@@ -37,12 +37,18 @@ export const SoftwareHeader = () => {
         </button>
 
         <div className='text-[1A1A1A] ml-32 flex justify-center items-center gap-20'>
-          <NavLink>CBT</NavLink>
+          <NavLink
+            to={`/software/cbt`}
+            className={({ isActive }) => isActive? 'bg-white py-1.5 px-3 rounded-md': 'py-1.5 px-3'}
+          >
+            <span>CBT</span>
+          </NavLink>
+          
           <NavLink 
             to={`/software/communication`}
-            className={({ isActive }) => isActive? 'bg-white p-1.5 rounded-md': 'hover:text-black'}
+            className={({ isActive }) => isActive? 'bg-white py-1.5 px-3 rounded-md': 'py-1.5 px-3'}
           >
-            <span className='p-1.5 rounded-lg'>Communication</span>
+            <span>Communication</span>
           </NavLink>
         </div>
 
