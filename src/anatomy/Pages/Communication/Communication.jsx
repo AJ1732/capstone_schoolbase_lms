@@ -14,13 +14,6 @@ const Communication = () => {
         </figure>
       </div>
 
-      {/* <div className={`quick-example`}>
-        <div >
-          <div>Hello</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quia obcaecati porro dicta, veritatis repellendus quasi sed, magni hic debitis numquam eos sunt ipsum odit, ducimus itaque soluta explicabo perferendis.</div>
-        </div>
-      </div> */}
-
       <div className='bg-[#F0F0F0] py-7 px-5 rounded-lg flex flex-col '>
         <div onClick={() => setOpen(!open)} className='w-full flex justify-between items-center'>
           <div className='font-semibold flex flex-col gap-5'>
