@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { useValueContext } from '../../context/ContextProvider';
 import { Button } from "../Button/Buttons";
 import { HeaderAvatar } from '../Avatar';
@@ -37,8 +37,13 @@ export const SoftwareHeader = () => {
         </button>
 
         <div className='text-[1A1A1A] ml-32 flex justify-center items-center gap-20'>
-          <p>CBT</p>
-          <p>Communication</p>
+          <NavLink>CBT</NavLink>
+          <NavLink 
+            to={`/software/communication`}
+            className={({ isActive }) => isActive? 'bg-white p-1.5 rounded-md': 'hover:text-black'}
+          >
+            <span className='p-1.5 rounded-lg'>Communication</span>
+          </NavLink>
         </div>
 
         <div className='flex justify-center items-center gap-6'>
