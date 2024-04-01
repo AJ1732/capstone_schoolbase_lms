@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from "react-router-dom"
 import { useValueContext } from '../../context/ContextProvider';
 import { Button } from "../Button/Buttons";
@@ -27,10 +27,11 @@ export const HomePageHeader = () => {
 
 export const SoftwareHeader = () => {
   const { setExpand } = useValueContext();
+  const [ profileOpen, setProfileOpen ] = useState(false);
 
   return (
     <header className="col-span-2 | max-h-[6.9375rem] w-full bg-gray-200 flex justify-start items-center">
-      <div className="content | max-w-[79rem] w-full px-9 py-5 flex items-center justify-between cursor-default">
+      <div className="content relative | max-w-[79rem] w-full px-9 py-5 flex items-center justify-between cursor-default">
         
         <button onClick={() => setExpand(prev => !prev)}>
           <div className='size-6'><img src={menu} alt="menu" /></div>
@@ -59,7 +60,33 @@ export const SoftwareHeader = () => {
           <figure className='size-[18px] mb-1'>
             <img src={alert} alt="notifications" />
           </figure>
-          <HeaderAvatar src={avatarImg} />
+          <div onClick={() => setProfileOpen(!profileOpen)}>
+            <HeaderAvatar src={avatarImg} />
+          </div>
+        </div>
+
+        <div className={`
+          absolute top-[99%] right-[3%] 
+          w-80 max-h-0 overflow-hidden 
+          transition-[max-height] duration-500
+          ${profileOpen && 'max-h-[30rem]' }
+        `}>
+          <div className='bg-[#E8E8E8] text-[#1A1A1A] p-8 space-y-6 shadow-sm rounded-lg'>
+            <div className='flex justify-start items-center gap-4'>
+              <div className='size-10 bg-dark-gray rounded-full'></div>
+              <h2 className='font-medium'>Sarah Ogiri</h2>
+            </div>
+
+            <ul className='flex flex-col gap-5'>
+              <li>My Courses</li>
+              <li>Profile</li>
+              <li>Fee Management</li>
+              <li>Settings</li>
+              <li>Accomplishments</li>
+              <li>Help Center</li>
+              <li>Log Out</li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
