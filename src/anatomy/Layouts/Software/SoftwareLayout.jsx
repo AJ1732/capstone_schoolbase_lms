@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router'
-import { SoftwareHeader } from '../../../Components/Header/Headers'
-import Sidebar from '../../../Components/Sidebar/Sidebar'
+import { SoftwareHeader } from '../../../components/Header/Headers'
+import Sidebar from '../../../components/Sidebar/Sidebar'
 import './Software.css'
 import { useValueContext } from '../../../context/ContextProvider'
 

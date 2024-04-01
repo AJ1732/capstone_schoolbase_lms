@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import cbt from '../../../assets/cbt.svg'
-import { CommAccordion } from '../../../Components/Accordion/Accordions'
+import { CommAccordion } from '../../../components/Accordion/Accordions'
 
 const Communication = () => {
   const [open, setOpen] = useState(false)

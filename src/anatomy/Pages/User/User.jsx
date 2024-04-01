@@ -1,5 +1,5 @@
 import React from 'react'
-import { ProfileAvatar } from '../../../Components/Avatar'
+import { ProfileAvatar } from '../../../components/Avatar'
 import avatarImg from '../../../assets/avatarImg.png'
 
 const User = () => {

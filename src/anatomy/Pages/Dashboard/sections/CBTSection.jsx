@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavButton } from '../../../../Components/Button/Buttons'
+import { NavButton } from '../../../../components/Button/Buttons'
 
 const CBTSection = () => {
   return (

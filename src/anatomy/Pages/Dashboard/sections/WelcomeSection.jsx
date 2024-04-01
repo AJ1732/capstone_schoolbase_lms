@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderAvatar } from "../../../../Components/Avatar"
+import { HeaderAvatar } from "../../../../components/Avatar"
 import avatarImg from '../../../../assets/avatarImg.png'
 import dashboardHero from "../../../../assets/dashboardHero.png"
 

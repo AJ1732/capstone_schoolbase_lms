@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { LogInForm } from "../../Components/Form/Forms";
+import { LogInForm } from "../../components/Form/Forms";
 
 const Login = () => {
   return (
