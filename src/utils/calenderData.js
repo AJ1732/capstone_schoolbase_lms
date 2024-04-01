@@ -1,6 +1,8 @@
 import dayjs from 'dayjs';
 import weekOfYear from 'dayjs/plugin/weekOfYear';
+import weekYear from 'dayjs/plugin/weekYear';
 dayjs.extend(weekOfYear)
+dayjs.extend(weekYear)
 
 
 export const days = ["S", "M", "T", "W", "T", "F", "S"];

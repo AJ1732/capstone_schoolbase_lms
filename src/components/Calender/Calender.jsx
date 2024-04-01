@@ -57,6 +57,8 @@ export const MonthCalender = () => {
 }
 
 export const WeekCalender = () => {
+  const [today] = useState(currentDate);
+
   return (
     <div className='bg-[#F8F8F8] size-fit py-4 px-2 text-black rounded-3xl'>
       {/* MONTH */}
