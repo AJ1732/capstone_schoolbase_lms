@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { Button } from "../../Components/Button/Buttons"
+import { Button } from "../../components/Button/Buttons"
 
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../fireBase"

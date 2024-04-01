@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Button } from '../../Components/Button/Buttons';
+import { Button } from '../../components/Button/Buttons';
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../fireBase"
 

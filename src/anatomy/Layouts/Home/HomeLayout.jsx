@@ -1,6 +1,6 @@
 
 import { Outlet } from 'react-router'
-import { HomePageHeader } from '../../../Components/Header/Headers'
+import { HomePageHeader } from '../../../components/Header/Headers'
 
 const HomeLayout = () => {
   return (
