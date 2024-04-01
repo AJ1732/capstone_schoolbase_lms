@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import cbt from '../../../assets/cbt.svg'
-import './Communication.css'
 
 const Communication = () => {
   const [open, setOpen] = useState(false);
