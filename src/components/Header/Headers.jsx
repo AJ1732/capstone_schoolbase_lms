@@ -1,8 +1,13 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
+import { useValueContext } from '../../context/ContextProvider';
 import { Button } from "../Button/Buttons";
 import { HeaderAvatar } from '../Avatar';
 import avatarImg from '../../assets/avatarImg.png'
+import menu from "../../assets/menu@2x.png"
+import box from "../../assets/box.png"
+import alert from "../../assets/notifications.png"
+
 
 export const HomePageHeader = () => {
   const navigate = useNavigate();
@@ -21,22 +26,39 @@ export const HomePageHeader = () => {
 }
 
 export const SoftwareHeader = () => {
+  const { setExpand } = useValueContext();
 
   return (
     <header className="col-span-2 | max-h-[6.9375rem] w-full bg-gray-200 flex justify-start items-center">
       <div className="content | max-w-[79rem] w-full px-9 py-5 flex items-center justify-between cursor-default">
-        <div className='size-6 bg-[#1A1A1A]'>
-
-        </div>
+        
+        <button onClick={() => setExpand(prev => !prev)}>
+          <div className='size-6'><img src={menu} alt="menu" /></div>
+        </button>
 
         <div className='text-[1A1A1A] ml-32 flex justify-center items-center gap-20'>
-          <p>CBT</p>
-          <p>Communication</p>
+          <NavLink
+            to={`/software/cbt`}
+            className={({ isActive }) => isActive? 'bg-white py-1.5 px-3 rounded-md': 'py-1.5 px-3'}
+          >
+            <span>CBT</span>
+          </NavLink>
+          
+          <NavLink 
+            to={`/software/communication`}
+            className={({ isActive }) => isActive? 'bg-white py-1.5 px-3 rounded-md': 'py-1.5 px-3'}
+          >
+            <span>Communication</span>
+          </NavLink>
         </div>
 
         <div className='flex justify-center items-center gap-6'>
-          <div className='size-6 bg-[#1A1A1A]'></div>
-          <div className='size-6 bg-[#1A1A1A]'></div>
+          <figure className='size-[18px]'>
+            <img src={box} alt="" />
+          </figure>
+          <figure className='size-[18px] mb-1'>
+            <img src={alert} alt="notifications" />
+          </figure>
           <HeaderAvatar src={avatarImg} />
         </div>
       </div>
