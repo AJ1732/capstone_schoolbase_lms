@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router'
 import { SoftwareHeader } from '../../../components/Header/Headers'
+// import SoftwareHeader from '../../../components/Header/Headers'
 import Sidebar from '../../../components/Sidebar/Sidebar'
 import './Software.css'
 
