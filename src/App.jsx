@@ -1,9 +1,10 @@
-import { HeaderAvatar, ProfileAvatar } from "./components/Avatar"
-import { FormButton, NavButton } from "./components/Button/Buttons"
-import { LogInForm, SignUpForm } from "./components/Form/Forms"
-import { MonthCalender, WeekCalender } from "./components/Calender/Calender"
-import TodoList from "./components/TodoList/TodoList"
+import { HeaderAvatar, ProfileAvatar } from "./Components/Avatar"
+import { FormButton, NavButton } from "./Components/Button/Buttons"
+import { LogInForm, SignUpForm } from "./Components/Form/Forms"
+import { MonthCalender, WeekCalender } from "./Components/Calender/Calender"
+import TodoList from "./Components/TodoList/TodoList"
 import avatarImg from './assets/avatarImg.png'
+import { CommAccordion } from "./Components/Accordion/Accordions"
 
 function App() {
 
@@ -69,6 +70,12 @@ function App() {
       <div>
         <h2 className="text-3xl font-bold py-3">To Do List</h2>
         <TodoList />
+      </div>
+
+      {/* ACCORDION */}
+      <div>
+        <h2 className="text-3xl font-bold py-3">Accordion</h2>
+        <CommAccordion status={`Ongoing`} title={`1 Subject`} content={`This is Content`} />
       </div>
     </div>
   )
