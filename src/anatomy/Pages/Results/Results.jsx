@@ -1,8 +1,12 @@
-import React from 'react'
+import result from "../../../assets/Result-Frame.png"
 
 const Results = () => {
+
   return (
-    <div>Results</div>
+    <>
+      <img src={result} alt="" />
+
+    </>
   )
 }
 
