@@ -17,12 +17,12 @@ const CoursesSection = () => {
       <div className='grid grid-cols-8 font-bold mt-8 text-sm'>
         <p className='col-span-1'>#</p>
         <h3 className='col-span-2 -ml-10'>NAME</h3>
-        <h3 className='col-span-2 ml-5'>DESCRIPTION</h3>
+        <h3 className='col-span-2 ml-11'>DESCRIPTION</h3>
       </div>
 
       <div className='grid grid-cols-3 gap-8 text-xs'>
        
-        <div className='mt-2 font-semibold'>
+        <div className='mt-3 font-semibold'>
           <ol className="list-decimal leading-[_50px] ml-4">
             <li className="pl-8">English Language</li>
             <li className="pl-8">Mathematics</li>
@@ -31,8 +31,8 @@ const CoursesSection = () => {
             <li className="pl-8">Computer Science</li>
           </ol>
         </div>
-        <div className='mt-2 font-semibold'>
-          <ol className="list-none leading-[_50px] ml-8 pl-2">
+        <div className='mt-3 font-semibold'>
+          <ol className="list-none leading-[_50px] ml-16">
             <li>Difficulty-Advanced</li>
             <li>Difficulty-Beginner</li>
             <li>Difficulty-Beginner</li>
@@ -41,12 +41,12 @@ const CoursesSection = () => {
           </ol>
         </div>
         <div className='font-semibold'>
-          <ol className="list-none leading-[_40px] ml-11 text-center borde">
-            <li className="bg-white mt-5">Enrolled</li>
-            <li  className="bg-white mt-5">Enrolled</li>
-            <li className="bg-dark-gray mt-5">Pending</li>
-            <li  className="bg-white mt-5">Enrolled</li>
-            <li className="bg-dark-gray mt-5">Pending</li>
+          <ol className="list-none leading-[_10px] ml-28 text-center borde">
+            <li className="bg-white mt-5 rounded-sm w-20 font-bold p-3">Enrolled</li>
+            <li  className="bg-white mt-5 rounded-sm w-20 font-bold p-3">Enrolled</li>
+            <li className="bg-dark-gray mt-5 rounded-sm w-20 p-3">Pending</li>
+            <li  className="bg-white mt-5 rounded-sm w-20 font-bold p-3">Enrolled</li>
+            <li className="bg-dark-gray mt-5 rounded-sm w-20 p-3">Pending</li>
           </ol>
         </div>
 
