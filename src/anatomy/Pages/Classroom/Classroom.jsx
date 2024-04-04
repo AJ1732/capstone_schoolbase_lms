@@ -1,8 +1,10 @@
-import React from 'react'
+import classroom from "../../../assets/Classes-Frame.png"
 
 const Classroom = () => {
   return (
-    <div>Classroom</div>
+    <>
+    <img src={classroom} alt="" />
+    </>
   )
 }
 
