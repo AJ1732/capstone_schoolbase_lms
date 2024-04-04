@@ -1,5 +1,5 @@
 
-import frame from "../../../assets/Frame 1000001991.png"
+import frame from "../../../assets/Assignment-frame.png"
 import dropdown from "../../../assets/arrow_drop_down.png"
 
 const Assignments = () => {
@@ -11,7 +11,7 @@ const Assignments = () => {
       <div className="flex gap-5 w-auto mt-4">
           <h3 className="font-bold mt-2">Filter:</h3>
 
-        <div className="flex flex-col gap-2 shadow-lg px-4 py-2">
+        <div className="flex flex-col  sm:flex-row gap-2 shadow-lg px-4 py-2">
           <h3>
             All Assignments 
             <button className="ml-3"><img src={dropdown} alt="" /></button>
