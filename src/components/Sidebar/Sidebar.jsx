@@ -33,7 +33,7 @@ const Sidebar = () => {
   const { expand, setExpand } = useValueContext();
 
   return (
-    <aside className={`
+    <aside onMouseOver={() => setExpand(true)} onMouseLeave={() => setExpand(false)} className={`
       w-24 transition-[width] duration-500 ease-in-out ${expand && 'w-64'}
       z-10 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll overflow-x-hidden | 
       bg-[#E8E8E8] py-12 px-8 | font-semibold text-[#616161] 
