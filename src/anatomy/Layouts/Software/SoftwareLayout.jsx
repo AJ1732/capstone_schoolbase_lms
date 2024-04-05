@@ -12,7 +12,7 @@ const SoftwareLayout = () => {
       <SoftwareHeader />
       <Sidebar />
       <div className={`
-        ${expand && "animate-view"}
+        animate-view
         col-start-2 |  max-w-[72rem] max-h-[calc(100dvh_-_90px)] |
         p-4 pr-12 | overflow-y-scroll
       `}>
