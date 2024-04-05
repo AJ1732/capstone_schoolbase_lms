@@ -20,7 +20,7 @@ const SidebarItem = ({ children, to, text }) => {
     <NavLink to={to} className={({ isActive }) => isActive? 'text-black': 'hover:text-black'}>
       <li onClick={() => setExpand(prev => !prev)} className={`w-full flex items-center justify-center gap-4`}>
         <figure className='rounded-full size-6  text-xs text-[#616161]'>{children}</figure>
-        <span className={`overflow-hidden ${!expand && 'opacity-0 transition-all duration-300'}`}>{text}</span>
+        <span className={`overflow-hidden ${!expand && 'opacity-0 transition-all duration-500'}`}>{text}</span>
       </li>
     </NavLink>
   )
@@ -34,7 +34,7 @@ const Sidebar = () => {
 
   return (
     <aside onMouseOver={() => setExpand(true)} onMouseLeave={() => setExpand(false)} className={`
-      w-24 transition-all duration-500 ease-in-out ${expand && 'w-64'}
+      w-24 transition-all duration-[400ms] ease-in-out ${expand && 'w-64'}
       z-10 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll overflow-x-hidden | 
       bg-[#E8E8E8] py-12 px-8 | font-semibold text-[#616161] 
       flex flex-col justify-start items-start gap-40
