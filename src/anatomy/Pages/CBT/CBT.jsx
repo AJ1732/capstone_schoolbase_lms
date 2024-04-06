@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
-// import cbt from '../../../assets/cbt.svg'
+import React from 'react'
 import cbt from '../../../assets/cbt.png'
 import { CommAccordion } from '../../../components/Accordion/Accordions'
 
 const CBT = () => {
-  const [open, setOpen] = useState(false)
-
   return (
     <section className='grid grid-cols-1 gap-7'>
       <div className='min-h-56 bg-primary-50 | py-4 pl-9 pr-24 | flex justify-between items-center rounded-lg'>
