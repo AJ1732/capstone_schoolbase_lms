@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from "react-router-dom"
 import { useValueContext } from '../../context/ContextProvider';
-import { Button, NavButton } from "../Button/Buttons";
+import { NavButton } from "../Button/Buttons";
 import { HeaderAvatar } from '../Avatar';
 import avatarImg from '../../assets/avatarImg.png'
-import menu from "../../assets/menu@2x.png"
-import box from "../../assets/box.png"
-import alert from "../../assets/notifications.png"
+import box from "../../assets/box.svg"
+import alert from "../../assets/notifications.svg"
 import logoFull from "../../assets/logo-full.svg"
+import logoShort from "../../assets/logo-short.png"
 
 
 export const HomePageHeader = () => {
@@ -40,34 +40,36 @@ export const SoftwareHeader = () => {
   const [ profileOpen, setProfileOpen ] = useState(false);
 
   return (
-    <header className="col-span-2 | max-h-[6.9375rem] w-full bg-gray-200 flex justify-start items-center">
-      <div className="content relative | max-w-[79rem] w-full px-9 py-5 flex items-center justify-between cursor-default">
+    <header className="col-span-2 | max-h-[6.9375rem] w-full bg-white | flex justify-start items-center | border-b border-primary-900">
+      <div className="content relative | max-w-[79rem] w-full px-8 py-5 flex items-center justify-between cursor-default">
         
         <button onClick={() => setExpand(prev => !prev)}>
-          <div className='size-6'><img src={menu} alt="menu" /></div>
+          <div className='size-8'>
+            <img src={logoShort} alt="logo" />
+          </div>
         </button>
 
-        <div className='text-[1A1A1A] ml-32 flex justify-center items-center gap-20'>
+        <div className='text-primary-900 ml-32 flex justify-center items-center gap-10'>
           <NavLink
             to={`/software/cbt`}
-            className={({ isActive }) => isActive? 'bg-white py-1.5 px-3 rounded-md': 'py-1.5 px-3'}
+            className={({ isActive }) => isActive? 'bg-primary-100 font-medium py-1.5 px-10 rounded-md transition-all duration-300': 'border border-primary-100 py-1.5 px-10 rounded-md transition-all duration-300'}
           >
-            <span>CBT</span>
+            <span className=' '>CBT</span>
           </NavLink>
           
           <NavLink 
             to={`/software/communication`}
-            className={({ isActive }) => isActive? 'bg-white py-1.5 px-3 rounded-md': 'py-1.5 px-3'}
+            className={({ isActive }) => isActive? 'bg-primary-100  py-1.5 px-10 rounded-md transition-all duration-300': 'border border-primary-100 py-1.5 px-10 rounded-md transition-all duration-300'}
           >
-            <span>Communication</span>
+            <span>Chat</span>
           </NavLink>
         </div>
 
         <div className='flex justify-center items-center gap-6'>
-          <figure className='size-[18px]'>
+          <figure className='size-6'>
             <img src={box} alt="" />
           </figure>
-          <figure className='size-[18px] mb-1'>
+          <figure className='size-6'>
             <img src={alert} alt="notifications" />
           </figure>
           <div onClick={() => setProfileOpen(!profileOpen)}>
