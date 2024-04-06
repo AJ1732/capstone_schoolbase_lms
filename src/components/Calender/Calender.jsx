@@ -79,6 +79,18 @@ export const WeekCalender = () => {
 
       {/* DATES */}
       <div className='size-full grid grid-cols-7 gap-1.5'>
+        {generateWeekDate()
+          .arrayOfWeekDate.map(({ date, today }, index) => (
+            <div key={index} className={`calender_date_tiles ${cn(today && "bg-primary-00 rounded-t-none" )}`}>
+              <p className={`
+                bg-white | ${cn(today? "text-black": 'text-[#676767]')}
+              `}>{date}</p>
+            </div>
+          )
+        )}
+      </div>
+
+      {/* <div className='size-full grid grid-cols-7 gap-1.5'>
         {generateWeekDate().arrayOfWeekDate.map(({ date, today }, index) => {
           return (
             <div key={index} className={`calender_date_tiles ${cn(today && "bg-primary-00 rounded-t-none" )}`}>
@@ -88,7 +100,7 @@ export const WeekCalender = () => {
             </div>
           )
         })}
-      </div>
+      </div> */}
     </div>
   )
 }

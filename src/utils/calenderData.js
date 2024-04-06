@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
 import weekOfYear from 'dayjs/plugin/weekOfYear';
-import weekYear from 'dayjs/plugin/weekYear';
+// import weekYear from 'dayjs/plugin/weekYear';
 dayjs.extend(weekOfYear)
-dayjs.extend(weekYear)
+// dayjs.extend(weekYear)
 
 
 export const days = ["S", "M", "T", "W", "T", "F", "S"];
@@ -49,27 +49,29 @@ export const generateDate = ( month = dayjs().month(), year = dayjs().year() ) =
     );
   }
 
+  // returning the array
   return {
     arrayOfMonthDate: arrayOfMonthDate,
   }
 }
 
 export const generateWeekDate = ( week = dayjs().week(), month = dayjs().month(), year = dayjs().year() ) => {  
-  const firstDateOfWeek = dayjs().year(year).month(month).week(week).startOf("week");
-  const lastDateOfWeek = dayjs().year(year).month(month).week(week).endOf("week");
+  // const firstDateOfWeek = dayjs().year(year).month(month).week(week).startOf("week");
+  // const lastDateOfWeek = dayjs().year(year).month(month).week(week).endOf("week");
+  const dateOfWeek = dayjs().year(year).month(month).week(week);
 
   const arrayOfWeekDate = [];
   
   // pushing date into array
-  for (let i = firstDateOfWeek.date(); i <= lastDateOfWeek.date(); i++) {
+  for (let i = 0; i < 7; i++) {
     arrayOfWeekDate.push(
       {
-        date: firstDateOfWeek.date(i),
-        today: firstDateOfWeek.date(i).toDate().toDateString() === dayjs().toDate().toDateString(),
+        date: dateOfWeek.day(i).date(),
+        today: dateOfWeek.day(i).toDate().toDateString() === dayjs().toDate().toDateString(),
       }
     );
   }
-
+  
   // returning the array
   return {
     arrayOfWeekDate: arrayOfWeekDate,
