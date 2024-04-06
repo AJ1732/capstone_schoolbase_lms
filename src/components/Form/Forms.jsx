@@ -74,7 +74,7 @@ export const LogInForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          min-w-[630px] bg-white text-black p-12 drop-shadow-lg
+          min-w-[630px] bg-white text-black p-12 shadow-black-800 shadow-lg 
         `}
       >
         <fieldset className='flex flex-col gap-5'>
@@ -209,7 +209,7 @@ export const SignUpForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          min-w-[630px] bg-white text-black p-12 drop-shadow-lg
+          min-w-[630px] bg-white text-black p-12 shadow-black-800 shadow-lg
         `}
       >
         <fieldset className='flex flex-col gap-5'>
