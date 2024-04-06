@@ -4,7 +4,7 @@ export const CommAccordion = ({ title, status, content }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className='bg-white text-[#1A1A1A] rounded-lg flex flex-col '>
+    <div className='bg-white text-[#1A1A1A] rounded-lg flex flex-col shadow-sm'>
       <div onClick={() => setOpen(!open)} className='w-full flex justify-between items-center py-7 px-5'>
         <div className='font-semibold flex flex-col gap-5'>
           <span>{status}</span>
