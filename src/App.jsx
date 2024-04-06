@@ -1,10 +1,10 @@
-import { HeaderAvatar, ProfileAvatar } from "./Components/Avatar"
-import { FormButton, NavButton } from "./Components/Button/Buttons"
-import { LogInForm, SignUpForm } from "./Components/Form/Forms"
-import { MonthCalender, WeekCalender } from "./Components/Calender/Calender"
-import TodoList from "./Components/TodoList/TodoList"
+import { HeaderAvatar, ProfileAvatar } from "./components/Avatar"
+import { FormButton, NavButton } from "./components/Button/Buttons"
+import { LogInForm, SignUpForm } from "./components/Form/Forms"
+import { MonthCalender, WeekCalender } from "./components/Calender/Calender"
+import TodoList from "./components/TodoList/TodoList"
+import { CommAccordion } from "./components/Accordion/Accordions"
 import avatarImg from './assets/avatarImg.png'
-import { CommAccordion } from "./Components/Accordion/Accordions"
 
 function App() {
 
