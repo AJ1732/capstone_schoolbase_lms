@@ -1,24 +1,34 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from "react-router-dom"
 import { useValueContext } from '../../context/ContextProvider';
-import { Button } from "../Button/Buttons";
+import { Button, NavButton } from "../Button/Buttons";
 import { HeaderAvatar } from '../Avatar';
 import avatarImg from '../../assets/avatarImg.png'
 import menu from "../../assets/menu@2x.png"
 import box from "../../assets/box.png"
 import alert from "../../assets/notifications.png"
+import logoFull from "../../assets/logo-full.svg"
 
 
 export const HomePageHeader = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="full-width content-grid | w-full max-h-[110px] bg-gray-200">
-      <div className="content | p-4 flex items-center justify-between cursor-default">
-        <h1 onClick={() => navigate("/")} className="font-bold text-text-black text-xl">LOGO</h1>
-        <nav>
-          <Button type="button" variant="primary" onClick={() => navigate("/login")}>LOGIN</Button>
-          <Button type="button" variant="primary" onClick={() => navigate("/signup")}>SIGN UP</Button>
+    <header className="full-width content-grid | w-full max-h-[110px] bg-primary-100">
+      <div className="full-width | p-4 flex items-center justify-between cursor-default">
+
+        <figure 
+          onClick={() => navigate("/")} 
+          className="font-bold text-text-black text-xl"
+        >
+          <img src={logoFull} alt="Logo" />
+        </figure>
+
+        <nav className='space-x-7'>
+          <NavButton onClick={() => navigate("/login")}>LOGIN</NavButton>
+          <NavButton onClick={() => navigate("/signup")}>SIGNUP</NavButton>
+          {/* <Button type="button" variant="primary" onClick={() => navigate("/login")}>LOGIN</Button>
+          <Button type="button" variant="primary" onClick={() => navigate("/signup")}>SIGN UP</Button> */}
         </nav>
       </div>
     </header>
