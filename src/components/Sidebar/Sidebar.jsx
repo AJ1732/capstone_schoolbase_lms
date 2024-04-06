@@ -17,7 +17,7 @@ const SidebarItem = ({ children, to, text }) => {
   const { expand, setExpand } = useValueContext();
 
   return (
-    <NavLink to={to} className={({ isActive }) => isActive? 'text-black': 'hover:text-black'}>
+    <NavLink to={to} className={({ isActive }) => isActive? 'text-primary-900': 'hover:text-primary-900'}>
       <li onClick={() => setExpand(false)} className={`w-full flex items-center justify-center gap-4`}>
         <figure className='rounded-full size-6  text-xs text-[#616161]'>{children}</figure>
         <span className={`overflow-hidden ${!expand && 'opacity-0 transition-all duration-500'}`}>{text}</span>
@@ -39,7 +39,7 @@ const Sidebar = () => {
       className={`
         w-24 transition-all duration-[400ms] ease-in-out ${expand && 'w-64'}
         z-10 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll overflow-x-hidden | 
-        bg-[#E8E8E8] py-12 px-8 | font-semibold text-[#616161] 
+        bg-white py-12 px-8 | font-semibold text-primary-900 text-opacity-70 
         flex flex-col justify-start items-start gap-40
       `
     }>
@@ -97,10 +97,11 @@ const Sidebar = () => {
           relative | transition-colors cursor-pointer flex items-center justify-center gap-4
         `}>
           
-          <span className='rounded-full size-6'><img src={logout} alt="logout_your_account" />
-          </span>
-          <span className={`overflow-hidden ${!expand && ' opacity-0'}`}>Logout</span>
-          </div>
+          <figure className='rounded-full size-6'>
+            <img src={logout} alt="logout_your_account" />
+          </figure>
+          <span className={`overflow-hidden hover:text-primary-900 ${!expand && ' opacity-0'}`}>Logout</span>
+        </div>
 
       </div>
     </aside>
