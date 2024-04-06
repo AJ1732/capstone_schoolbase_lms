@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './TodoList.css'
 import dayjs from 'dayjs'
+import './TodoList.css'
 
 const TodoList = () => {
   // TIME DATA
@@ -81,26 +81,29 @@ const TodoList = () => {
         {/* TODO LIST */}
         <ul className='max-h-64 h-full | text-sm space-y-3 | overflow-y-scroll no-scrollbar'>
           {todos.map(({ id, task, subject, time, completed }) => (
-            <li key={id} className={`${completed && 'line-through'}`} onDoubleClick={() => handleDelete(id)}>
+            <li key={id}  onDoubleClick={() => handleDelete(id)}>
               <div className='flex justify-start items-start gap-3'>
                 {/* checkbox */}
                 <input 
                   id={`Todo${id}`} 
                   type="checkbox"
-                  className='mt-1' 
+                  className='todo-check
+                    relative | size-4 mt-1 ml-px | appearance-none | p-1.5 | transition-all duration-300
+                    border border-primary-00 rounded | checked:bg-primary-00
+                  ' 
                   checked={completed}
                   onChange={() => handleCheck(id)}
                 /> 
 
                 {/* task content */}
-                <div className='text-sm flex flex-col'>
+                <div className={`text-sm flex flex-col ${completed && 'line-through'}`}>
                   {/* task title */}
-                  <label htmlFor={`Todo${id}`} className='text-[#42404C]'>{task}</label>
+                  <label htmlFor={`Todo${id}`} className='text-black-800'>{task}</label>
                   
                   {/* task specifications */}
                   <div className='flex divide-x-2'>
-                    <p className='text-[#676767] pr-2'>{subject}</p>
-                    <p className='text-[#959595] pl-2'>{time}</p>
+                    <p className='text-text-grey pr-2'>{subject}</p>
+                    <p className='text-secondary-00 pl-2'>{time}</p>
                   </div>
                 </div> 
               </div>
@@ -115,21 +118,21 @@ const TodoList = () => {
         <input 
           id='taskInput'
           type="text"
-          placeholder='Add Todo' 
           value={input}
+          placeholder='Add Todo' 
           onChange={(e) => setInput(e.target.value)}
         />
 
         <select 
           value={subject} 
           onChange={(e) => setSubject(e.target.value)}
-          className='bg-white border text-xs border-[#959595]'
+          className='bg-white text-xs border border-[#959595]'
         > 
           {subjects.map( subject => (
             <option key={subject} value={subject}>{subject}</option> 
           ))}
         </select> 
-        <button type='submit' className='bg-[#1A1A1A] text-white text-xs px-5 py-2 rounded-r-md'>Add</button>
+        <button type='submit' className='bg-primary-00 text-white text-xs px-5 py-2 rounded-r-md'>Add</button>
       </form>
     </div>
   )
