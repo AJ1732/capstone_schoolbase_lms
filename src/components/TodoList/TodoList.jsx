@@ -88,7 +88,7 @@ const TodoList = () => {
                   id={`Todo${id}`} 
                   type="checkbox"
                   className='todo-check
-                    size-4 mt-1 ml-px | appearance-none | p-1.5 | transition-all duration-300
+                    relative | size-4 mt-1 ml-px | appearance-none | p-1.5 | transition-all duration-300
                     border border-primary-00 rounded | checked:bg-primary-00
                   ' 
                   checked={completed}
