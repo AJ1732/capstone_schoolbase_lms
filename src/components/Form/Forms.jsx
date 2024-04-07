@@ -74,7 +74,7 @@ export const LogInForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          min-w-[630px] bg-white text-black p-12 shadow-black-800 shadow-lg 
+          max-w-[630px] min-w-[420px] bg-white text-black p-12 shadow-black-800 shadow-md 
         `}
       >
         <fieldset className='flex flex-col gap-5'>
@@ -141,7 +141,7 @@ export const LogInForm = () => {
           </div>
           
           <div className='mt-[20px] self-end flex justify-center items-center gap-6'>
-            <p className='font-semibold text-[#595959]'>Forgot your password?</p>
+            <p className='font-semibold text-[#595959] text-sm md:text-base'>Forgot your password?</p>
 
             {/* SUBMIT BUTTON */}
             <FormButton disabled={!getIsFormValid()} className={`w-[150px] `}>SIGN UP</ FormButton>
@@ -209,7 +209,7 @@ export const SignUpForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          min-w-[630px] bg-white text-black p-12 shadow-black-800 shadow-lg
+          max-w-[630px] min-w-[420px] w-full bg-white text-black p-12 shadow-black-800 shadow-md
         `}
       >
         <fieldset className='flex flex-col gap-5'>
