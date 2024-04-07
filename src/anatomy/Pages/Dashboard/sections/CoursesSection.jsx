@@ -34,12 +34,12 @@ const courseData = [
 const CoursesSection = () => {
 
   return (
-    <section className='col-span-2 bg-white w-full h-[34rem] sm:h-auto p-8 rounded-lg drop-shadow-md overflow-auto'>
-      <div className="min-w-[50rem] grid grid-cols-1 gap-8">
-        <div className='w-full leading-9'>
-          <h3 className='font-bold'>Courses</h3>
-          <p className='font-bold text-xs'>Maximum number of courses allowed: 9</p>
-          <p className='text-primary-400 text-xs mt-2 ml-0'>[Including general courses: find courses available to you below]</p>
+    <section className='col-span-2 bg-white w-full h-[34rem] sm:h-auto p-8 sm:pr-0 rounded-lg drop-shadow-md overflow-auto'>
+      <div className="max-w-[50rem] min-w-[40rem] grid grid-cols-1 gap-8">
+        <div className='w-full space-y-2 leading-9'>
+          <h3 className='font-bold text-xl'>Courses</h3>
+          <p className='font-bold text-sm'>Maximum number of courses allowed: 9</p>
+          <p className='font-bold text-primary-400 text-sm'>[Including general courses: find courses available to you below]</p>
         </div>
 
         {/* <div>
@@ -79,21 +79,28 @@ const CoursesSection = () => {
             </div>
           </div>
         </div> */}
-        <table class="table-auto border-spacing-2">
-          <thead className="text-left">
+        <table class="table-auto font-bold">
+          <thead className="h-12 md:h-16 text-left text-primary-900">
             <tr>
               <th>#</th>
               <th>NAME</th>
               <th>DESCRIPTION</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-text-black">
             {courseData.map( ({ id, name, description, status }) => (
-              <tr key={id}>
+              <tr key={id} className="h-12 md:h-16">
                 <td>{id}</td>
                 <td>{name}</td>
                 <td>{description}</td>
-                <td>{status}</td>
+                <td>
+                  <span className={`
+                    text-center text-xs p-3 rounded-md
+                    ${status === 'Enrolled'? 'bg-primary-100 text-primary-900': 'bg-primary-00 text-white'}
+                  `}>
+                    {status}
+                  </span>
+                </td>
               </tr>
             ))}
           </tbody>
