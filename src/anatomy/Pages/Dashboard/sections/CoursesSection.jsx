@@ -34,7 +34,7 @@ const courseData = [
 const CoursesSection = () => {
 
   return (
-    <section className='col-span-2 bg-white w-full h-[34rem] sm:h-auto p-8 sm:pr-0 rounded-lg drop-shadow-md overflow-auto'>
+    <section className='md:col-span-2 bg-white w-full h-[34rem] sm:h-auto p-8 sm:pr-0 rounded-lg drop-shadow-md overflow-auto'>
       <div className="max-w-[50rem] min-w-[40rem] grid grid-cols-1 gap-8">
         <div className='w-full space-y-2 leading-9'>
           <h3 className='font-bold text-xl'>Courses</h3>

@@ -4,7 +4,7 @@ import boxLarge from "../../../../assets/boxLarge.svg"
 const NotesSection = () => {
   return (
     <section className='
-      col-span-1 | bg-white | max-w-[14rem] max-h-[17rem] size-full | p-8 | drop-shadow-md
+      md:col-span-1 | bg-white | max-w-[14rem] max-h-[17rem] size-full | p-8 | drop-shadow-md
       text-center | flex flex-col justify-center items-center gap-4 rounded-lg
     '>
       <div className='flex flex-col justify-center items-center'>
