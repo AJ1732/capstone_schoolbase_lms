@@ -57,8 +57,10 @@ export const MonthCalender = () => {
 }
 
 export const WeekCalender = () => {
+  const [today] = useState(currentDate);
+
   return (
-    <div className='bg-[#F8F8F8] size-fit py-4 px-2 text-black rounded-3xl'>
+    <div className='bg-primary-50 size-fit py-4 px-2 text-black rounded-3xl'>
       {/* MONTH */}
       <div className='flex justify-between items-center px-3 mb-4'>
         <div className='size-2 rounded-full bg-[#1A1A1A]'></div>
@@ -69,7 +71,7 @@ export const WeekCalender = () => {
       {/* DAYS */}
       <div className='w-full grid grid-cols-7 gap-1.5'>
         {days.map((day, index) => (
-          <div key={index} className={`calender_day_tiles ${cn(dayjs().day() === index && "bg-[#1A1A1A] rounded-b-none")}`}>
+          <div key={index} className={`calender_day_tiles ${cn(dayjs().day() === index && "bg-primary-00 rounded-b-none")}`}>
             <p className={`${cn(dayjs().day() === index? "text-white": "text-[#676767]")}`}>{day}</p>
           </div>
         ))}
@@ -77,15 +79,15 @@ export const WeekCalender = () => {
 
       {/* DATES */}
       <div className='size-full grid grid-cols-7 gap-1.5'>
-        {generateWeekDate().arrayOfWeekDate.map(({ date, today }, index) => {
-          return (
-            <div key={index} className={`calender_date_tiles ${cn(today && "bg-[#1A1A1A] rounded-t-none" )}`}>
-              <p className={` 
-                bg-white | ${cn(today? "text-black": 'text-[#676767]')}  
-              `}>{date.date()}</p>
+        {generateWeekDate()
+          .arrayOfWeekDate.map(({ date, today }, index) => (
+            <div key={index} className={`calender_date_tiles ${cn(today && "bg-primary-00 rounded-t-none" )}`}>
+              <p className={`
+                bg-white | ${cn(today? "text-black": 'text-[#676767]')}
+              `}>{date}</p>
             </div>
           )
-        })}
+        )}
       </div>
     </div>
   )

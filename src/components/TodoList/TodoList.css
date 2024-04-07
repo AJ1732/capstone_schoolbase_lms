@@ -10,4 +10,29 @@ form input[id='taskInput'] {
   padding: 3px 6px;
 }
 
+form input[id='taskInput']::placeholder {
+  font-size: 12px;
+}
+
+.todo-check::before {
+  content: " ";
+  position: absolute;
+  top: -0.5px;
+  left: -1px;
+  width: 1rem;
+  height: 1rem;
+  transform: scale(0);
+  clip-path: polygon(17% 54%, 28% 43%, 38% 54%, 70% 22%, 81% 33%, 38% 75%, 17% 54%);
+  background-color: white;
+}
+
+.todo-check:checked::before {
+  transform: scale(1);
+}
+
+.todo-check:hover {
+  color: black;
+}
+
 /* #D9D9D9 */
+/* Clip path: polygon(17% 54%, 28% 43%, 38% 54%, 70% 22%, 81% 33%, 38% 75%, 17% 54%) */
