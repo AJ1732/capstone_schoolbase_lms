@@ -15,18 +15,18 @@ export const HomePageHeader = () => {
 
   return (
     <header className="full-width content-grid | w-full max-h-[110px] bg-primary-100">
-      <div className="full-width | p-4 flex items-center justify-between cursor-default">
+      <div className="full-width pr-4 flex items-center justify-between cursor-default">
 
         <figure 
           onClick={() => navigate("/")} 
-          className="font-bold text-text-black text-xl"
+          className="max-w-64 min-w-44 font-bold text-text-black text-xl"
         >
           <img src={logoFull} alt="Logo" />
         </figure>
 
-        <nav className='space-x-7'>
-          <NavButton onClick={() => navigate("/login")}>LOGIN</NavButton>
-          <NavButton onClick={() => navigate("/signup")}>SIGNUP</NavButton>
+        <nav className='flex gap-2 md:gap-7'>
+          <NavButton className={`min-w-[50px] !px-4 md:min-w-[150px]`} onClick={() => navigate("/login")}>LOGIN</NavButton>
+          <NavButton className={`min-w-[50px] !px-4 md:min-w-[150px]`} onClick={() => navigate("/signup")}>SIGNUP</NavButton>
           {/* <Button type="button" variant="primary" onClick={() => navigate("/login")}>LOGIN</Button>
           <Button type="button" variant="primary" onClick={() => navigate("/signup")}>SIGN UP</Button> */}
         </nav>
