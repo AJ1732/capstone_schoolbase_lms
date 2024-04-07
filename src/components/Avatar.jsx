@@ -2,7 +2,7 @@ import React from 'react'
 
 export const HeaderAvatar = ({ src }) => {
   return (
-    <figure className='size-12 rounded-full'>
+    <figure className='min-w-12 size-12 rounded-full'>
       <img src={src} alt="" />
     </figure>
   )
