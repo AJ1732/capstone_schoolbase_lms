@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { auth } from "../../fireBase"
-import { signInWithEmailAndPassword } from "firebase/auth"
-import { createUserWithEmailAndPassword } from "firebase/auth"
+// import { signInWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+
+import { useAuthContext } from '../../context/AuthProvider';
 import { FormButton } from '../Button/Buttons';
 import './Form.css'
 
@@ -13,6 +15,20 @@ export const validateEmail = (email) => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
+
+export const validateSchoolEmail = (email) => {
+  if ( String(email)
+  .toLowerCase()
+  .match(/^[a-zA-Z0-9._%+-]+@schoolbase\.edu$/) ) {
+    return true
+  } else {
+    return false
+  }
+};
+
+// Example usage:
+const email = "example@schoolbase.edu";
+console.log(validateSchoolEmail(email)); 
 
 // LOGIN FORM
 export const LogInForm = () => {
@@ -26,12 +42,14 @@ export const LogInForm = () => {
     isTouched: false,
   });
   const [remember, setRemember] = useState(false);
-  const navigate = useNavigate()
+  const [error, setError] = useState('');
+  
+  const navigate = useNavigate();
 
   // ERROR MESSAGES
   const EmailErrorMessage = () => {
     return (
-      <p className="field-error">Please enter a valid Email Adresss</p>
+      <p className="field-error">Please enter a valid SchoolBase email address</p>
     );
   };
 
@@ -50,7 +68,7 @@ export const LogInForm = () => {
   // SUBMISSION FUNCTIONS
   const getIsFormValid = () => { 
     return ( 
-      validateEmail(email.value) && 
+      validateSchoolEmail(email.value) && 
       password.value.length >= 8 
     ); 
   }; 
@@ -66,20 +84,21 @@ export const LogInForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  // HANNDLE SIGNIN FORM SUBMISSION
+  const { signIn } = useAuthContext();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      alert("Login successful!");
+    setError('');
+
+    try {
+      await signIn(email.value, password.value);
+      alert("Login successful!");  
       navigate("/software")
-      console.log(user)
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorCode, errorMessage)
-      console.log(errorCode, errorMessage)
-    })
+    } catch (e) {
+      setError(e.message)
+      alert(e.message);
+    }
 
     clearForm();
   };
@@ -112,7 +131,7 @@ export const LogInForm = () => {
               }} 
             />
             {
-              email.isTouched && validateEmail(email.value) == null ? 
+              email.isTouched && !validateSchoolEmail(email.value)? 
               ( <EmailErrorMessage /> ) :
               null
             } 
@@ -170,6 +189,9 @@ export const LogInForm = () => {
 
 // SIGNUP FORM
 export const SignUpForm = () => {
+  const navigate = useNavigate()
+
+  // Form State
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState({
     value: "",
@@ -179,10 +201,12 @@ export const SignUpForm = () => {
     value: "",
     isTouched: false,
   });
+  const [error, setError] = useState('');
 
+  // Error Messages
   const EmailErrorMessage = () => {
     return (
-      <p className="field-error">Please enter a valid Email Adresss</p>
+      <p className="field-error">Please enter a valid SchoolBase Email Adresss</p>
     );
   };
 
@@ -193,11 +217,11 @@ export const SignUpForm = () => {
   };
 
   const getIsFormValid = () => { 
-    return ( 
-      fullName && 
-      validateEmail(email.value) && 
-      password.value.length >= 8 
-    ); 
+    if ( fullName && validateSchoolEmail(email.value) && password.value.length >= 8 ) {
+      return true
+    } else {
+      return false
+    }
   }; 
   
   const clearForm = () => {
@@ -212,21 +236,20 @@ export const SignUpForm = () => {
     })
   };
 
+  // HANDLE SIGNUP FORM SUBMISSION
+  const { createUser } = useAuthContext();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('')
 
-    await createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
-      alert("Sign up successfull.! Login")
+    try {
+      await createUser(email.value, password.value);
       navigate("/login")
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-      alert(errorCode, errorMessage);
-    });
+    } catch (e) {
+      setError(e.message)
+      alert(e.message);
+    }
 
     clearForm();
   };
@@ -250,7 +273,7 @@ export const SignUpForm = () => {
               id='fullName'
               type="text" 
               value={fullName}
-              placeholder='Enter Full Name'
+              placeholder='Enter First and Last Name'
               required
               onChange={(e) => setFullName(e.target.value)}
             />
@@ -275,7 +298,7 @@ export const SignUpForm = () => {
               }} 
             />
             {
-              email.isTouched && validateEmail(email.value) == null ? 
+              email.isTouched && !validateSchoolEmail(email.value)? 
               ( <EmailErrorMessage /> ) :
               null
             } 
@@ -307,29 +330,12 @@ export const SignUpForm = () => {
           </div>
           
           {/* SUBMIT BUTTON */}
-          <FormButton disabled={!getIsFormValid()} className={`w-[150px] mt-[20px] self-end`}>SIGN UP</ FormButton>
+          <FormButton disabled={!getIsFormValid()} className={`w-[150px] mt-[20px] self-end ${!getIsFormValid() && 'bg-slate-400'}`}>SIGN UP</ FormButton>
         </fieldset>
       </form>
     </div>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // export const validateEmail2 = (email) => {
