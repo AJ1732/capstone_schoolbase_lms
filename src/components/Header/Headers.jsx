@@ -52,14 +52,14 @@ export const SoftwareHeader = () => {
         <div className='text-primary-900 ml-32 flex justify-center items-center gap-10'>
           <NavLink
             to={`/software/cbt`}
-            className={({ isActive }) => isActive? 'bg-primary-100 font-medium py-1.5 px-10 rounded-md transition-all duration-300': 'border border-primary-100 py-1.5 px-10 rounded-md transition-all duration-300'}
+            className={({ isActive }) => isActive? 'bg-primary-100 font-medium py-1.5 px-10 rounded-md transition-all duration-300': 'border border-primary-100 py-1.5 px-10 rounded-md | hover:bg-primary-50 transition-all duration-300 '}
           >
             <span className=' '>CBT</span>
           </NavLink>
           
           <NavLink 
             to={`/software/communication`}
-            className={({ isActive }) => isActive? 'bg-primary-100  py-1.5 px-10 rounded-md transition-all duration-300': 'border border-primary-100 py-1.5 px-10 rounded-md transition-all duration-300'}
+            className={({ isActive }) => isActive? 'bg-primary-100  py-1.5 px-10 rounded-md transition-all duration-300': 'border border-primary-100 py-1.5 px-10 rounded-md hover:bg-primary-50 | transition-all duration-300'}
           >
             <span>Chat</span>
           </NavLink>
