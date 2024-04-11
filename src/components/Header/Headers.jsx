@@ -100,6 +100,7 @@ export const SoftwareHeader = () => {
           </div>
         </div>
 
+        {/* RIGHT DROPDOWN */}
         <div 
           onClick={() => setProfileOpen(!profileOpen)} 
           className={`
