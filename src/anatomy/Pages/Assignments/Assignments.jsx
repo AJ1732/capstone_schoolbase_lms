@@ -22,7 +22,7 @@ const Assignments = () => {
       </div>
 
 
-      <div className="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-y-7 mt-7 mb-11 ml-1 -mr-14">
+      <div className="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-y-7 mt-7 mb-11 -mr-20">
 
          <div className="shadow-lg rounded m-2 p-5 w-48 h-60">
             <div className="grid grid-cols-2 gap-32 mt-3 mb-5">
