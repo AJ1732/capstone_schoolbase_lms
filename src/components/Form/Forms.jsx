@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { auth } from "../../fireBase"
-// import { signInWithEmailAndPassword } from "firebase/auth"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
 
 import { useAuthContext } from '../../context/AuthProvider';
 import { FormButton } from '../Button/Buttons';
@@ -201,6 +198,10 @@ export const SignUpForm = () => {
     value: "",
     isTouched: false,
   });
+  const [confirmPassword, setConfirmPassword] = useState({
+    value: "",
+    isTouched: false,
+  });
   const [error, setError] = useState('');
 
   // Error Messages
@@ -216,8 +217,15 @@ export const SignUpForm = () => {
     );
   };
 
+  const ConfirmPasswordErrorMessage = () => {
+    return (
+      <p className="field-error">Passwords should be the same</p>
+    );
+  };
+
+  // FORM SUBMISSIONS
   const getIsFormValid = () => { 
-    if ( fullName && validateSchoolEmail(email.value) && password.value.length >= 8 ) {
+    if ( fullName && validateSchoolEmail(email.value) && password.value.length >= 8 && confirmPassword.value === password.value ) {
       return true
     } else {
       return false
@@ -325,6 +333,31 @@ export const SignUpForm = () => {
             {
               password.isTouched && password.value.length < 8 ? 
               ( <PasswordErrorMessage /> ) :
+              null
+            } 
+          </div>
+
+          {/* CONFIRM PASSWORD */}
+          <div className='field'>
+            <div>
+              <label htmlFor="confirmPassword">Confirm Password </label>
+            </div>
+            <input 
+              id='confirmPassword'
+              type="password" 
+              value={confirmPassword.value}
+              placeholder='Confirm Password'
+              required
+              onChange={(e) => { 
+                setConfirmPassword({ ...confirmPassword, value: e.target.value }); 
+              }} 
+              onBlur={() => { 
+                setConfirmPassword({ ...confirmPassword, isTouched: true }); 
+              }} 
+            />
+            {
+              confirmPassword.isTouched && confirmPassword.value !== password.value ? 
+              ( <ConfirmPasswordErrorMessage /> ) :
               null
             } 
           </div>
