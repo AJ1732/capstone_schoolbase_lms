@@ -94,6 +94,7 @@ export const SoftwareHeader = () => {
 
         {/* RIGHT DROPDOWN */}
         <div 
+          onMouseLeave={() => setProfileOpen(false)}
           onClick={() => setProfileOpen(!profileOpen)} 
           className={`
           absolute z-50 top-[99%] right-[3%] 
