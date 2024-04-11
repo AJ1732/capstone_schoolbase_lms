@@ -104,8 +104,8 @@ export const SoftwareHeader = () => {
           onClick={() => setProfileOpen(!profileOpen)} 
           className={`
           absolute z-50 top-[99%] right-[3%] 
-          w-80 max-h-0 overflow-hidden 
-          transition-[max-height] duration-500
+          w-80 max-h-0 drop-shadow-sm hover:drop-shadow-md primary-900 overflow-hidden 
+          transition-all duration-500
           ${profileOpen && 'max-h-[30rem]' }
         `}>
           <div className='bg-primary-100 text-primary-900 p-8 space-y-6 shadow-sm rounded-lg'>
