@@ -98,9 +98,11 @@ export const LogInForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          md:w-[630px] min-w-[420px] bg-white text-black p-12 shadow-black-800 shadow-md 
+          md:w-[630px] min-w-[420px] bg-white text-black p-12 drop-shadow-md rounded-sm
         `}
       >
+        {error && <p className='bg-red-100 font-semibold text-red-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>{error}</p>}
+
         <fieldset className='flex flex-col gap-5'>
           {/* EMAIL */}
           <div className='field'>
@@ -263,9 +265,11 @@ export const SignUpForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          md:w-[630px] min-w-[420px] bg-white text-black p-12 shadow-black-800 shadow-md
+          md:w-[630px] min-w-[420px] bg-white text-black p-12 drop-shadow-md rounded-sm
         `}
       >
+        {error && <p className='bg-red-100 font-semibold text-red-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>{error}</p>}
+        
         <fieldset className='flex flex-col gap-5'>
           {/* NAME */}
           <div className='field'>
