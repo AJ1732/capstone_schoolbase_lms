@@ -81,8 +81,8 @@ export const LogInForm = () => {
     try {
       setLoading(true);
       await signIn(email.value, password.value);
-      alert("Login successful!");  
       navigate("/software")
+      alert("Login successful!");  
     } catch (e) {
       setError(e.message)
       alert(e.message);
