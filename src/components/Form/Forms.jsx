@@ -269,7 +269,7 @@ export const SignUpForm = () => {
         `}
       >
         {error && <p className='bg-red-100 font-semibold text-red-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>{error}</p>}
-        
+
         <fieldset className='flex flex-col gap-5'>
           {/* NAME */}
           <div className='field'>
@@ -378,7 +378,9 @@ export const ForgotPasswordForm = () => {
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  
+  const [resetLoading, setResetLoading] = useState(false);
+
+  const { resetPassWord } = useAuthContext();
   const navigate = useNavigate();
 
   // ERROR MESSAGES
@@ -403,24 +405,23 @@ export const ForgotPasswordForm = () => {
   };
 
   // HANDLE FORGOT PASSWORD FORM SUBMISSION
-  const { setLoading, resetPassWord } = useAuthContext();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
     try {
-      setLoading(true);
+      setResetLoading(true);
       await resetPassWord(email.value);
-      setMessage("Reset Password Email Sent!\n Check Inbox for further details");  
+      setMessage("Reset Password Email Sent! Check Inbox for further details");  
     } catch (e) {
       setError(e.message)
       alert(e.message);
     }
 
+    setResetLoading(false);
     clearForm();
-    setLoading(false);
   };
+  console.log(error);
 
   return (
     <div>
@@ -431,6 +432,7 @@ export const ForgotPasswordForm = () => {
           md:w-[630px] min-w-[420px] bg-white text-black p-12 drop-shadow-md rounded-sm
         `}
       >
+        {resetLoading && <p className='bg-primary-100 font-semibold text-primary-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>Loading...</p>}
         {message && <p className='bg-primary-100 font-semibold text-primary-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>{message}</p>}
         <fieldset className='flex flex-col gap-5'>
           {/* EMAIL */}
