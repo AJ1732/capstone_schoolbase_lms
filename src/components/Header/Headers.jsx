@@ -51,14 +51,6 @@ export const SoftwareHeader = () => {
       console.log(e.message);
     }
   }
-  
-  const profileItems = ["Profile", "My Courses", "Fee Management", "Settings", "Accomplishments", "Help Center"]
-
-  const ProfileItems = ({ children }) => {
-    return (
-      <li to>{children}</li>
-    )
-  }
 
   return (
     <header className="col-span-2 | max-h-[6.9375rem] w-full bg-white | flex justify-start items-center | border-b border-primary-900">
