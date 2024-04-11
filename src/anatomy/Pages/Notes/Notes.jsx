@@ -11,7 +11,7 @@ const Notes = () => {
 
              <div className="flex justify-between gap-10 w-1/2 mt-4">
               
-             <div className="flex flex-col  sm:flex-row gap-5 w-auto h-10 mt-1">
+             <div className="flex flex-row gap-5 w-auto h-10 mt-1">
               <h3 className="font-bold mt-2">Filter:</h3>
 
             <div className="flex flex-col gap-2 border-solid shadow rounded-md px-4 py-2">
