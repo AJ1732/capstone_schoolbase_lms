@@ -13,6 +13,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   // User State
   const [user, setUser] = useState('');
+  const [loading, setLoading] = useState(true);
 
   // Auth Functions
   const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
@@ -31,6 +32,8 @@ export const AuthProvider = ({ children }) => {
   // Auth Context Value
   const contextValue = {
     user,
+    loading,
+    setLoading,
     createUser,
     signIn,
     logOut,
