@@ -28,6 +28,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false)
     })
     return unsubscribe
   }, []);
@@ -46,7 +47,7 @@ export const AuthProvider = ({ children }) => {
   // Auth Context Provider
   return (
     <AuthContext.Provider value={contextValue}>
-      {children}
+      {!loading? children: <p className='text-primary-900 text-4xl text-center py-40'>Loading...</p>}
     </AuthContext.Provider>
   )
 }
