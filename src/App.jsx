@@ -90,7 +90,7 @@ function App() {
           <AuthLoader2 />
 
           <h2 className="text-xl font-bold py-3">Auth Loader 3</h2>
-          <AuthLoader2 parentClassName={`h-full`} divClassName={`size-2`} />
+          <AuthLoader2 parentClassName={`h-full w-fit bg-transparent`} divClassName={`size-2`} />
         </div>
       </div>
     </div>
