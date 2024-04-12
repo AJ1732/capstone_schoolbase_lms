@@ -28,8 +28,8 @@ const Attendance = () => {
 
         </div>
 
-        <section className="sm:md:flex bg-[#F0F0F0] h-auto w-auto sm:h-auto sm:w-auto p-8 rounded-lg mt-5 md:sm:flex-col">
-
+        <section className="sm:md:flex bg-white h-auto w-auto sm:h-auto sm:w-auto p-8 rounded-lg mt-5 mb-20 md:sm:flex-col shadow">
+        
           <div className="flex justify-between my-2">
             <p className="text-sm">2023/2024 <span className="ml-5"> FIRST TERM</span></p>
             <button className="text-xs text-[#1e4b8c] bg-[#d2daef] font-bold rounded-sm px-5">View Attendance</button>
