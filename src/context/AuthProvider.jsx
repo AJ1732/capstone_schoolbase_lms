@@ -4,8 +4,11 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword, 
   signOut, 
-  onAuthStateChanged 
+  onAuthStateChanged, 
+  sendPasswordResetEmail
 } from "firebase/auth"
+
+import { AuthLoader2 } from '../components/Loader/Loaders'
 
 const AuthContext = createContext();
 
@@ -13,6 +16,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   // User State
   const [user, setUser] = useState('');
+  const [loading, setLoading] = useState(true);
 
   // Auth Functions
   const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
@@ -20,10 +24,13 @@ export const AuthProvider = ({ children }) => {
   const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
   
   const logOut = () => signOut(auth);
+
+  const resetPassWord = (email) => sendPasswordResetEmail(auth, email);
   
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false)
     })
     return unsubscribe
   }, []);
@@ -31,15 +38,18 @@ export const AuthProvider = ({ children }) => {
   // Auth Context Value
   const contextValue = {
     user,
+    loading,
+    setLoading,
     createUser,
     signIn,
     logOut,
+    resetPassWord,
   }
 
   // Auth Context Provider
   return (
     <AuthContext.Provider value={contextValue}>
-      {children}
+      {!loading? children: <AuthLoader2 />}
     </AuthContext.Provider>
   )
 }

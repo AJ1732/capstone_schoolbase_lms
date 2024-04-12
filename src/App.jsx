@@ -17,6 +17,7 @@ import Communication from "./anatomy/Pages/Communication/Communication"
 import CBT from "./anatomy/Pages/CBT/CBT"
 import ProtectedRoute from "./ProtectedRoute"
 import ErrorPage from "./anatomy/Pages/Error/ErrorPage"
+import ForgotPassword from "./anatomy/Pages/ForgotPassword"
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgotPassword" element={<ForgotPassword />} />
           </Route>
           <Route path="/software" element={
             <ProtectedRoute>

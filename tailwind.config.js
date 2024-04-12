@@ -56,8 +56,26 @@ export default {
         generalSans: ['General Sans', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
       },
+      animation: {
+        'bead': 'beads 1.5s ease-in-out infinite',
+        'view': 'view 500ms ease-in-out 1',
+      },
       keyframes: {
-        view: {
+        'beads': {
+          '0%, 100%': { 
+            transform: 'scale(0.2)',  
+            backgroundColor: "#00337C",
+          },
+          '40%': { 
+            transform: 'scale(1)',
+            backgroundColor: '#004EBA',
+          },
+          '50%': { 
+            transform: 'scale(1)',
+            backgroundColor: '#2982FF',
+          },
+        },
+        'view': {
           '0%': { 
             opacity: 0, 
             transform: 'translateY(-5px) scale(0.99)' 
@@ -67,9 +85,6 @@ export default {
             transform: 'translateY(0px) scale(1)' 
           },
         }
-      },
-      animation: {
-        view: 'view 500ms ease-in-out 1',
       }
     },
   },
