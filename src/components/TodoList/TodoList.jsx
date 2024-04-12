@@ -126,7 +126,7 @@ const TodoList = () => {
         <select 
           value={subject} 
           onChange={(e) => setSubject(e.target.value)}
-          className='bg-white text-xs border border-[#959595]'
+          className='bg-white text-xs p-2 border border-[#959595]'
         > 
           {subjects.map( subject => (
             <option key={subject} value={subject}>{subject}</option> 
