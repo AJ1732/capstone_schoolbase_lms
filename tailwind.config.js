@@ -55,6 +55,25 @@ export default {
       fontFamily: {
         generalSans: ['General Sans', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
+      },
+      animation: {
+        'bead': 'beads 1.5s ease-in-out infinite',
+      },
+      keyframes: {
+        'beads': {
+          '0%, 100%': { 
+            transform: 'scale(0.2)',  
+            backgroundColor: "#00337C",
+          },
+          '40%': { 
+            transform: 'scale(1)',
+            backgroundColor: '#004EBA',
+          },
+          '50%': { 
+            transform: 'scale(1)',
+            backgroundColor: '#2982FF',
+          },
+        }
       }
     },
   },

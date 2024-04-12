@@ -5,6 +5,7 @@ import { MonthCalender, WeekCalender } from "./components/Calender/Calender"
 import TodoList from "./components/TodoList/TodoList"
 import { CommAccordion } from "./components/Accordion/Accordions"
 import avatarImg from './assets/avatarImg.png'
+import { AuthLoader1, AuthLoader2 } from "./components/Loader/Loaders"
 
 function App() {
 
@@ -76,6 +77,21 @@ function App() {
       <div>
         <h2 className="text-3xl font-bold py-3">Accordion</h2>
         <CommAccordion status={`Ongoing`} title={`1 Subject`} content={`This is Content`} />
+      </div>
+
+      {/* LOADER */}
+      <div>
+        <h2 className="text-3xl font-bold py-3">Loader</h2>
+        <div className="flex flex-col justify-start items-start gap-2">
+          <h2 className="text-xl font-bold py-3">Auth Loader 1</h2>
+          <AuthLoader1 />
+
+          <h2 className="text-xl font-bold py-3">Auth Loader 2</h2>
+          <AuthLoader2 />
+
+          <h2 className="text-xl font-bold py-3">Auth Loader 3</h2>
+          <AuthLoader2 parentClassName={`h-full`} divClassName={`size-2`} />
+        </div>
       </div>
     </div>
   )
