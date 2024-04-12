@@ -38,8 +38,8 @@ export const MonthCalender = () => {
               <p className={`
                 ${cn(
                   currentMonth? "text-black": "text-[#676767]", 
-                  today? "bg-red-500 text-white": "bg-white",
-                  selectDate.toDate().toDateString() === date.toDate().toDateString() && 'bg-black text-white'
+                  today? "bg-primary-00 text-white": "bg-white",
+                  selectDate.toDate().toDateString() === date.toDate().toDateString() && 'bg-black text-black'
                 )}
               `}>{date.date()}</p>
             </div>
@@ -49,8 +49,8 @@ export const MonthCalender = () => {
 
       {/* SCHEDULE */}
       <div className='space-y-1'>
-        <h3 className='font-semibold text-[#D1D1D1] text-xl'>Schedule for <span className='font-bold text-white'>{selectDate.toDate().toDateString()}</span></h3>
-        <p className='text-sm text-[#959595]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, praesentium?</p>
+        <h3 className='font-semibold text-black-800 text-xl'>Schedule for <span className='font-bold text-primary-900'>{selectDate.toDate().toDateString()}</span></h3>
+        <p className='text-sm text-black-gray'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus, praesentium?</p>
       </div>
     </div>
   )
