@@ -56,24 +56,9 @@ export default {
         generalSans: ['General Sans', 'sans-serif'],
         manrope: ['Manrope', 'sans-serif'],
       },
-<<<<<<< HEAD
-      keyframes: {
-        view: {
-          '0%': { 
-            opacity: 0, 
-            transform: 'translateY(-5px) scale(0.99)' 
-          },
-          '100%': { 
-            opacity: 1, 
-            transform: 'translateY(0px) scale(1)' 
-          },
-        }
-      },
-      animation: {
-        view: 'view 500ms ease-in-out 1',
-=======
       animation: {
         'bead': 'beads 1.5s ease-in-out infinite',
+        'view': 'view 500ms ease-in-out 1',
       },
       keyframes: {
         'beads': {
@@ -89,8 +74,17 @@ export default {
             transform: 'scale(1)',
             backgroundColor: '#2982FF',
           },
+        },
+        'view': {
+          '0%': { 
+            opacity: 0, 
+            transform: 'translateY(-5px) scale(0.99)' 
+          },
+          '100%': { 
+            opacity: 1, 
+            transform: 'translateY(0px) scale(1)' 
+          },
         }
->>>>>>> software_components
       }
     },
   },
