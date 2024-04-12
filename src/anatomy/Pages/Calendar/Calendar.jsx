@@ -1,8 +1,14 @@
 import React from 'react'
+import { MonthCalender } from './../../../components/Calender/Calender';
 
 const Calendar = () => {
   return (
-    <div>Calendar</div>
+    <>
+    <h1>Calendar</h1>
+    <MonthCalender />
+    </>
+
+    
   )
 }
 
