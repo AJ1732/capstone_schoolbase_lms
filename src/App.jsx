@@ -15,6 +15,9 @@ import Attendance from "./anatomy/Pages/Attendance/Attendance"
 import Calendar from "./anatomy/Pages/Calendar/Calendar"
 import Communication from "./anatomy/Pages/Communication/Communication"
 import CBT from "./anatomy/Pages/CBT/CBT"
+import ProtectedRoute from "./ProtectedRoute"
+import ErrorPage from "./anatomy/Pages/Error/ErrorPage"
+import ForgotPassword from "./anatomy/Pages/ForgotPassword"
 
 
 function App() {
@@ -26,8 +29,13 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgotPassword" element={<ForgotPassword />} />
           </Route>
-          <Route path="/software" element={<SoftwareLayout />}>
+          <Route path="/software" element={
+            <ProtectedRoute>
+              <SoftwareLayout />
+            </ProtectedRoute>
+          }>
             <Route index element={<Dashboard/>}/>
             <Route path="/software/user" element={<User/>}/>
             <Route path="/software/lessons" element={<Lessons />}/>
@@ -40,6 +48,7 @@ function App() {
             <Route path="/software/cbt" element={<CBT />}/>
             <Route path="/software/communication" element={<Communication />}/>
           </Route>
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
       

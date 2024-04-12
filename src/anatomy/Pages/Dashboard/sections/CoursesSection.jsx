@@ -79,7 +79,7 @@ const CoursesSection = () => {
             </div>
           </div>
         </div> */}
-        <table class="table-auto font-bold">
+        <table className="table-auto font-bold">
           <thead className="h-12 md:h-16 text-left text-primary-900">
             <tr>
               <th>#</th>

@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { auth } from "../../fireBase"
-import { signInWithEmailAndPassword } from "firebase/auth"
-import { createUserWithEmailAndPassword } from "firebase/auth"
+import { Link, useNavigate } from 'react-router-dom';
+
+import { useAuthContext } from '../../context/AuthProvider';
 import { FormButton } from '../Button/Buttons';
 import './Form.css'
 
@@ -12,6 +11,16 @@ export const validateEmail = (email) => {
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
+};
+
+export const validateSchoolEmail = (email) => {
+  if ( String(email)
+  .toLowerCase()
+  .match(/^[a-zA-Z0-9._%+-]+@schoolbase\.edu$/) ) {
+    return true
+  } else {
+    return false
+  }
 };
 
 // LOGIN FORM
@@ -26,12 +35,14 @@ export const LogInForm = () => {
     isTouched: false,
   });
   const [remember, setRemember] = useState(false);
-  const navigate = useNavigate()
+  const [error, setError] = useState('');
+  
+  const navigate = useNavigate();
 
   // ERROR MESSAGES
   const EmailErrorMessage = () => {
     return (
-      <p className="field-error">Please enter a valid Email Adresss</p>
+      <p className="field-error">Please enter a valid SchoolBase email address</p>
     );
   };
 
@@ -41,16 +52,10 @@ export const LogInForm = () => {
     );
   };
 
-  const SubmitErrorMessage = () => {
-    return (
-      <p className="field-error">Please complete the form above</p>
-    );
-  };
-
   // SUBMISSION FUNCTIONS
   const getIsFormValid = () => { 
     return ( 
-      validateEmail(email.value) && 
+      validateSchoolEmail(email.value) && 
       password.value.length >= 8 
     ); 
   }; 
@@ -66,21 +71,24 @@ export const LogInForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      alert("Login successful!");
-      navigate("/software")
-      console.log(user)
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorCode, errorMessage)
-      console.log(errorCode, errorMessage)
-    })
+  // HANNDLE SIGNIN FORM SUBMISSION
+  const { setLoading, signIn } = useAuthContext();
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    try {
+      setLoading(true);
+      await signIn(email.value, password.value);
+      navigate("/software")
+      alert("Login successful!");  
+    } catch (e) {
+      setError(e.message)
+      alert(e.message);
+    }
+
+    setLoading(false);
     clearForm();
   };
 
@@ -90,9 +98,11 @@ export const LogInForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          md:w-[630px] min-w-[420px] bg-white text-black p-12 shadow-black-800 shadow-md 
+          md:w-[630px] min-w-[420px] bg-white text-black p-12 drop-shadow-md rounded-sm
         `}
       >
+        {error && <p className='bg-red-100 font-semibold text-red-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>{error}</p>}
+
         <fieldset className='flex flex-col gap-5'>
           {/* EMAIL */}
           <div className='field'>
@@ -112,7 +122,7 @@ export const LogInForm = () => {
               }} 
             />
             {
-              email.isTouched && validateEmail(email.value) == null ? 
+              email.isTouched && !validateSchoolEmail(email.value)? 
               ( <EmailErrorMessage /> ) :
               null
             } 
@@ -157,7 +167,8 @@ export const LogInForm = () => {
           </div>
           
           <div className='mt-[20px] self-end flex justify-center items-center gap-6'>
-            <p className='font-semibold text-[#595959] text-sm md:text-base'>Forgot your password?</p>
+            {/* FORGOT PASSWORD */}
+            <Link to={`/forgotPassword`} className='font-semibold text-[#595959] text-sm md:text-base hover:text-primary-00 hover:underline transition-all duration-300'>Forgot your password?</Link>
 
             {/* SUBMIT BUTTON */}
             <FormButton disabled={!getIsFormValid()} className={`w-[150px] `}>LOGIN</ FormButton>
@@ -170,6 +181,9 @@ export const LogInForm = () => {
 
 // SIGNUP FORM
 export const SignUpForm = () => {
+  const navigate = useNavigate()
+
+  // Form State
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState({
     value: "",
@@ -179,10 +193,16 @@ export const SignUpForm = () => {
     value: "",
     isTouched: false,
   });
+  const [confirmPassword, setConfirmPassword] = useState({
+    value: "",
+    isTouched: false,
+  });
+  const [error, setError] = useState('');
 
+  // Error Messages
   const EmailErrorMessage = () => {
     return (
-      <p className="field-error">Please enter a valid Email Adresss</p>
+      <p className="field-error">Please enter a valid SchoolBase Email Adresss</p>
     );
   };
 
@@ -192,12 +212,19 @@ export const SignUpForm = () => {
     );
   };
 
+  const ConfirmPasswordErrorMessage = () => {
+    return (
+      <p className="field-error">Passwords should be the same</p>
+    );
+  };
+
+  // FORM SUBMISSIONS
   const getIsFormValid = () => { 
-    return ( 
-      fullName && 
-      validateEmail(email.value) && 
-      password.value.length >= 8 
-    ); 
+    if ( fullName && validateSchoolEmail(email.value) && password.value.length >= 8 && confirmPassword.value === password.value ) {
+      return true
+    } else {
+      return false
+    }
   }; 
   
   const clearForm = () => {
@@ -212,22 +239,23 @@ export const SignUpForm = () => {
     })
   };
 
+  // HANDLE SIGNUP FORM SUBMISSION
+  const { setLoading, createUser } = useAuthContext();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('')
 
-    await createUserWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      console.log(user);
-      alert("Sign up successfull.! Login")
+    try {
+      setLoading(true);
+      await createUser(email.value, password.value);
       navigate("/login")
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-      alert(errorCode, errorMessage);
-    });
+    } catch (e) {
+      setError(e.message)
+      alert(e.message);
+    }
 
+    setLoading(false);
     clearForm();
   };
 
@@ -237,9 +265,11 @@ export const SignUpForm = () => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          md:w-[630px] min-w-[420px] bg-white text-black p-12 shadow-black-800 shadow-md
+          md:w-[630px] min-w-[420px] bg-white text-black p-12 drop-shadow-md rounded-sm
         `}
       >
+        {error && <p className='bg-red-100 font-semibold text-red-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>{error}</p>}
+
         <fieldset className='flex flex-col gap-5'>
           {/* NAME */}
           <div className='field'>
@@ -250,7 +280,7 @@ export const SignUpForm = () => {
               id='fullName'
               type="text" 
               value={fullName}
-              placeholder='Enter Full Name'
+              placeholder='Enter First and Last Name'
               required
               onChange={(e) => setFullName(e.target.value)}
             />
@@ -275,7 +305,7 @@ export const SignUpForm = () => {
               }} 
             />
             {
-              email.isTouched && validateEmail(email.value) == null ? 
+              email.isTouched && !validateSchoolEmail(email.value)? 
               ( <EmailErrorMessage /> ) :
               null
             } 
@@ -305,31 +335,139 @@ export const SignUpForm = () => {
               null
             } 
           </div>
+
+          {/* CONFIRM PASSWORD */}
+          <div className='field'>
+            <div>
+              <label htmlFor="confirmPassword">Confirm Password </label>
+            </div>
+            <input 
+              id='confirmPassword'
+              type="password" 
+              value={confirmPassword.value}
+              placeholder='Confirm Password'
+              required
+              onChange={(e) => { 
+                setConfirmPassword({ ...confirmPassword, value: e.target.value }); 
+              }} 
+              onBlur={() => { 
+                setConfirmPassword({ ...confirmPassword, isTouched: true }); 
+              }} 
+            />
+            {
+              confirmPassword.isTouched && confirmPassword.value !== password.value ? 
+              ( <ConfirmPasswordErrorMessage /> ) :
+              null
+            } 
+          </div>
           
           {/* SUBMIT BUTTON */}
-          <FormButton disabled={!getIsFormValid()} className={`w-[150px] mt-[20px] self-end`}>SIGN UP</ FormButton>
+          <FormButton disabled={!getIsFormValid()} className={`w-[150px] mt-[20px] self-end ${!getIsFormValid() && 'bg-slate-400'}`}>SIGN UP</ FormButton>
         </fieldset>
       </form>
     </div>
   )
 }
 
+// FORGOT PASSWORD FORM
+export const ForgotPasswordForm = () => {
+  // STATE
+  const [email, setEmail] = useState({
+    value: "",
+    isTouched: false,
+  });
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [resetLoading, setResetLoading] = useState(false);
 
+  const { resetPassWord } = useAuthContext();
+  const navigate = useNavigate();
 
+  // ERROR MESSAGES
+  const EmailErrorMessage = () => {
+    return (
+      <p className="field-error">Please enter a valid SchoolBase email address</p>
+    );
+  };
 
+  // SUBMISSION FUNCTIONS
+  const getIsFormValid = () => { 
+    return ( 
+      validateSchoolEmail(email.value)
+    ); 
+  }; 
+  
+  const clearForm = () => {
+    setEmail({
+      value: "",
+      isTouched: false,
+    });
+  };
 
+  // HANDLE FORGOT PASSWORD FORM SUBMISSION
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
 
+    try {
+      setResetLoading(true);
+      await resetPassWord(email.value);
+      setMessage("Reset Password Email Sent! Check Inbox for further details");  
+    } catch (e) {
+      setError(e.message)
+      alert(e.message);
+    }
 
+    setResetLoading(false);
+    clearForm();
+  };
+  console.log(error);
 
-
-
-
-
-
-
-
-
-
+  return (
+    <div>
+      <form 
+        action="" 
+        onSubmit={handleSubmit}
+        className={`
+          md:w-[630px] min-w-[420px] bg-white text-black p-12 drop-shadow-md rounded-sm
+        `}
+      >
+        {resetLoading && <p className='bg-primary-100 font-semibold text-primary-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>Loading...</p>}
+        {message && <p className='bg-primary-100 font-semibold text-primary-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>{message}</p>}
+        <fieldset className='flex flex-col gap-5'>
+          {/* EMAIL */}
+          <div className='field'>
+            <div>
+              <label htmlFor="loginEmail">Email:</label>
+            </div>
+            <input 
+              id='loginEmail'
+              type="email" 
+              value={email.value}
+              placeholder='Email Address'
+              onChange={(e) => { 
+                setEmail({ ...email, value: e.target.value }); 
+              }} 
+              onBlur={() => { 
+                setEmail({ ...email, isTouched: true }); 
+              }} 
+            />
+            {
+              email.isTouched && !validateSchoolEmail(email.value)? 
+              ( <EmailErrorMessage /> ) :
+              null
+            } 
+          </div>
+          
+          <div className='mt-[20px] self-end flex justify-center items-center gap-6'>
+            {/* SUBMIT BUTTON */}
+            <FormButton disabled={!getIsFormValid()} className={`w-[150px] ${!getIsFormValid() && 'bg-slate-400'}`}>RESET</ FormButton>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  )
+}
 
 
 // export const validateEmail2 = (email) => {

@@ -1,5 +1,5 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, {} from 'react'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { useValueContext } from '../../context/ContextProvider'
 import playLessons from "../../assets/play_lesson.png"
 import dashBoard from "../../assets/speed.png"
@@ -11,6 +11,7 @@ import video from "../../assets/video_chat.png"
 import attendance from "../../assets/event_available.png"
 import calender from "../../assets/calendar_month.png"
 import logout from "../../assets/move_item.png"
+import { useAuthContext } from '../../context/AuthProvider'
 
 
 const SidebarItem = ({ children, to, text }) => {
@@ -31,6 +32,20 @@ const SidebarItem = ({ children, to, text }) => {
 
 const Sidebar = () => {
   const { expand, setExpand } = useValueContext();
+  const { logOut } = useAuthContext();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logOut()
+      navigate('/')
+      alert('Logged Out Successfully')
+    } catch (e) {
+      console.log(e.message);
+    }
+    
+    setExpand(prev => !prev)
+  }
 
   return (
     <aside 
@@ -93,7 +108,7 @@ const Sidebar = () => {
       </nav>
 
       <div>
-        <div onClick={() => setExpand(prev => !prev)} className={`
+        <div onClick={() => handleLogout()} className={`
           relative | transition-colors cursor-pointer flex items-center justify-center gap-4
         `}>
           
@@ -102,7 +117,6 @@ const Sidebar = () => {
           </figure>
           <span className={`overflow-hidden hover:text-primary-900 ${!expand && ' opacity-0'}`}>Logout</span>
         </div>
-
       </div>
     </aside>
   )
