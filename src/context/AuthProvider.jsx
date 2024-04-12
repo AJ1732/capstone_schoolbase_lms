@@ -8,6 +8,8 @@ import {
   sendPasswordResetEmail
 } from "firebase/auth"
 
+import { AuthLoader2 } from '../components/Loader/Loaders'
+
 const AuthContext = createContext();
 
 // eslint-disable-next-line react/prop-types
@@ -47,7 +49,7 @@ export const AuthProvider = ({ children }) => {
   // Auth Context Provider
   return (
     <AuthContext.Provider value={contextValue}>
-      {!loading? children: <p className='text-primary-900 text-4xl text-center py-40'>Loading...</p>}
+      {!loading? children: <AuthLoader2 />}
     </AuthContext.Provider>
   )
 }
