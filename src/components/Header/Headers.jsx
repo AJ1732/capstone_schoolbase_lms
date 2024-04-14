@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { useValueContext } from '../../context/ContextProvider';
 import { NavButton } from "../Button/Buttons";
@@ -37,10 +37,10 @@ export const HomePageHeader = () => {
 }
 
 export const SoftwareHeader = () => {
+  const navigate = useNavigate();
+  const { logOut } = useAuthContext();
   const { setExpand } = useValueContext();
   const [ profileOpen, setProfileOpen ] = useState(false);
-  const {logOut} = useAuthContext();
-  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
@@ -53,7 +53,7 @@ export const SoftwareHeader = () => {
   }
 
   return (
-    <header className="col-span-2 | max-h-[6.9375rem] w-full bg-white | flex justify-start items-center | border-b border-primary-900">
+    <header id='header' className={`col-span-2 | z-50 max-h-[6.9375rem] w-full bg-white | flex justify-start items-center | border-b border-primary-900 drop-shadow`}>
       <div className="content relative | max-w-[79rem] w-full px-8 py-5 flex items-center justify-between cursor-default">
         {/* LEFT LOGO */}
         <button onClick={() => setExpand(prev => !prev)}>
