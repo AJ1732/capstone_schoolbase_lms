@@ -18,10 +18,11 @@ const Notes = () => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-[1fr_18rem]">
-        <div className="md:col-start-1 | flex flex-col justify-between gap-10">   
+        <div className="md:col-start-1 | flex flex-col justify-start">   
           <div className="flex flex-col md:flex-row justify-start items-start md:items-center gap-3">
             <h3 className="font-bold">Filter:</h3>
 
+            {/* SELECT  */}
             <div className="flex gap-2">
               <select 
                 value={term} 
@@ -44,8 +45,9 @@ const Notes = () => {
               </select> 
             </div>
           </div>
-
-          <div className="min-h-80 flex justify-center items-start">
+          
+          {/* NOTES */}
+          <div className="flex justify-center items-center">
             {noteItems.length > 0
             ? 
             <h2 className="font-bold text-center p-20">Saved Notes Here</h2>
@@ -55,7 +57,7 @@ const Notes = () => {
           </div>
         </div>
                                             
-        <div className="md:col-start-2 space-y-10">
+        <div className="md:col-start-2 space-y-4 h-fit">
           <WeekCalender />
           <TodoList />
         </div>
