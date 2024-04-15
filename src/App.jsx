@@ -18,6 +18,7 @@ import CBT from "./anatomy/Pages/CBT/CBT"
 import ProtectedRoute from "./ProtectedRoute"
 import ErrorPage from "./anatomy/Pages/Error/ErrorPage"
 import ForgotPassword from "./anatomy/Pages/ForgotPassword"
+import Fee from "./anatomy/Pages/Fee/Fee"
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Route path="/software/calendar" element={<Calendar />}/>
             <Route path="/software/cbt" element={<CBT />}/>
             <Route path="/software/communication" element={<Communication />}/>
+            <Route path="/software/fee" element={<Fee />}/>
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Routes>
