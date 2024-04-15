@@ -33,8 +33,22 @@ const statusData = [
   },
 ];
 
-const Classroom = () => {
+const courseData = [
+  {
+    id: 1,
+    title: 'Geometry',
+    timeHour: '2:30',
+    lessonAmount: '14',
+  },
+  {
+    id: 2,
+    title: 'Civic Education',
+    timeHour: '2:30',
+    lessonAmount: '14',
+  },
+];
 
+const Classroom = () => {
   return (
     <>
       <div className='bg-primary-50 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
@@ -114,67 +128,54 @@ const Classroom = () => {
           </div>
         </div>
         
-        {/* RECENTLY ENROLLED CLASSES */}
         <div className="grid grid-cols-1 md:grid-cols-[60%_40%] gap-5 mb-10">
-          <div>
-            <div className="grid grid-cols-3">
+          {/* RECENTLY ENROLLED CLASSES */}
+          <div className="space-y-2">
+            <div className="flex flex-col md:flex-row justify-between items-start gap-2">
               <p className="text-sm font-semibold text-[#484848]">Recently Enrolled Classes</p>
 
-              {/* <div className="flex items-center relative">
-                <input type="text" placeholder="All" className="py-1 pl-3 ml-40 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#007BFF] focus:border-transparent" />
-                <button className="bg-[#eff1fe] rounded-xl w-7 h-7 absolute left-72 top-1 p-1">
-                  <img src={search} alt="" className="w-5 "/>
+              <div className="flex justify-center items-center gap-2">
+                <div className="self-baseline flex justify-center items-center relative">
+                  <input type="text" placeholder="All" 
+                  className="w-full py-1 px-3 border rounded-2xl 
+                  focus:outline-none focus:ring-2 focus:ring-primary-00 focus:border-transparent" />
+                  
+                  <label className="absolute right-1 bg-primary-50 size-7 p-1 rounded-full">
+                    <img src={search} alt="" className="w-5 "/>
+                  </label>
+                </div>
+
+                <button className="bg-primary-50 w-7 p-0.5 flex justify-center items-center rounded-full">
+                  <img src={plus}  />
                 </button>
               </div>
-
-              <div>
-                <button><img src={plus} alt="" className="w-5 ml-48 mt-7" /></button>
-              </div> */}
             </div>
 
-            <div className="bg-white  border-solid shadow rounded-md py-5 px-7 w-[555px] mt-5">
-              <p className="text-md font-bold">Geometry</p>
+            {courseData.map(({ id, title, lessonAmount, timeHour }) => (
+              <div key={id} className="p-8 shadow rounded-md space-y-4">
+                <h4 className="font-bold">{title}</h4>
 
-              <div className="flex justify-between text-sm font-medium mt-5">
-                <div className="grid grid-cols-2">
-                  <img src={timer} alt="" className="w-5 ml-2" />
-                  <p>2:30hr</p>
-                </div>
+                <div className="font-medium text-sm flex flex-col md:flex-row justify-between items-start gap-5">
+                  <div className="flex justify-center items-center gap-2">
+                    <img src={timer} className="w-5" />
+                    <p>{timeHour}hr</p>
+                  </div>
 
-                <div className="grid grid-cols-2">
-                  <img src={lesson} alt=""  className="w-4 ml-10 " />
-                  <p className="">14 Lessons</p>
-                </div>
+                  <div className="flex justify-center items-center gap-2">
+                    <img src={lesson} className="w-4 ml-0.5" />
+                    <p>{lessonAmount} Lessons</p>
+                  </div>
 
-                <div className="grid grid-cols-2">
-                  <img src={ok} alt=""  className="w-5 ml-11" />
-                  <p>Assignment</p>
+                  <div className="flex justify-center items-center gap-2">
+                    <img src={ok} className="w-5" />
+                    <p>Assignment</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-          
-            <div className="bg-white  border-solid shadow rounded-md py-6 px-7 w-[555px] mt-7">
-              <p className="text-md font-bold">Geometry</p>
-
-              <div className="flex justify-between text-sm font-medium mt-5">
-                <div className="grid grid-cols-2">
-                  <img src={timer} alt="" className="w-5 ml-2" />
-                  <p>2:30hr</p>
-                </div>
-
-                <div className="grid grid-cols-2">
-                  <img src={lesson} alt=""  className="w-4 ml-10 " />
-                  <p className="">14 Lessons</p>
-                </div>
-
-                <div className="grid grid-cols-2">
-                  <img src={ok} alt=""  className="w-5 ml-11" />
-                  <p>Assignment</p>
-                </div>
-              </div>
-            </div>     
+              </div> 
+            ))}
           </div>
 
+          {/* UPCOMING CLASSES */}
           <div className="w-full space-y-5">
             <p className="font-semibold text-sm">Upcoming Class</p>
 
