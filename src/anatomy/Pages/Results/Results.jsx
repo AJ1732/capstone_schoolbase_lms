@@ -55,7 +55,7 @@ const Results = () => {
             <p className='font-bold text-primary-400 text-sm'>[Including general courses: find courses available to you below]</p>
           </div>
 
-          <table className="table-auto font-bold">
+          <table className="table-auto lg:w-[calc(100dvw-280px)] font-bold">
             {/* TABLE HEADINGS */}
             <thead className="h-12 md:h-16 text-left text-primary-900">
               <tr>
@@ -76,13 +76,13 @@ const Results = () => {
                   <td>{description}</td>
                   <td>
                     <span className={`
-                      text-center text-xs p-3 rounded-md
+                      text-center text-xs p-3 rounded-md 
                       ${status === 'Enrolled'? 'bg-primary-100 text-primary-900': 'bg-primary-00 text-white'}
                     `}>
                       {status}
                     </span>
                   </td>
-                  <td className={`uppercase ${grade === 'Pending' && 'text-error'}`}>{grade}</td>
+                  <td className={`uppercase  ${grade === 'Pending' && 'text-error'}`}>{grade}</td>
                 </tr>
               ))}
             </tbody>
