@@ -28,8 +28,6 @@ const SidebarItem = ({ children, to, text }) => {
   
 }
 
-// ${!expand && 'absolute opacity-0'}
-
 const Sidebar = () => {
   const { expand, setExpand } = useValueContext();
   const { logOut } = useAuthContext();
