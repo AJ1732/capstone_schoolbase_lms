@@ -52,7 +52,7 @@ const Sidebar = () => {
       onMouseOver={() => setExpand(true)} 
       onMouseLeave={() => setExpand(false)} 
       className={`
-        w-24 transition-all duration-[400ms] ease-in-out ${expand && 'w-64'}
+        w-24 transition-all duration-[400ms] ease-in-out ${expand && 'w-64'} shadow-lg
         z-10 max-h-[calc(100dvh_-_90px)] | overflow-y-scroll overflow-x-hidden | 
         bg-white py-12 px-8 | font-semibold text-primary-900 text-opacity-70 
         flex flex-col justify-start items-start gap-40
