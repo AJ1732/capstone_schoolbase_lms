@@ -8,7 +8,7 @@ import TodoList from "../../../components/TodoList/TodoList"
 
 function Dashboard() {
   return (
-    <div className="grid md:grid-cols-[280px_1fr_280px] gap-4">
+    <div className="grid md:grid-cols-[280px_1fr_18rem] gap-4">
       <WelcomeSection />
       <NotesSection />
       <CBTSection />

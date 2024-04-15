@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthProvider';
 import { FormButton } from '../Button/Buttons';
 import './Form.css'
+import { AuthLoader2 } from '../Loader/Loaders';
 
 export const validateEmail = (email) => {
   return String(email)
@@ -410,6 +411,7 @@ export const ForgotPasswordForm = () => {
     setError('');
 
     try {
+      setMessage('');
       setResetLoading(true);
       await resetPassWord(email.value);
       setMessage("Reset Password Email Sent! Check Inbox for further details");  
@@ -432,7 +434,7 @@ export const ForgotPasswordForm = () => {
           md:w-[630px] min-w-[420px] bg-white text-black p-12 drop-shadow-md rounded-sm
         `}
       >
-        {resetLoading && <p className='bg-primary-100 font-semibold text-primary-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>Loading...</p>}
+        {resetLoading && <AuthLoader2 parentClassName={`h-full w-fit bg-transparent`} divClassName={`size-2`} />}
         {message && <p className='bg-primary-100 font-semibold text-primary-900 text-sm text-center py-4 px-4 my-2 rounded-sm'>{message}</p>}
         <fieldset className='flex flex-col gap-5'>
           {/* EMAIL */}

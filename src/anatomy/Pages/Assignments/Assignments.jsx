@@ -1,5 +1,5 @@
 
-import frame from "../../../assets/Assignment-frame.png"
+import assignmnent from "../../../assets/assignment.svg"
 import dropdown from "../../../assets/arrow_drop_down.png"
 import dot from "../../../assets/green-dot.png"
 
@@ -66,12 +66,14 @@ const Assignments = () => {
 
 
   return (
-    <>
-      <div>
-        <img src={frame} alt="header-frame" />
+    <section>
+      <div className='bg-primary-50 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
+        <h1 className='font-semibold text-lg tracking-wide'>Assignment</h1>
+        <img src={assignmnent} alt="" />
       </div>
+
       <div className="flex gap-5 w-auto mt-4">
-          <h3 className="font-bold mt-2">Filter:</h3>
+        <h3 className="font-bold mt-2">Filter:</h3>
 
         <div className="flex flex-col  sm:flex-row gap-2 shadow-lg rounded-md px-4 py-2">
           <h3>
@@ -79,9 +81,7 @@ const Assignments = () => {
             <button className="ml-3"><img src={dropdown} alt="" /></button>
           </h3> 
         </div>
-        
       </div>
-
 
       <div className="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-x-16 mb-20">
         {/* ASSIGNMENT CARDS */}
@@ -99,8 +99,7 @@ const Assignments = () => {
           </div>
         ))}
       </div>
-      
-    </>
+    </section>
   )
 }
 
