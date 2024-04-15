@@ -36,7 +36,7 @@ const chatData = [
 
 const Communication = () => {
   return (
-    <section className='flex flex-col justify-start items-start gap-9'>
+    <section className='flex flex-col justify-start items-start gap-9 mb-10'>
       {/* CHAT HEADER */}
       <div className="md:col-span-3 | bg-primary-50 w-full h-[14.3125rem] px-5 md:px-12 flex justify-between items-center rounded-lg">
         <h2 className='font-semibold text-xl text-text-black'>Chat</h2>
@@ -63,8 +63,13 @@ const Communication = () => {
       </div>
 
       {/* CHAT BUTTONS */}
-      <div className='mt-20 self-end'>
-        Buttons
+      <div className='mt-20 self-end text-xs'>
+        <button className='bg-[#f0f2ff] text-[#007bff] py-2 px-10 mr-7  rounded-md'>
+          Send Message
+        </button>
+        <button  className='text-[#ffffff] bg-[#007bff] py-2 px-10 rounded-md'>
+          Schedule Call
+        </button>
       </div>
     </section>
   )
