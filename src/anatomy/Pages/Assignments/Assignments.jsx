@@ -83,7 +83,7 @@ const Assignments = () => {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-x-16 mb-20">
+      <div className="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-x-16 place-items-center mb-20">
         {/* ASSIGNMENT CARDS */}
         {assignmentData.map( data => (
           <div key={data.id} className="rounded border border-primary-50 mt-7 py-[30px] px-5 w-56 h-72 | flex flex-col justify-between items-center">
