@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import chat from '../../../assets/chat.svg'
 import readChat from '../../../assets/read.svg'
 import unreadChat from '../../../assets/unread.svg'
+import { createPortal } from 'react-dom'
+import CallModal from './CallModal'
+import MessageModal from './MessageModal'
 
 const chatData = [
   {
@@ -35,6 +38,9 @@ const chatData = [
 ]
 
 const Communication = () => {
+  const [ callOpen, setCallOpen ] = useState(false);
+  const [ messageOpen, setMessageOpen ] = useState(false);
+
   return (
     <section className='flex flex-col justify-start items-start gap-9 mb-10'>
       {/* CHAT HEADER */}
@@ -61,13 +67,17 @@ const Communication = () => {
 
       {/* CHAT BUTTONS */}
       <div className='mt-20 text-xs sm:self-end | flex flex-col sm:flex-row gap-5 sm:gap-10'>
-        <button className='bg-primary-50 text-primary-00 py-3 px-12 rounded-md'>
+        <button onClick={() => setMessageOpen(true)} className='bg-primary-50 text-primary-00 py-3 px-12 rounded-md'>
           Send Message
         </button>
-        <button  className='text-white bg-primary-00 py-3 px-12 rounded-md'>
+        <button  onClick={() => setCallOpen(true)} className='text-white bg-primary-00 py-3 px-12 rounded-md'>
           Schedule Call
         </button>
       </div>
+
+      {/* MODALS */}
+      <CallModal open={callOpen} onClose={() => setCallOpen(false)}>Call Modal</CallModal>
+      <MessageModal open={messageOpen} onClose={() => setMessageOpen(false)}>Message Modal</MessageModal>
     </section>
   )
 }
