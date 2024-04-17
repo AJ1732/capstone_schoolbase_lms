@@ -76,8 +76,8 @@ const Communication = () => {
       </div>
 
       {/* MODALS */}
-      <CallModal open={callOpen} onClose={() => setCallOpen(false)}>Call Modal</CallModal>
-      <MessageModal open={messageOpen} onClose={() => setMessageOpen(false)}>Message Modal</MessageModal>
+      <CallModal open={callOpen} onClose={() => setCallOpen(false)} />
+      <MessageModal open={messageOpen} onClose={() => setMessageOpen(false)} />
     </section>
   )
 }
