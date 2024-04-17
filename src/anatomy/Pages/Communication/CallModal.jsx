@@ -89,7 +89,7 @@ const CallModal = ({ open, onClose  }) => {
         action="" 
         onSubmit={handleSubmit}
         className={`
-          relative | max-w-[54rem] size-full bg-white shadow-md ${!open? 'h-0 opacity-0': 'h-[43rem] opacity-100'}
+          relative | max-w-[54rem] w-full h-fit bg-white shadow-md ${!open? 'opacity-0': 'opacity-100'}
           flex flex-col justify-start items-center rounded-md | transition-all duration-500
         `}
       >
