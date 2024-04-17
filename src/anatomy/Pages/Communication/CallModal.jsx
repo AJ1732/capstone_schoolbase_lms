@@ -38,7 +38,7 @@ const CallModal = ({ open, onClose  }) => {
       fullName.value.length < 8 && grade.value.length < 1 && adminNum.value.length < 5
     ); 
   }; 
-  console.log(fullName.value.length < 8);
+  console.log(fullName.value.length < 8 && grade.value.length < 1 && adminNum.value.length < 5);
 
   const clearForm = () => {
     setFullName({
@@ -94,7 +94,7 @@ const CallModal = ({ open, onClose  }) => {
         `}
       >
         {/* CLOSE BUTTON */}
-        <button onClick={onClose} className='absolute top-5 right-5 | bg-primary-100 px-5 py-2 rounded-md'>Close Modal</button>
+        <button onClick={onClose} className='absolute top-5 right-5 | bg-primary-100 px-5 py-2.5 rounded-md'>x</button>
         
         {/* FORM CONTENT */}
         <fieldset className='w-full mt-16 p-10 md:p-14 flex flex-col justify-center items-start gap-4'>
@@ -175,7 +175,6 @@ const CallModal = ({ open, onClose  }) => {
                 form="callModalForm" 
                 value={description.value}
                 placeholder='Write a description of the reason of the call '
-                className='size-full min-h-32 border border-slate-300 p-2 rounded placeholder:text-sm'
                 onChange={(e) => { 
                   setDescription({ ...description, value: e.target.value }); 
                 }} 
@@ -191,6 +190,7 @@ const CallModal = ({ open, onClose  }) => {
             } 
           </div>
           
+          {/* CALL BUTTONS */}
           <div className='mt-[20px] self-end flex flex-col md:flex-row justify-center items-center gap-6'>
             {/* CALL BUTTONS */}
             <FormButton disabled={getIsFormValid()} className={`font-normal bg-primary-50 text-primary-00 rounded-md disabled:bg-gray-100 disabled:text-text-gray`}>Send Video Call</ FormButton>
