@@ -1,8 +1,11 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom';
 
 const ErrorPage = () => {
-  return <Navigate to={`/`} />
+  return (
+    <div className='size-full font-bold text-primary-900 text-4xl | flex justify-center items-center'>
+      <h2>Sorry, seems something went wrong</h2>
+    </div>
+  )
 }
 
 export default ErrorPage
