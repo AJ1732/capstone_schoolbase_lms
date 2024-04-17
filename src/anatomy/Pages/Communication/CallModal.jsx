@@ -28,19 +28,18 @@ const CallModal = ({ open, onClose  }) => {
   // ERROR MESSAGES
   const ErrorMessage = ({ children }) => {
     return (
-      <p className="text-orange-600 text-xs md:ml-[10.5rem]">{children}</p>
+      <p className="text-orange-600 text-xs md:ml-[10.5rem]">Input must be filled</p>
     );
   };
 
   // SUBMISSION FUNCTIONS
   const getIsFormValid = () => { 
     return ( 
-      fullName.value.length > 8
+      fullName.value.length < 8 && grade.value.length < 1 && adminNum.value.length < 5
     ); 
   }; 
+  console.log(fullName.value.length < 8);
 
-  console.log(fullName.value.length > 8);
-  
   const clearForm = () => {
     setFullName({
       value: "",
@@ -65,7 +64,12 @@ const CallModal = ({ open, onClose  }) => {
     setError('');
 
     try {
-      console.log('submit');
+      console.log('submit', {
+        fullName: fullName.value,
+        grade: grade.value,
+        admissionNumber: adminNum.value,
+        description: description.value,
+      });
     } catch (e) {
       setError(e.message)
       alert(e.message);
@@ -81,6 +85,7 @@ const CallModal = ({ open, onClose  }) => {
       transition-all duration-75 delay-300 overflow-y-scroll
     `}>
       <form 
+        id='callModalForm'
         action="" 
         onSubmit={handleSubmit}
         className={`
@@ -92,16 +97,15 @@ const CallModal = ({ open, onClose  }) => {
         <button onClick={onClose} className='absolute top-5 right-5 | bg-primary-100 px-5 py-2 rounded-md'>Close Modal</button>
         
         {/* FORM CONTENT */}
-        <fieldset className='w-full mt-16 p-10 md:p-14 flex flex-col justify-center items-start gap-5'>
-          {/* EMAIL */}
+        <fieldset className='w-full mt-16 p-10 md:p-14 flex flex-col justify-center items-start gap-4'>
+          {/* FULL NAME */}
           <div className='modal_field'>
-            <div className='w-full flex flex-col md:flex-row justify-center items-start md:items-center gap-1.5 md:gap-10'>
-              <label htmlFor="fullName" >Full name:</label>
+            <div className='w-full flex flex-col md:flex-row justify-center items-start gap-1.5 md:gap-10'>
+              <label htmlFor="fullName" >Full Name</label>
               <input 
                 id='fullName'
                 type="text" 
                 value={fullName.value}
-                placeholder='Enter Full Name'
                 onChange={(e) => { 
                   setFullName({ ...fullName, value: e.target.value }); 
                 }} 
@@ -117,9 +121,81 @@ const CallModal = ({ open, onClose  }) => {
             } 
           </div>
           
-          <div className='mt-[20px] self-end flex justify-center items-center gap-6'>
-            {/* SUBMIT BUTTON */}
-            <FormButton disabled={!getIsFormValid()} className={`font-normal rounded-md disabled:bg-gray-500`}>Send Message</ FormButton>
+          {/* GRADE */}
+          <div className='modal_field'>
+            <div className='w-full flex flex-col md:flex-row justify-center items-start gap-1.5 md:gap-10'>
+              <label htmlFor="fullName" >Class/ Grade</label>
+              <input 
+                id='fullName'
+                type="text" 
+                value={grade.value}
+                onChange={(e) => { 
+                  setGrade({ ...grade, value: e.target.value }); 
+                }} 
+                onBlur={() => { 
+                  setGrade({ ...grade, isTouched: true }); 
+                }} 
+              />
+            </div>
+            {
+              grade.isTouched && grade.value.length < 1? 
+              ( <ErrorMessage>Enter Your Grade</ErrorMessage> ) :
+              null
+            } 
+          </div>
+          
+          {/* ADMISSION NUMBER */}
+          <div className='modal_field'>
+            <div className='w-full flex flex-col md:flex-row justify-center items-start gap-1.5 md:gap-10'>
+              <label htmlFor="fullName" >Admission Number</label>
+              <input 
+                id='fullName'
+                type="text" 
+                value={adminNum.value}
+                onChange={(e) => { 
+                  setAdminNum({ ...adminNum, value: e.target.value }); 
+                }} 
+                onBlur={() => { 
+                  setAdminNum({ ...adminNum, isTouched: true }); 
+                }} 
+              />
+            </div>
+            {
+              adminNum.isTouched && adminNum.value.length < 5? 
+              ( <ErrorMessage>Enter Your Admission Number</ErrorMessage> ) :
+              null
+            } 
+          </div>
+
+          {/* DESCRIPTION MESSAGE */}
+          <div className='modal_field'>
+            <div className='w-full flex flex-col md:flex-row justify-center items-start md:items-center gap-1.5 md:gap-10'>
+              <textarea 
+                name='description'
+                form="callModalForm" 
+                value={description.value}
+                placeholder='Write a description of the reason of the call '
+                className='size-full min-h-32 border border-slate-300 p-2 rounded placeholder:text-sm'
+                onChange={(e) => { 
+                  setDescription({ ...description, value: e.target.value }); 
+                }} 
+                onBlur={() => { 
+                  setDescription({ ...description, isTouched: true }); 
+                }} 
+              />
+            </div>
+            {
+              description.isTouched && description.value.length < 5? 
+              ( <ErrorMessage /> ) :
+              null
+            } 
+          </div>
+          
+          <div className='mt-[20px] self-end flex flex-col md:flex-row justify-center items-center gap-6'>
+            {/* CALL BUTTONS */}
+            <FormButton disabled={getIsFormValid()} className={`font-normal bg-primary-50 text-primary-00 rounded-md disabled:bg-gray-100 disabled:text-text-gray`}>Send Video Call</ FormButton>
+
+            <FormButton disabled={getIsFormValid()} className={`font-normal rounded-md disabled:bg-gray-400 disabled:text-white`}>Send Video Call</ FormButton>
           </div>
         </fieldset>
       </form>
