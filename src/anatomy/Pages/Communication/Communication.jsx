@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import chat from '../../../assets/chat.svg'
 import readChat from '../../../assets/read.svg'
 import unreadChat from '../../../assets/unread.svg'
+import { createPortal } from 'react-dom'
+import CallModal from './CallModal'
+import MessageModal from './MessageModal'
 
 const chatData = [
   {
@@ -35,17 +38,17 @@ const chatData = [
 ]
 
 const Communication = () => {
+  const [ callOpen, setCallOpen ] = useState(false);
+  const [ messageOpen, setMessageOpen ] = useState(false);
+
   return (
     <section className='flex flex-col justify-start items-start gap-9 mb-10'>
       {/* CHAT HEADER */}
-      <div className="md:col-span-3 | bg-primary-50 w-full h-[14.3125rem] px-5 md:px-12 flex justify-between items-center rounded-lg">
-        <h2 className='font-semibold text-xl text-text-black'>Chat</h2>
-
-        <figure className="max-w-80 max-h-48">
-          <img src={chat} alt="chat img" />
-        </figure>
+      <div className='md:col-span-3 | w-full bg-primary-50 p-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
+        <h1 className='font-semibold text-lg tracking-wide'>Chat</h1>
+        <img src={chat} alt="" />
       </div>
-
+    
       {/* CHATS */}
       <div className='w-full flex flex-col justify-start items-center gap-5'>
         {chatData.map( ({id, title, date, timeSent, read}) => (
@@ -63,14 +66,18 @@ const Communication = () => {
       </div>
 
       {/* CHAT BUTTONS */}
-      <div className='mt-20 self-end text-xs'>
-        <button className='bg-[#f0f2ff] text-[#007bff] py-2 px-10 mr-7  rounded-md'>
+      <div className='mt-20 text-xs sm:self-end | flex flex-col sm:flex-row gap-5 sm:gap-10'>
+        <button onClick={() => setMessageOpen(true)} className='bg-primary-50 text-primary-00 py-3 px-12 rounded-md'>
           Send Message
         </button>
-        <button  className='text-[#ffffff] bg-[#007bff] py-2 px-10 rounded-md'>
+        <button  onClick={() => setCallOpen(true)} className='text-white bg-primary-00 py-3 px-12 rounded-md'>
           Schedule Call
         </button>
       </div>
+
+      {/* MODALS */}
+      <CallModal open={callOpen} onClose={() => setCallOpen(false)} />
+      <MessageModal open={messageOpen} onClose={() => setMessageOpen(false)} />
     </section>
   )
 }
