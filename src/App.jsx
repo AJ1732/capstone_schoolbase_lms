@@ -21,6 +21,7 @@ import ForgotPassword from "./anatomy/Pages/ForgotPassword"
 import Fee from "./anatomy/Pages/Fee/Fee"
 import ErrorBoundary from "./anatomy/Pages/Error/ErrorBoundary"
 import ErrorPage from "./anatomy/Pages/Error/ErrorPage"
+import PaystackCheckout from "./anatomy/Pages/Paystack/PaystackCheckout"
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
               <Route path="/software/classroom" element={<Classroom />}/>
               <Route path="/software/attendance" element={<Attendance />}/>
               <Route path="/software/calendar" element={<Calendar />}/>
+              <Route path="/software/paystackcheckout" element={<PaystackCheckout />}/>
               <Route path="/software/cbt" element={<CBT />}/>
               <Route path="/software/communication" element={<Communication />}/>
               <Route path="/software/fee" element={<Fee />}/>
