@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, {} from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import { useValueContext } from '../../context/ContextProvider'
@@ -12,6 +13,7 @@ import attendance from "../../assets/event_available.png"
 import calender from "../../assets/calendar_month.png"
 import logout from "../../assets/move_item.png"
 import { useAuthContext } from '../../context/AuthProvider'
+import PaystackCheckout from '../../anatomy/Pages/Paystack/PaystackCheckout'
 
 
 const SidebarItem = ({ children, to, text }) => {
@@ -101,6 +103,12 @@ const Sidebar = () => {
           {/* CALENDAR LINK */}
           <SidebarItem to={`/software/calendar`} text={`Calendar`}>
           <img src={calender} alt="calender_month" />
+          </SidebarItem>
+
+          {/*Paystack */}
+          <SidebarItem to={`/software/paystackcheckout`} text={`PayStack`}>
+          <img src={calender} alt="make your payment for LMS" />
+          
           </SidebarItem>
         </ul>
       </nav>

@@ -3,6 +3,7 @@ import { MonthCalender } from './../../../components/Calender/Calender';
 import longlogo from "../../../assets/logo-full.svg"
 
 
+
 const Calendar = () => {
   return (
     <section className='flex flex-col'>
@@ -12,6 +13,7 @@ const Calendar = () => {
 
       <div className='h-auto w-auto rounded-lg mt-7 mb-20 self-start'>
         <MonthCalender />
+        
       </div>
     </section>
   )
