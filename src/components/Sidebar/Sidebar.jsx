@@ -105,11 +105,6 @@ const Sidebar = () => {
           <img src={calender} alt="calender_month" />
           </SidebarItem>
 
-          {/*Paystack */}
-          <SidebarItem to={`/software/paystackcheckout`} text={`PayStack`}>
-          <img src={calender} alt="make your payment for LMS" />
-          
-          </SidebarItem>
         </ul>
       </nav>
 

@@ -22,7 +22,7 @@ function PaystackCheckout() {
     text: "Pay Now",
     onSuccess: () =>
       alert("Thanks for doing business with us! Come back soon!!"),
-    onClose: () => alert("Wait! You need this LMS, don't go!!!!"),
+    onClose: () => alert("Please wait! You need this LMS, don't go!!!!"),
   }
 
   return (
