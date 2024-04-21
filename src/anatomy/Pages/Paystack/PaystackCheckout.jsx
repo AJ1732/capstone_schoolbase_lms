@@ -5,7 +5,8 @@ import logo from "../../../assets/logo-full.svg"
 
 function PaystackCheckout() {
 
-  const publicKey = "pk_test_473edf04faf6668acd008939fe8a84a21626ac2b"
+  
+  const publicKey = "pk_test_a0a197f123eef7e2fb74344244b51447b6e394f9"
   const amount = 1000000 //set in kobo
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
