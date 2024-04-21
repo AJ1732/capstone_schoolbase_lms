@@ -8,17 +8,12 @@ export default {
     extend: {
       colors: {
         'primary-00': '#007BFF',
+        'primary-10': '#D9E0FF',
         'primary-50': '#F0F2FF',
         'primary-100': '#E3E8FF',
         'primary-200': '#CCD6FF',
         'primary-250': '#D2EDFD',
-        'primary-300': '#89ACFF',
-        'primary-400': '#5F96FF',
-        'primary-500': '#2982FF',
-        'primary-600': '#006EEF',
-        'primary-700': '#004EBA',
-        'primary-800': '#0042A0',
-        'primary-900': '#00337C',
+        'primary-900': '#0B1A3A',
 
         'secondary-00': '#2C928E',
 
@@ -35,7 +30,7 @@ export default {
         'black-900': '#363636',
 
         'text-grey': '#676767',
-        'text-black': '#1A1A1A',
+        'text-black': '#1B1B1B',
         
         'blue-150': '#C9E3FF',
         'pink-150': '#FFCFDB',
