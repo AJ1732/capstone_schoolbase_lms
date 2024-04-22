@@ -33,12 +33,13 @@ export default {
         'text-black': '#1B1B1B',
         
         'blue-150': '#C9E3FF',
-        'pink-150': '#FFCFDB',
+        'pink-150': '#FFCBCC',
         'amber-150': '#FFEFD2',
         'green-150': '#E2FFEA',
 
         'info': '#2F80ED',
-        'error': '#EB5757',
+        'error': '#C4013D',
+        'error-100': '#360D11',
         'success': '#27AE60',
         'warning': '#E2B93B',
 

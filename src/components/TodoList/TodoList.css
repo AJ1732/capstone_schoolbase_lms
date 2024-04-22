@@ -17,7 +17,7 @@ form input[id='taskInput']::placeholder {
 .todo-check::before {
   content: " ";
   position: absolute;
-  top: -0.5px;
+  top: -1px;
   left: -1px;
   width: 1rem;
   height: 1rem;
