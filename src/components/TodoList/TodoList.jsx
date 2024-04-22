@@ -89,7 +89,7 @@ const TodoList = () => {
                   type="checkbox"
                   className='todo-check
                     relative | size-4 mt-1 ml-px | appearance-none | p-1.5 | transition-all duration-300
-                    border border-primary-00 rounded | checked:bg-primary-00
+                    border-2 border-primary-900 rounded | checked:bg-primary-900
                   ' 
                   checked={completed}
                   onChange={() => handleCheck(id)}
@@ -103,7 +103,7 @@ const TodoList = () => {
                   {/* task specifications */}
                   <div className='flex divide-x-2'>
                     <p className='text-text-grey pr-2'>{subject}</p>
-                    <p className='text-secondary-00 pl-2'>{time}</p>
+                    <p className='text-error-100 pl-2'>{time}</p>
                   </div>
                 </div> 
               </div>
@@ -132,7 +132,7 @@ const TodoList = () => {
             <option key={subject} value={subject}>{subject}</option> 
           ))}
         </select> 
-        <button type='submit' className='bg-primary-00 text-white text-xs px-5 py-2 rounded-r-md'>Add</button>
+        <button type='submit' className='bg-primary-900 text-white text-xs px-5 py-2 rounded-r-md'>Add</button>
       </form>
     </div>
   )
