@@ -91,7 +91,7 @@ export const LogInForm = () => {
     setError('');
 
     if (email.value === 'superad@schoolbase.edu' && pathname === '/login') {
-      alert('You are not an Admin')
+      alert('Wrong User Details')
       navigate('/')
     } else {
       try {
@@ -105,6 +105,21 @@ export const LogInForm = () => {
       }
     }
 
+    // TODO: Fix User access to Admin dashboard, when on login route
+    // if (email.value !== 'superad@schoolbase.edu' && pathname === '/login') {
+    //   alert('Wrong User Details')
+    //   navigate('/')
+    // } else {
+    //   try {
+    //     setLoading(true);
+    //     await signIn(email.value, password.value);
+    //     navigate(navRoute())
+    //     alert("Login successful!");  
+    //   } catch (e) {
+    //     setError(e.message)
+    //     alert(e.message);
+    //   }
+    // }    
 
     setLoading(false);
     clearForm();
