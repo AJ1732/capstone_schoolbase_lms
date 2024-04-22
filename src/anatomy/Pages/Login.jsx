@@ -11,11 +11,6 @@ const Login = () => {
         </div>
 
         <LogInForm />
-        
-        <h3 className="flex self-end pr-10">
-          Don't have an account?
-          <NavLink to="/signup" className="font-semibold text-primary-00 ml-2">Sign Up</NavLink>
-        </h3>
       </div>
     </div>
   )

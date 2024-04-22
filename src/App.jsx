@@ -22,6 +22,8 @@ import Fee from "./anatomy/Pages/Fee/Fee"
 import ErrorBoundary from "./anatomy/Pages/Error/ErrorBoundary"
 import ErrorPage from "./anatomy/Pages/Error/ErrorPage"
 import PaystackCheckout from "./anatomy/Pages/Paystack/PaystackCheckout"
+import AdminLayout from "./anatomy/Layouts/Admin/AdminLayout"
+import Admin from "./anatomy/Pages/Admin/Admin"
 
 
 function App() {
@@ -35,6 +37,10 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
+              <Route path="/superad" element={<Login/>} />
+            </Route>
+            <Route path="/superadmin" element={<AdminLayout />} >
+              <Route index element={<Admin />} />
             </Route>
             <Route path="/software" element={
               <ProtectedRoute>

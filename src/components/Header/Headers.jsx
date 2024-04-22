@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import React, { useId, useState } from 'react'
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { useValueContext } from '../../context/ContextProvider';
 import { NavButton } from "../Button/Buttons";
 import { HeaderAvatar } from '../Avatar';
 import avatarImg from '../../assets/avatarImg.png'
-import box from "../../assets/box.svg"
-import alertIcon from "../../assets/notifications.svg"
 import logoFull from "../../assets/logo-full.svg"
 import logoShort from "../../assets/logo-short.png"
 import { useAuthContext } from '../../context/AuthProvider';
@@ -13,6 +11,7 @@ import { useAuthContext } from '../../context/AuthProvider';
 
 export const HomePageHeader = () => {
   const navigate = useNavigate();
+  const pathname = window.location.pathname;
 
   return (
     <header className="full-width content-grid | w-full max-h-[110px] lg:px-4 bg-primary-100">
@@ -24,9 +23,12 @@ export const HomePageHeader = () => {
           <img src={logoFull} alt="Logo" />
         </figure>
 
-        <nav className='flex gap-2 md:gap-7'>
-          <NavButton className={`min-w-[50px] md:min-w-[150px] px-4`} onClick={() => navigate("/login")}>LOGIN</NavButton>
-        </nav>
+        { 
+          pathname !== '/login' && pathname !== '/superad' &&
+          <nav className='flex gap-2 md:gap-7'>
+            <NavButton className={`min-w-[50px] md:min-w-[150px] px-4`} onClick={() => navigate('/login')}>LOGIN</NavButton>
+          </nav>
+        }
       </div>
     </header>
   )
@@ -77,12 +79,6 @@ export const SoftwareHeader = () => {
 
         {/* RIGHT ICONS */}
         <div className='flex justify-center items-center gap-6'>
-          <figure className='size-6'>
-            <img src={box} alt="" />
-          </figure>
-          <figure className='size-6'>
-            <img src={alertIcon} alt="notifications" />
-          </figure>
           <div onClick={() => setProfileOpen(!profileOpen)}>
             <HeaderAvatar src={avatarImg} />
           </div>

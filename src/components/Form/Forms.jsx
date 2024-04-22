@@ -74,6 +74,15 @@ export const LogInForm = () => {
 
   // HANNDLE SIGNIN FORM SUBMISSION
   const { setLoading, signIn } = useAuthContext();
+  
+  const pathname = window.location.pathname;
+  const navRoute = () => {
+    if (pathname === '/login') {
+      return '/software'
+    } else if (pathname === '/superad')  {
+      return '/superadmin'
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -82,7 +91,7 @@ export const LogInForm = () => {
     try {
       setLoading(true);
       await signIn(email.value, password.value);
-      navigate("/software")
+      navigate(navRoute())
       alert("Login successful!");  
     } catch (e) {
       setError(e.message)
