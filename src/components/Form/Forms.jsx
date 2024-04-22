@@ -84,19 +84,27 @@ export const LogInForm = () => {
     }
   }
 
+  console.log(navRoute());
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
-    try {
-      setLoading(true);
-      await signIn(email.value, password.value);
-      navigate(navRoute())
-      alert("Login successful!");  
-    } catch (e) {
-      setError(e.message)
-      alert(e.message);
+    if (email.value === 'superad@schoolbase.edu' && pathname === '/login') {
+      alert('You are not an Admin')
+      navigate('/')
+    } else {
+      try {
+        setLoading(true);
+        await signIn(email.value, password.value);
+        navigate(navRoute())
+        alert("Login successful!");  
+      } catch (e) {
+        setError(e.message)
+        alert(e.message);
+      }
     }
+
 
     setLoading(false);
     clearForm();
