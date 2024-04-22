@@ -60,7 +60,7 @@ export const WeekCalender = () => {
   const [today] = useState(currentDate);
 
   return (
-    <div className='bg-primary-50 size-fit py-4 px-2 text-black rounded-3xl'>
+    <div className='bg-primary-10 size-fit py-4 px-2 text-black rounded-3xl'>
       {/* MONTH */}
       <div className='flex justify-between items-center px-3 mb-4'>
         <div className='size-2 rounded-full bg-[#1A1A1A]'></div>
