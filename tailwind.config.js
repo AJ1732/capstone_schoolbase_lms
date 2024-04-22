@@ -8,17 +8,12 @@ export default {
     extend: {
       colors: {
         'primary-00': '#007BFF',
+        'primary-10': '#D9E0FF',
         'primary-50': '#F0F2FF',
         'primary-100': '#E3E8FF',
         'primary-200': '#CCD6FF',
         'primary-250': '#D2EDFD',
-        'primary-300': '#89ACFF',
-        'primary-400': '#5F96FF',
-        'primary-500': '#2982FF',
-        'primary-600': '#006EEF',
-        'primary-700': '#004EBA',
-        'primary-800': '#0042A0',
-        'primary-900': '#00337C',
+        'primary-900': '#0B1A3A',
 
         'secondary-00': '#2C928E',
 
@@ -38,12 +33,13 @@ export default {
         'text-black': '#1A1A1A',
         
         'blue-150': '#C9E3FF',
-        'pink-150': '#FFCFDB',
+        'pink-150': '#FFCBCC',
         'amber-150': '#FFEFD2',
         'green-150': '#E2FFEA',
 
         'info': '#2F80ED',
-        'error': '#EB5757',
+        'error': '#C4013D',
+        'error-100': '#360D11',
         'success': '#27AE60',
         'warning': '#E2B93B',
 
