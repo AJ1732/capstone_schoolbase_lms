@@ -18,7 +18,7 @@ const UsersTable = () => {
         </div>
       </fieldset>
 
-      <div className='w-full min-h-64 flex flex-col justify-start items-start overflow-scroll'>
+      <div className='w-full min-h-[55dvh] flex flex-col justify-start items-start overflow-scroll'>
         {/* TODO: USERS TABLE HERE */}
         <table class="table-auto  min-w-[50rem] w-full">
           <tbody>
