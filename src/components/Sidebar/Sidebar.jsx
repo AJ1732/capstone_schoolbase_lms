@@ -3,8 +3,8 @@ import React, {} from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import { useValueContext } from '../../context/ContextProvider'
 import playLessons from "../../assets/play_lesson.png"
-import dashBoard from "../../assets/speed.png"
-import user from "../../assets/person (1).png"
+import dashBoard from "../../assets/dashboard.png"
+import user from "../../assets/person.png"
 import notes from "../../assets/news.png"
 import assignment1 from "../../assets/assignment_late.png"
 import assignment2 from "../../assets/assignment_turned_in.png"
