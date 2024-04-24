@@ -9,7 +9,7 @@ const AdminLayout = () => {
     <div className='content-grid | min-h-dvh'>
       <AdminHeader />
       <div className={`
-        breakout animate-view | p-4
+        breakout animate-view | py-4
       `}>
         <ErrorBoundary fallback={<ErrorPage />}>
           <Outlet />
