@@ -9,8 +9,7 @@ const AdminLayout = () => {
     <div className='content-grid | min-h-dvh'>
       <AdminHeader />
       <div className={`
-        full-width animate-view
-        col-start-2 | max-h-[calc(100dvh_-_90px)] | p-4 pr-12 | overflow-y-scroll
+        breakout animate-view | p-4
       `}>
         <ErrorBoundary fallback={<ErrorPage />}>
           <Outlet />

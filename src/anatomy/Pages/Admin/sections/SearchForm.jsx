@@ -2,11 +2,11 @@ import React from 'react'
 
 const SearchForm = () => {
   return (
-    <div className='max-h-64 w-full space-y-10'>
+    <div className='w-full space-y-10'>
       <h2 className='font-semibold text-xl'>Administrator</h2>
       
       <div className='space-y-7'>
-        <button className='w-full bg-primary-00 font-medium text-white text-center uppercase  py-2.5 px-14 rounded-md'><span>+</span> New User</button>
+        <button className='w-full bg-primary-00 font-medium text-white text-center uppercase  py-2.5 rounded-md'><span>+</span> New User</button>
         <form action="">
           <fieldset className='space-y-5'>
             {/* SEARCH INPUT */}

@@ -4,7 +4,7 @@ import UsersTable from './sections/UsersTable'
 
 const Admin = () => {
   return (
-    <main className='w-full font-manrope p-3 | grid grid-cols-[20%_80%] gap-10'>
+    <main className='size-full font-manrope p-3 | grid grid-cols-1 lg:grid-cols-[20%_80%] gap-5'>
       <SearchForm/>
       <UsersTable />
     </main>

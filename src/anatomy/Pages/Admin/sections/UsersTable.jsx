@@ -2,7 +2,7 @@ import React from 'react'
 
 const UsersTable = () => {
   return (
-    <div className='max-w-[80rem] border'>
+    <div className='w-full border overflow-y-scroll'>
       UsersTable
     </div>
   )
