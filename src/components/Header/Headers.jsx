@@ -115,3 +115,13 @@ export const SoftwareHeader = () => {
     </header>
   )
 }
+
+export const AdminHeader = () => {
+  return (
+    <header id='header' className={`full-width col-span-2 | z-50 max-h-[6.9375rem] w-full bg-white | flex justify-start items-center | drop-shadow`}>
+      <figure>
+        <img src={logoFull} alt="Logo" />
+      </figure>
+    </header>
+  )
+}
