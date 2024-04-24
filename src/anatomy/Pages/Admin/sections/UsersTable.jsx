@@ -1,8 +1,9 @@
 import React from 'react'
+import edit from '../../../../assets/edit.svg'
 
 const UsersTable = () => {
   return (
-    <div className='w-full flex flex-col justify-start items-start gap-10 overflow-scroll'>
+    <div className='w-full flex flex-col justify-start items-start gap-10'>
       <fieldset className='self-end space-x-4'>
         <label htmlFor="sort" className='font-bold text-sm'>Sort by</label>
         <select name="sort" id="sort" className='text-sm p-2 border rounded-md'>
@@ -17,25 +18,37 @@ const UsersTable = () => {
         </div>
       </fieldset>
 
-      {/* TODO: USERS TABLE HERE */}
-      <div className=''>
-        <table class="table-auto min-w-[50rem] w-full overflow-auto">
-          <thead className='text-left'>
-            <tr>
-              <th>User</th>
-              <th>Role</th>
-              <th>Date Added</th>
-              <th>Status</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
+      <div className='w-full min-h-64 flex flex-col justify-start items-start overflow-scroll'>
+        {/* TODO: USERS TABLE HERE */}
+        <table class="table-auto  min-w-[50rem] w-full">
           <tbody>
-            <tr>
-              <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-              <td>Malcolm Lockyer</td>
-              <td>1961</td>
-              <td>1961</td>
-              <td>1961</td>
+            <tr className='bg-[#F8F8F8] h-11 text-sm font-bold'>
+              <td className='pl-3'><input type="checkbox" /></td>
+              <td className='min-w-60'>Sarah Daniels</td>
+              <td>Student</td>
+              <td>2024-04-4</td>
+              <td>
+                <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
+              </td>
+              <td>
+                <figure>
+                  <img src={edit} />
+                </figure>
+              </td>
+            </tr>
+            <tr className='bg-[#F8F8F8] h-11 text-sm font-bold'>
+              <td className='pl-3'><input type="checkbox" /></td>
+              <td className='min-w-60'>Sarah Daniels</td>
+              <td>Student</td>
+              <td>2024-04-4</td>
+              <td>
+                <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
+              </td>
+              <td>
+                <figure>
+                  <img src={edit} />
+                </figure>
+              </td>
             </tr>
           </tbody>
         </table>
