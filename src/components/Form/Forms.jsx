@@ -93,6 +93,9 @@ export const LogInForm = () => {
     if (email.value === 'superad@schoolbase.edu' && pathname === '/login') {
       alert('Wrong User Details')
       navigate('/')
+    } else if (email.value !== 'superad@schoolbase.edu' && pathname === '/superad') {
+      alert('Wrong User Details')
+      navigate('/')
     } else {
       try {
         setLoading(true);
@@ -104,22 +107,6 @@ export const LogInForm = () => {
         alert(e.message);
       }
     }
-
-    // TODO: Fix User access to Admin dashboard, when on login route
-    // if (email.value !== 'superad@schoolbase.edu' && pathname === '/login') {
-    //   alert('Wrong User Details')
-    //   navigate('/')
-    // } else {
-    //   try {
-    //     setLoading(true);
-    //     await signIn(email.value, password.value);
-    //     navigate(navRoute())
-    //     alert("Login successful!");  
-    //   } catch (e) {
-    //     setError(e.message)
-    //     alert(e.message);
-    //   }
-    // }    
 
     setLoading(false);
     clearForm();
