@@ -1,0 +1,59 @@
+
+::placeholder {
+  font-size: small;
+}
+
+.checkout {
+  background: white; 
+  width: 50%;
+  margin: 10px;
+}
+
+.checkout-form {
+  padding: 20px 20px;
+}
+
+.checkout-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.checkout-field label {
+  text-align: left;
+  color: #595959;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  letter-spacing: 0.1rem;
+}
+
+.checkout-field input {
+  background-color: transparent;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  color: black;
+  height: 35px;
+  padding: 10px;
+}
+
+.paystack-button {
+  cursor: pointer;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  background-color: #007BFF;
+  font-weight: bold;
+  color: #e0eafc;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 45px;
+  margin-top: 40px;
+}
+
+.paystack-button:hover {
+  background-color: #e0eafc;
+  color: #007BFF;
+}

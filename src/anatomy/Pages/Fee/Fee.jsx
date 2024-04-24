@@ -1,5 +1,7 @@
 import React from 'react'
 import feeImg from "../../../assets/fee.svg"
+import { NavLink } from 'react-router-dom'
+
 
 const feeData = [
   {
@@ -47,7 +49,9 @@ const Fee = () => {
                   <p>{term}</p>
                   <p>{session}</p>
                 </div>
-                <button className='w-full bg-purple-50 text-primary-00 py-2.5 rounded-[0.625rem]'>Make Payment</button>
+                <button className='w-full bg-purple-50 text-primary-00 py-2.5 rounded-[0.625rem] '>
+                  <NavLink to={"/software/paystackcheckout"}>Make Payment</NavLink>
+                </button>
               </div>
             ))}
           </div>

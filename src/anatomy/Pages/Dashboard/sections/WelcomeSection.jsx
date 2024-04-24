@@ -14,7 +14,7 @@ const WelcomeSection = () => {
         <div className="text-sm md:text-base space-y-2">
           <h4>Welcome<span className="font-bold">{user? `, ${user.email}` : ''}</span> </h4>
           <p>Here’s an overview of your classes</p>
-          <p className='text-primary-00'>School Base Solutions</p>
+          <p className='text-primary-00'>Schoolbase Solutions</p>
         </div>
       </div>
       <img src={dashboardHero} alt="" />

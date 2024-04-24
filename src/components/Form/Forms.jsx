@@ -74,19 +74,38 @@ export const LogInForm = () => {
 
   // HANNDLE SIGNIN FORM SUBMISSION
   const { setLoading, signIn } = useAuthContext();
+  
+  const pathname = window.location.pathname;
+  const navRoute = () => {
+    if (pathname === '/login') {
+      return '/software'
+    } else if (pathname === '/superad')  {
+      return '/superadmin'
+    }
+  }
+
+  console.log(navRoute());
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
-    try {
-      setLoading(true);
-      await signIn(email.value, password.value);
-      navigate("/software")
-      alert("Login successful!");  
-    } catch (e) {
-      setError(e.message)
-      alert(e.message);
+    if (email.value === 'superad@schoolbase.edu' && pathname === '/login') {
+      alert('Wrong User Details')
+      navigate('/')
+    } else if (email.value !== 'superad@schoolbase.edu' && pathname === '/superad') {
+      alert('Wrong User Details')
+      navigate('/')
+    } else {
+      try {
+        setLoading(true);
+        await signIn(email.value, password.value);
+        navigate(navRoute())
+        alert("Login successful!");  
+      } catch (e) {
+        setError(e.message)
+        alert(e.message);
+      }
     }
 
     setLoading(false);

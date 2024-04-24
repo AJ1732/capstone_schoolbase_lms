@@ -21,6 +21,9 @@ import ForgotPassword from "./anatomy/Pages/ForgotPassword"
 import Fee from "./anatomy/Pages/Fee/Fee"
 import ErrorBoundary from "./anatomy/Pages/Error/ErrorBoundary"
 import ErrorPage from "./anatomy/Pages/Error/ErrorPage"
+import PaystackCheckout from "./anatomy/Pages/Paystack/PaystackCheckout"
+import AdminLayout from "./anatomy/Layouts/Admin/AdminLayout"
+import Admin from "./anatomy/Pages/Admin/Admin"
 
 
 function App() {
@@ -34,6 +37,10 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
+              <Route path="/superad" element={<Login/>} />
+            </Route>
+            <Route path="/superadmin" element={<AdminLayout />} >
+              <Route index element={<Admin />} />
             </Route>
             <Route path="/software" element={
               <ProtectedRoute>
@@ -49,6 +56,7 @@ function App() {
               <Route path="/software/classroom" element={<Classroom />}/>
               <Route path="/software/attendance" element={<Attendance />}/>
               <Route path="/software/calendar" element={<Calendar />}/>
+              <Route path="/software/paystackcheckout" element={<PaystackCheckout />}/>
               <Route path="/software/cbt" element={<CBT />}/>
               <Route path="/software/communication" element={<Communication />}/>
               <Route path="/software/fee" element={<Fee />}/>

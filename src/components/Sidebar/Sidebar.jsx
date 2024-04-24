@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React, {} from 'react'
 import { useNavigate, NavLink } from 'react-router-dom'
 import { useValueContext } from '../../context/ContextProvider'
 import playLessons from "../../assets/play_lesson.png"
-import dashBoard from "../../assets/speed.png"
-import user from "../../assets/person (1).png"
+import dashBoard from "../../assets/dashboard.png"
+import user from "../../assets/person.png"
 import notes from "../../assets/news.png"
 import assignment1 from "../../assets/assignment_late.png"
 import assignment2 from "../../assets/assignment_turned_in.png"
@@ -12,6 +13,7 @@ import attendance from "../../assets/event_available.png"
 import calender from "../../assets/calendar_month.png"
 import logout from "../../assets/move_item.png"
 import { useAuthContext } from '../../context/AuthProvider'
+import PaystackCheckout from '../../anatomy/Pages/Paystack/PaystackCheckout'
 
 
 const SidebarItem = ({ children, to, text }) => {
@@ -102,6 +104,7 @@ const Sidebar = () => {
           <SidebarItem to={`/software/calendar`} text={`Calendar`}>
           <img src={calender} alt="calender_month" />
           </SidebarItem>
+
         </ul>
       </nav>
 

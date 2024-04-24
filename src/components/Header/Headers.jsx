@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useId, useState } from 'react'
 import { Link, NavLink, useNavigate } from "react-router-dom"
 import { useValueContext } from '../../context/ContextProvider';
 import { NavButton } from "../Button/Buttons";
 import { HeaderAvatar } from '../Avatar';
 import avatarImg from '../../assets/avatarImg.png'
-import box from "../../assets/box.svg"
-import alertIcon from "../../assets/notifications.svg"
 import logoFull from "../../assets/logo-full.svg"
 import logoShort from "../../assets/logo-short.png"
 import { useAuthContext } from '../../context/AuthProvider';
@@ -13,11 +11,11 @@ import { useAuthContext } from '../../context/AuthProvider';
 
 export const HomePageHeader = () => {
   const navigate = useNavigate();
+  const pathname = window.location.pathname;
 
   return (
-    <header className="full-width content-grid | w-full max-h-[110px] bg-primary-100">
+    <header className="full-width content-grid | w-full max-h-[110px] lg:px-4 bg-primary-100">
       <div className="full-width pr-4 flex items-center justify-between cursor-default">
-
         <figure 
           onClick={() => navigate("/")} 
           className="max-w-64 min-w-44 font-bold text-text-black text-xl"
@@ -25,12 +23,12 @@ export const HomePageHeader = () => {
           <img src={logoFull} alt="Logo" />
         </figure>
 
-        <nav className='flex gap-2 md:gap-7'>
-          <NavButton className={`min-w-[50px] !px-4 md:min-w-[150px]`} onClick={() => navigate("/login")}>LOGIN</NavButton>
-          <NavButton className={`min-w-[50px] !px-4 md:min-w-[150px]`} onClick={() => navigate("/signup")}>SIGNUP</NavButton>
-          {/* <Button type="button" variant="primary" onClick={() => navigate("/login")}>LOGIN</Button>
-          <Button type="button" variant="primary" onClick={() => navigate("/signup")}>SIGN UP</Button> */}
-        </nav>
+        { 
+          pathname !== '/login' && pathname !== '/superad' &&
+          <nav className='flex gap-2 md:gap-7'>
+            <NavButton className={`min-w-[50px] md:min-w-[150px] px-4`} onClick={() => navigate('/login')}>LOGIN</NavButton>
+          </nav>
+        }
       </div>
     </header>
   )
@@ -81,12 +79,6 @@ export const SoftwareHeader = () => {
 
         {/* RIGHT ICONS */}
         <div className='flex justify-center items-center gap-6'>
-          <figure className='size-6'>
-            <img src={box} alt="" />
-          </figure>
-          <figure className='size-6'>
-            <img src={alertIcon} alt="notifications" />
-          </figure>
           <div onClick={() => setProfileOpen(!profileOpen)}>
             <HeaderAvatar src={avatarImg} />
           </div>
@@ -120,6 +112,16 @@ export const SoftwareHeader = () => {
           </div>
         </div>
       </div>
+    </header>
+  )
+}
+
+export const AdminHeader = () => {
+  return (
+    <header id='header' className={`full-width col-span-2 | z-50 max-h-[6.9375rem] w-full bg-white | flex justify-start items-center | drop-shadow`}>
+      <figure>
+        <img src={logoFull} alt="Logo" />
+      </figure>
     </header>
   )
 }

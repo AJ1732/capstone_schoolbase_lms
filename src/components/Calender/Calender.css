@@ -23,8 +23,8 @@
 }
 
 .calender_date_tiles p:hover {
-  color: white;
-  background-color: #1A1A1A; 
+  color: white ;
+  background-color: #0B1A3A; 
   transition: all 150ms ease-in-out;
   cursor: pointer;
 }
