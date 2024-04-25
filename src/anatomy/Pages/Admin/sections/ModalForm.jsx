@@ -63,10 +63,19 @@ const ModalForm = ({ open, onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // const user = {};      
 
     try {
       setLoading(true);
       await createUser(newUser.email, newUser.password);
+      await fetch('https://capstone-schoolbase-server.onrender.com/api/users', {
+        method: 'POST',
+        body: JSON.stringify(newUser),
+        headers: {
+          'Content-type': 'application/json'
+        }
+      });
+
       console.log(newUser);
       onClose()
     } catch (e) {
