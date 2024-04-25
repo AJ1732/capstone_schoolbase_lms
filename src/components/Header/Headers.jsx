@@ -102,11 +102,7 @@ export const SoftwareHeader = () => {
 
             <ul className='flex flex-col gap-5'>
               <Link to={`/software/user`}>Profile</Link>
-              <Link to={`/software/courses`}>My Courses</Link>
               <Link to={`/software/fee`}>Fee Management</Link>
-              <Link to={`/software/settings`}>Settings</Link>
-              <Link to={`/software/accomplisments`}>Accomplishments</Link>
-              <Link to={`/software/help`}>Help Center</Link>
               <Link onClick={() => handleLogout()} >Log Out</Link>
             </ul>
           </div>

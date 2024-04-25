@@ -10,6 +10,7 @@ const SignUp = () => {
           <h3>SIGN UP HERE</h3>
         </div>
 
+        {/* PASSWORD HAVE SPECIAL CHARACTERS */}
         <SignUpForm />
       </div>
     </div>

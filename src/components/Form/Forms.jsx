@@ -3,26 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import { useAuthContext } from '../../context/AuthProvider';
 import { FormButton } from '../Button/Buttons';
+import { AuthLoader2 } from '../Loader/Loaders'
+import { validateSchoolEmail } from '../../utils/validate';
 import './Form.css'
-import { AuthLoader2 } from '../Loader/Loaders';
-
-export const validateEmail = (email) => {
-  return String(email)
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    );
-};
-
-export const validateSchoolEmail = (email) => {
-  if ( String(email)
-  .toLowerCase()
-  .match(/^[a-zA-Z0-9._%+-]+@schoolbase\.edu$/) ) {
-    return true
-  } else {
-    return false
-  }
-};
 
 // LOGIN FORM
 export const LogInForm = () => {

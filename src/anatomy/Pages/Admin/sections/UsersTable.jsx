@@ -1,8 +1,62 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import edit from '../../../../assets/edit.svg'
+import { useValueContext } from '../../../../context/ContextProvider';
+import { AuthLoader2 } from '../../../../components/Loader/Loaders';
+import { months } from '../../../../utils/calenderData'
+import dayjs from 'dayjs'
 
 const UsersTable = () => {
+  const [ loadTable, setLoadTable ] = useState(false);
+  const { state, dispatch } = useValueContext();
+  const users = state.users
+
+  // GET ALL USERS
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        setLoadTable(true)
+        const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users');
+        const data = await response.json();
+        if (response.ok) {
+          dispatch({ type: 'SET_USERS', payload: data })
+        } else if (!response.ok)  {
+          throw new Error('Request failed with status ' + response.status);
+        }
+        setLoadTable(false)
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+
+    fetchUsers();
+  }, [dispatch]);
+
+  // HANDLE FUNCTIONS
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users/' + id, {
+        method: "DELETE"
+      });
+      const data = await response.json();
+      if (response.ok) {
+        dispatch({ type: 'DELETE_USER', payload: data })
+      } else if (!response.ok)  {
+        throw new Error('Request failed with status ' + response.status);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+  const createdDate = (dateData) => {
+    const date = dayjs(dateData);
+    return (
+      <span>{date.year()}-{date.month() + 1}-{date.date()}</span>
+    )
+  }
+
   return (
-    <div className='w-full flex flex-col justify-start items-start gap-10 overflow-scroll'>
+    <div className='w-full flex flex-col justify-start items-start gap-10'>
       <fieldset className='self-end space-x-4'>
         <label htmlFor="sort" className='font-bold text-sm'>Sort by</label>
         <select name="sort" id="sort" className='text-sm p-2 border rounded-md'>
@@ -17,26 +71,47 @@ const UsersTable = () => {
         </div>
       </fieldset>
 
-      {/* TODO: USERS TABLE HERE */}
-      <div className=''>
-        <table class="table-auto min-w-[50rem] w-full overflow-auto">
-          <thead className='text-left'>
-            <tr>
-              <th>User</th>
-              <th>Role</th>
-              <th>Date Added</th>
-              <th>Status</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
+      <div className='w-full min-h-[55dvh] flex flex-col justify-start items-start overflow-scroll'>
+        {/* TODO: USERS TABLE HERE */}
+        <table className="table-auto  min-w-[50rem] w-full">
           <tbody>
-            <tr>
-              <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-              <td>Malcolm Lockyer</td>
-              <td>1961</td>
-              <td>1961</td>
-              <td>1961</td>
-            </tr>
+            {/* To load Table Contents */}
+            {
+              !loadTable? 
+              users.map(({ _id, firstname, surname, role, createdAt }) => (
+                <tr key={_id} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
+                  <td className='pl-3'><input type="checkbox" /></td>
+                  <td className='min-w-60'>
+                    <span className='capitalize'>{firstname} </span> 
+                    <span className='capitalize'>{surname}</span>
+                  </td>
+                  <td>{role}</td>
+                  <td>{createdDate(createdAt)}</td>
+                  <td>
+                    <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
+                  </td>
+                  <td onClick={() => handleDelete(_id)}>
+                    <figure>
+                      <img src={edit} />
+                    </figure>
+                  </td>
+                </tr>
+              )) 
+              : 
+              <tr className='text-2xl'>
+                <td className='flex justify-center items-center'>
+                  <AuthLoader2 parentClassName={`h-full w-[80%] bg-transparent`} divClassName={`size-2`} />
+                </td>
+              </tr>
+            }    
+
+            {/* To view if no data in the database */}
+            {
+              users.length < 0 && 
+              <tr className='text-2xl'>
+                <td>No Users</td>
+              </tr>
+            }    
           </tbody>
         </table>
       </div>

@@ -35,7 +35,7 @@ const SearchForm = () => {
             <div className='flex flex-col gap-2'>
               <label htmlFor="search" className='text-sm text-[#3A3A3A]'>Filter by date of registration</label>
               <input 
-                id='search' 
+                id='filter' 
                 type="text" 
                 className='py-1.5 px-2 border border-[#A8AABC] rounded-md'
               />
@@ -45,7 +45,7 @@ const SearchForm = () => {
             <div className='flex flex-col gap-2'>
               <label htmlFor="search" className='text-sm text-[#3A3A3A]'>Sort by role</label>
               <input 
-                id='search' 
+                id='sort' 
                 type="text" 
                 className='py-1.5 px-2 border border-[#A8AABC] rounded-md'
               />
