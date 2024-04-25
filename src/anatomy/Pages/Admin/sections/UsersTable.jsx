@@ -4,12 +4,18 @@ import { useValueContext } from '../../../../context/ContextProvider';
 import { AuthLoader2 } from '../../../../components/Loader/Loaders';
 import { months } from '../../../../utils/calenderData'
 import dayjs from 'dayjs'
+import UserEdit from './UserEdit';
 
 const UsersTable = () => {
-  const [ loadTable, setLoadTable ] = useState(false);
   const { state, dispatch } = useValueContext();
+  const [ loadTable, setLoadTable ] = useState(false);
+  // To Edit Form
+  const [ isOpen, setIsOpen ] = useState(false);
+  // const [ descrip, setDescrip ] = useState(desc);
+
   const users = state.users
 
+  console.log(state);
   // GET ALL USERS
   useEffect(() => {
     const fetchUsers = async () => {
@@ -79,7 +85,7 @@ const UsersTable = () => {
             {
               !loadTable? 
               users.map(({ _id, firstname, surname, role, createdAt }) => (
-                <tr key={_id} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
+                <tr key={_id} onClick={() => console.log('Edit')} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
                   <td className='pl-3'>
                     <input id={`check-${_id}`} type="checkbox" className='size-5 mt-1' />
                   </td>
@@ -98,6 +104,7 @@ const UsersTable = () => {
                     <figure>
                       <img src={edit} />
                     </figure>
+                    <UserEdit open={isOpen} onClose={() => setIsOpen(false)} id={_id}  />
                   </td>
                 </tr>
               )) 
