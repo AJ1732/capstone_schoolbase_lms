@@ -39,7 +39,11 @@ function App() {
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/superad" element={<Login/>} />
             </Route>
-            <Route path="/superadmin" element={<AdminLayout />} >
+            <Route path="/superadmin" element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }>
               <Route index element={<Admin />} />
             </Route>
             <Route path="/software" element={
