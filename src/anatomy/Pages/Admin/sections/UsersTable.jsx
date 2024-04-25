@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import edit from '../../../../assets/edit.svg'
+import { useValueContext } from '../../../../context/ContextProvider';
+import { AuthLoader2 } from '../../../../components/Loader/Loaders';
 
 const UsersTable = () => {
-  const [ users, setUsers ] = useState([]);
+  const [ loadTable, setLoadTable ] = useState(false);
+  const { state, dispatch } = useValueContext();
+  const users = state.users
 
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
+        setLoadTable(true)
         const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users');
         const data = await response.json();
-        
         if (response.ok) {
-          setUsers(data)
-          // dispatch({ type: 'ALL_WORKOUTS', payload: data })
+          dispatch({ type: 'SET_USERS', payload: data })
         } else if (!response.ok)  {
           throw new Error('Request failed with status ' + response.status);
         }
+        setLoadTable(false)
       } catch (error) {
         console.error('Error:', error);
       }
@@ -44,8 +48,9 @@ const UsersTable = () => {
         {/* TODO: USERS TABLE HERE */}
         <table className="table-auto  min-w-[50rem] w-full">
           <tbody>
+            {/* To load Table Contents */}
             {
-              users.length > 0? 
+              !loadTable? 
               users.map(({ _id, firstname, surname, role, createdAt }) => (
                 <tr key={_id} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
                   <td className='pl-3'><input type="checkbox" /></td>
@@ -64,12 +69,22 @@ const UsersTable = () => {
                     </figure>
                   </td>
                 </tr>
-              ))
+              )) 
               : 
+              <tr className='text-2xl'>
+                <td className='flex justify-center items-center'>
+                  <AuthLoader2 parentClassName={`h-full w-[80%] bg-transparent`} divClassName={`size-2`} />
+                </td>
+              </tr>
+            }    
+
+            {/* To view if no data in the database */}
+            {
+              users.length < 0 && 
               <tr className='text-2xl'>
                 <td>No Users</td>
               </tr>
-            }        
+            }    
           </tbody>
         </table>
       </div>
