@@ -66,7 +66,7 @@ const UsersTable = () => {
 
       <fieldset>
         <div className='bg-[#F8F8F8] py-1 px-2 | flex justify-center items-center gap-4 | rounded-md'>
-          <input id='selectAll' type="checkbox" className='size-4 border-4' />
+          <input id='selectAll' type="checkbox" className='size-5 border-4' />
           <label htmlFor="selectAll" className='font-bold text-[#454655]'>SELECT ALL</label>
         </div>
       </fieldset>
@@ -80,10 +80,14 @@ const UsersTable = () => {
               !loadTable? 
               users.map(({ _id, firstname, surname, role, createdAt }) => (
                 <tr key={_id} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
-                  <td className='pl-3'><input type="checkbox" /></td>
+                  <td className='pl-3'>
+                    <input id={`check-${_id}`} type="checkbox" className='size-5 mt-1' />
+                  </td>
                   <td className='min-w-60'>
-                    <span className='capitalize'>{firstname} </span> 
-                    <span className='capitalize'>{surname}</span>
+                    <label htmlFor={`check-${_id}`}>
+                      <span className='capitalize'>{firstname} </span> 
+                      <span className='capitalize'>{surname}</span>
+                    </label>
                   </td>
                   <td>{role}</td>
                   <td>{createdDate(createdAt)}</td>
