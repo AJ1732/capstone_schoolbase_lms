@@ -276,11 +276,11 @@ const ModalForm = ({ open, onClose }) => {
 
             {/* ROLE CHECKBOX */}
             <div className='col-span-2 space-y-3'>
-              <label htmlFor="roles">Roles</label>
+              <h3 htmlFor="roles" className='font-medium text-xl text-[#595959]'>Roles</h3>
               <div>
                 {
                   roles.map(({ value, label }) => (
-                    <div key={value}>
+                    <div key={value} className=''>
                       <input 
                         id={value}
                         type="radio" 
@@ -291,7 +291,7 @@ const ModalForm = ({ open, onClose }) => {
                         className='mr-2'
                         onChange={handleChange}
                       /> 
-                      <label htmlFor={value}>{label}</label>
+                      <label htmlFor={value} className='text-lg text-[#595959]'>{label}</label>
                       <br />
                     </div>
                   ))
