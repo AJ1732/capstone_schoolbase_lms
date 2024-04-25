@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import edit from '../../../../assets/edit.svg'
 import { useValueContext } from '../../../../context/ContextProvider';
 import { AuthLoader2 } from '../../../../components/Loader/Loaders';
+import { months } from '../../../../utils/calenderData'
+import dayjs from 'dayjs'
 
 const UsersTable = () => {
   const [ loadTable, setLoadTable ] = useState(false);
   const { state, dispatch } = useValueContext();
   const users = state.users
 
+  // GET ALL USERS
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -45,6 +48,13 @@ const UsersTable = () => {
     }
   }
 
+  const createdDate = (dateData) => {
+    const date = dayjs(dateData);
+    return (
+      <span>{date.year()}-{date.month() + 1}-{date.date()}</span>
+    )
+  }
+
   return (
     <div className='w-full flex flex-col justify-start items-start gap-10'>
       <fieldset className='self-end space-x-4'>
@@ -76,7 +86,7 @@ const UsersTable = () => {
                     <span className='capitalize'>{surname}</span>
                   </td>
                   <td>{role}</td>
-                  <td>2024-04-4</td>
+                  <td>{createdDate(createdAt)}</td>
                   <td>
                     <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
                   </td>
