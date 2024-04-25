@@ -32,6 +32,7 @@ function App() {
       <ErrorBoundary fallback={<ErrorPage />}>
         <Router>
           <Routes>
+            {/* HOME ROUTE */}
             <Route path="/" element={<HomeLayout />}>
               <Route index element={<Home />} />
               <Route path="/signup" element={<SignUp />} />
@@ -39,6 +40,7 @@ function App() {
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/superad" element={<Login/>} />
             </Route>
+            {/* ADMIN ROUTE */}
             <Route path="/superadmin" element={
               <ProtectedRoute>
                 <AdminLayout />
@@ -46,6 +48,7 @@ function App() {
             }>
               <Route index element={<Admin />} />
             </Route>
+            {/* SOFTWARE ROUTE */}
             <Route path="/software" element={
               <ProtectedRoute>
                 <SoftwareLayout />
