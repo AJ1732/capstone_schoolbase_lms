@@ -5,17 +5,17 @@ import { AuthLoader2 } from '../../../../components/Loader/Loaders';
 import { months } from '../../../../utils/calenderData'
 import dayjs from 'dayjs'
 import UserEdit from './UserEdit';
+import { DataSnapshot } from 'firebase/database';
 
 const UsersTable = () => {
   const { state, dispatch } = useValueContext();
   const [ loadTable, setLoadTable ] = useState(false);
   // To Edit Form
   const [ isOpen, setIsOpen ] = useState(false);
-  // const [ descrip, setDescrip ] = useState(desc);
+  const [ singleUser, setSingleUser ] = useState('');
 
   const users = state.users
 
-  console.log(state);
   // GET ALL USERS
   useEffect(() => {
     const fetchUsers = async () => {
@@ -54,6 +54,26 @@ const UsersTable = () => {
     }
   }
 
+  const fetchSingleUser = async (id) => {
+    try {
+      // setLoadTable(true)
+      const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users/' + id);
+      const data = await response.json();
+      console.log(data)
+      setSingleUser(data)
+      // if (response.ok) {
+      //   dispatch({ type: 'SET_USERS', payload: data })
+      // } else if (!response.ok)  {
+      //   throw new Error('Request failed with status ' + response.status);
+      // }
+      // setLoadTable(false)
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
+
+  // fetchSingleUser("662a8662adbe8bc252d7f3d4")
+
   const createdDate = (dateData) => {
     const date = dayjs(dateData);
     return (
@@ -85,7 +105,7 @@ const UsersTable = () => {
             {
               !loadTable? 
               users.map(({ _id, firstname, surname, role, createdAt }) => (
-                <tr key={_id} onClick={() => console.log('Edit')} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
+                <tr key={_id} onDoubleClick={() => setIsOpen(true)} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
                   <td className='pl-3'>
                     <input id={`check-${_id}`} type="checkbox" className='size-5 mt-1' />
                   </td>
