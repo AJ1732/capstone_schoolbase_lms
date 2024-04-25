@@ -3,7 +3,7 @@ import edit from '../../../../assets/edit.svg'
 
 const UsersTable = () => {
   const [ users, setUsers ] = useState([]);
-  
+
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
@@ -46,11 +46,14 @@ const UsersTable = () => {
           <tbody>
             {
               users.length > 0? 
-              users.map(({ _id, firstname, surname, createdAt }) => (
+              users.map(({ _id, firstname, surname, role, createdAt }) => (
                 <tr key={_id} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
                   <td className='pl-3'><input type="checkbox" /></td>
-                  <td className='min-w-60'>{firstname} {surname}</td>
-                  <td>Student</td>
+                  <td className='min-w-60'>
+                    <span className='capitalize'>{firstname} </span> 
+                    <span className='capitalize'>{surname}</span>
+                  </td>
+                  <td>{role}</td>
                   <td>2024-04-4</td>
                   <td>
                     <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
