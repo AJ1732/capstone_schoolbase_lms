@@ -9,7 +9,7 @@ const UsersTable = () => {
   const users = state.users
 
   useEffect(() => {
-    const fetchWorkouts = async () => {
+    const fetchUsers = async () => {
       try {
         setLoadTable(true)
         const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users');
@@ -25,8 +25,25 @@ const UsersTable = () => {
       }
     }
 
-    fetchWorkouts();
-  }, [])
+    fetchUsers();
+  }, [dispatch]);
+
+  // HANDLE FUNCTIONS
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users/' + id, {
+        method: "DELETE"
+      });
+      const data = await response.json();
+      if (response.ok) {
+        dispatch({ type: 'DELETE_USER', payload: data })
+      } else if (!response.ok)  {
+        throw new Error('Request failed with status ' + response.status);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 
   return (
     <div className='w-full flex flex-col justify-start items-start gap-10'>
@@ -63,7 +80,7 @@ const UsersTable = () => {
                   <td>
                     <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
                   </td>
-                  <td>
+                  <td onClick={() => handleDelete(_id)}>
                     <figure>
                       <img src={edit} />
                     </figure>
