@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import edit from '../../../../assets/edit.svg'
 
 const UsersTable = () => {
+  const [ users, setUsers ] = useState([]);
+  
+  useEffect(() => {
+    const fetchWorkouts = async () => {
+      try {
+        const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users');
+        const data = await response.json();
+        
+        if (response.ok) {
+          setUsers(data)
+          // dispatch({ type: 'ALL_WORKOUTS', payload: data })
+        } else if (!response.ok)  {
+          throw new Error('Request failed with status ' + response.status);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+
+    fetchWorkouts();
+  }, [])
+
   return (
     <div className='w-full flex flex-col justify-start items-start gap-10'>
       <fieldset className='self-end space-x-4'>
@@ -20,36 +42,31 @@ const UsersTable = () => {
 
       <div className='w-full min-h-[55dvh] flex flex-col justify-start items-start overflow-scroll'>
         {/* TODO: USERS TABLE HERE */}
-        <table class="table-auto  min-w-[50rem] w-full">
+        <table className="table-auto  min-w-[50rem] w-full">
           <tbody>
-            <tr className='bg-[#F8F8F8] h-11 text-sm font-bold'>
-              <td className='pl-3'><input type="checkbox" /></td>
-              <td className='min-w-60'>Sarah Daniels</td>
-              <td>Student</td>
-              <td>2024-04-4</td>
-              <td>
-                <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
-              </td>
-              <td>
-                <figure>
-                  <img src={edit} />
-                </figure>
-              </td>
-            </tr>
-            <tr className='bg-[#F8F8F8] h-11 text-sm font-bold'>
-              <td className='pl-3'><input type="checkbox" /></td>
-              <td className='min-w-60'>Sarah Daniels</td>
-              <td>Student</td>
-              <td>2024-04-4</td>
-              <td>
-                <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
-              </td>
-              <td>
-                <figure>
-                  <img src={edit} />
-                </figure>
-              </td>
-            </tr>
+            {
+              users.length > 0? 
+              users.map(({ _id, firstname, surname, createdAt }) => (
+                <tr key={_id} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
+                  <td className='pl-3'><input type="checkbox" /></td>
+                  <td className='min-w-60'>{firstname} {surname}</td>
+                  <td>Student</td>
+                  <td>2024-04-4</td>
+                  <td>
+                    <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
+                  </td>
+                  <td>
+                    <figure>
+                      <img src={edit} />
+                    </figure>
+                  </td>
+                </tr>
+              ))
+              : 
+              <tr className='text-2xl'>
+                <td>No Users</td>
+              </tr>
+            }        
           </tbody>
         </table>
       </div>
