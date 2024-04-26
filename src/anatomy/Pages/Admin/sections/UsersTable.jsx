@@ -4,12 +4,13 @@ import { useValueContext } from '../../../../context/ContextProvider';
 import { AuthLoader2 } from '../../../../components/Loader/Loaders';
 import dayjs from 'dayjs'
 import UserEdit from './UserEdit';
+import UserDelete from './UserDelete';
 
 const UsersTable = () => {
   const { state, dispatch } = useValueContext();
   const [ loadTable, setLoadTable ] = useState(false);
-  // To Edit Form
-  const [ isOpen, setIsOpen ] = useState(false);
+  const [ openEdit, setOpenEdit ] = useState(false);
+  const [ openDelete, setOpenDelete ] = useState(false);
   const [ singleUser, setSingleUser ] = useState('');
 
   const users = state.users
@@ -104,11 +105,11 @@ const UsersTable = () => {
             {
               !loadTable? 
               users.map(({ _id, firstname, surname, role, createdAt }) => (
-                <tr key={_id} onDoubleClick={() => setIsOpen(true)} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
+                <tr key={_id} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
                   <td className='pl-3'>
                     <input id={`check-${_id}`} type="checkbox" className='size-5 mt-1' />
                   </td>
-                  <td className='min-w-60'>
+                  <td className='min-w-60' onDoubleClick={() => setOpenDelete(true)}>
                     <label htmlFor={`check-${_id}`}>
                       <span className='capitalize'>{firstname} </span> 
                       <span className='capitalize'>{surname}</span>
@@ -119,12 +120,13 @@ const UsersTable = () => {
                   <td>
                     <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
                   </td>
-                  <td onClick={() => handleDelete(_id)}>
-                    <figure>
+                  <td>
+                    <figure onClick={() => setOpenEdit(true)}>
                       <img src={edit} />
                     </figure>
-                    <UserEdit open={isOpen} onClose={() => setIsOpen(false)} id={_id}  />
                   </td>
+                  <UserEdit open={openEdit} onClose={() => setOpenEdit(false)} id={_id} user={singleUser}  />
+                  <UserDelete open={openDelete} onClose={() => setOpenDelete(false)} id={_id} user={singleUser}  />
                 </tr>
               )) 
               : 

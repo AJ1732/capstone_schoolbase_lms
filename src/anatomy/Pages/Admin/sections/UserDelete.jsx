@@ -1,7 +1,7 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
 
-const UserEdit = ({ open, onClose, id, userData }) => {
+const UserDelete = ({ open, onClose, id, user }) => {
   if (!open) return null;
   
   return createPortal(
@@ -9,11 +9,11 @@ const UserEdit = ({ open, onClose, id, userData }) => {
       <div className='min-w-80 w-[75svw] bg-greyshade p-5 '>
         {/* CLOSE MODAL BUTTON */}
         <div onClick={onClose} className='absolute top-5 right-5 | bg-black text-white px-10 rounded'>X</div>
-        UserEdit {id}
+        UserDelete {id}
       </div> 
     </div>,
     document.getElementById('portal')
   )
 }
 
-export default UserEdit
+export default UserDelete
