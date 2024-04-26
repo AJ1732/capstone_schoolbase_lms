@@ -6,12 +6,16 @@ import dayjs from 'dayjs'
 import UserEdit from './UserEdit';
 
 const UsersTable = () => {
-  const { state, dispatch, del } = useValueContext();
+  const { state, dispatch } = useValueContext();
 
   const [ loadTable, setLoadTable ] = useState(false);
   const [ openEdit, setOpenEdit ] = useState(false);
+  const [ isCheckAll, setIsCheckAll ] = useState(false);
+  const [ isCheck, setIsCheck ] = useState([]);
+  const [list, setList] = useState([]);
 
   const users = state.users
+  console.log(users);
 
   // GET ALL USERS
   useEffect(() => {
@@ -34,6 +38,9 @@ const UsersTable = () => {
     fetchUsers();
   }, [dispatch]);
 
+  useEffect(() => {
+    setList(users);
+  }, [list]);
   // HANDLE FUNCTIONS
   const handleDelete = async (id) => {
     try {
@@ -50,6 +57,22 @@ const UsersTable = () => {
       console.error('Error:', error);
     }
   }
+
+  const handleCheckAll = e => {
+    setIsCheckAll(!isCheckAll);
+    setIsCheck(list.map(li => li._id));
+    if (isCheckAll) {
+      setIsCheck([]);
+    }
+  };
+
+  const handleCheck = (e) => {
+    const { id, checked } = e.target;
+    setIsCheck([...isCheck, id]);
+    if (!checked) {
+      setIsCheck(isCheck.filter(item => item !== id));
+    }
+  }; 
 
   const createdDate = (dateData) => {
     const date = dayjs(dateData);
@@ -69,7 +92,13 @@ const UsersTable = () => {
 
       <fieldset>
         <div className='bg-[#F8F8F8] py-1 px-2 | flex justify-center items-center gap-4 | rounded-md'>
-          <input id='selectAll' type="checkbox" className='size-5 border-4' />
+          <input 
+            id='selectAll' 
+            type="checkbox" 
+            className='size-5 border-4' 
+            onChange={handleCheckAll}
+            checked={isCheckAll}
+          />
           <label htmlFor="selectAll" className='font-bold text-[#454655]'>SELECT ALL</label>
         </div>
       </fieldset>
@@ -84,7 +113,13 @@ const UsersTable = () => {
               users.map(({ _id, firstname, surname, role, createdAt }) => (
                 <tr key={_id} className='bg-[#F8F8F8] h-11 text-sm font-bold'>
                   <td className='pl-3'>
-                    <input id={`check-${_id}`} type="checkbox" className='size-5 mt-1' />
+                    <input 
+                      id={`check-${_id}`} 
+                      type="checkbox" 
+                      className='size-5 mt-1' 
+                      onChange={handleCheck}
+                      checked={isCheck.includes(`check-${_id}`)}
+                    />
                   </td>
                   <td className='min-w-60' onDoubleClick={() => setOpenEdit(true)}>
                     <label htmlFor={`check-${_id}`}>
