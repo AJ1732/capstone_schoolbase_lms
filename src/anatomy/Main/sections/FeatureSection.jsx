@@ -26,7 +26,7 @@ const FeatureSection = () => {
               <FeatureCard
                 key={feature.id}
                 heading={feature.heading} 
-                img={feature.img}
+              
               />
             ))}
           </div>

@@ -13,35 +13,39 @@
       "id": 2,
       "heading": "Attendance Management",
       "title": "Student and Staff Attendance Tracking",
-      "content": "Easily track daily student attendance, generate reports, and notify parents of absenteeism. Record and manage staff attendance to ensure organizational efficiency."
+      "content": "Easily track daily student attendance, generate reports, and notify parents of absenteeism. Record and manage staff attendance to ensure organizational efficiency.",
+      "img": "https://i.imghippo.com/files/jH8ED1714160395.png"
     },
 
     {
       "id": 3,
       "heading": "Communication and Collaboration",
       "title": "Parent-Teacher Communication and Announcements",
-      "content": "Facilitate seamless communication between parents and teachers through messaging and appointment scheduling. Share important school announcements, news, and events. Create online forums for engaging student and teacher discussions to foster collaboration and knowledge sharing."
+      "content": "Facilitate seamless communication between parents and teachers through messaging and appointment scheduling. Share important school announcements, news, and events. Create online forums for engaging student and teacher discussions to foster collaboration and knowledge sharing.",
+      "img": "https://i.imghippo.com/files/jH8ED1714160395.png"
     },
     {
       "id": 4,
       "heading": "Academic Management",
       "title": "Efficient Curriculum and Grade Management",
-      "content": "Define and organize the school's curriculum, courses, subjects, and class schedules. Record grades, calculate GPAs, and generate transcripts seamlessly within the system. Manage exams, assignments, and quizzes efficiently."
+      "content": "Define and organize the school's curriculum, courses, subjects, and class schedules. Record grades, calculate GPAs, and generate transcripts seamlessly within the system. Manage exams, assignments, and quizzes efficiently.",
+      "img": "https://i.imghippo.com/files/jH8ED1714160395.png"
     },
     {
       "id": 5,
-      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
       "heading": "Examination and Assessment",
       "title": "Seamless Exam Scheduling and Assessment",
-      "content": "Create exam timetables, assign venues, and manage the examination process smoothly. Provide various assessment methods, including online quizzes and assignments, to gauge student understanding. Analyze and distribute exam results to students and parents."
+      "content": "Create exam timetables, assign venues, and manage the examination process smoothly. Provide various assessment methods, including online quizzes and assignments, to gauge student understanding. Analyze and distribute exam results to students and parents.",
+      "img": "https://i.imghippo.com/files/jH8ED1714160395.png"
     },
     {
       "id": 6,
-      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
       "heading": "Security and Access Control",
       "title": "Parent-Teacher Communication and Announcements",
-      "content": "Facilitate seamless communication between parents and teachers through messaging and appointment scheduling. Share important school announcements, news, and events. Create online forums for engaging student and teacher discussions to foster collaboration and knowledge sharing."
+      "content": "Facilitate seamless communication between parents and teachers through messaging and appointment scheduling. Share important school announcements, news, and events. Create online forums for engaging student and teacher discussions to foster collaboration and knowledge sharing.",
+      "img": "https://i.imghippo.com/files/jH8ED1714160395.png"
     }
+
   ],
   "testimonials": [
     {
