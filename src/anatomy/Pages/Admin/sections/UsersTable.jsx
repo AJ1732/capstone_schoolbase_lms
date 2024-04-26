@@ -53,25 +53,27 @@ const UsersTable = () => {
     }
   }
 
-  const fetchSingleUser = async (id) => {
-    try {
-      // setLoadTable(true)
-      const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users/' + id);
-      const data = await response.json();
-      console.log(data)
-      setSingleUser(data)
-      // if (response.ok) {
-      //   dispatch({ type: 'SET_USERS', payload: data })
-      // } else if (!response.ok)  {
-      //   throw new Error('Request failed with status ' + response.status);
-      // }
-      // setLoadTable(false)
-    } catch (error) {
-      console.error('Error:', error);
+  useEffect(() => {
+    const fetchSingleUser = async (id) => {
+      try {
+        // setLoadTable(true)
+        const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users/' + id);
+        const data = await response.json();
+        console.log(data)
+        setSingleUser(data)
+        // if (response.ok) {
+        //   dispatch({ type: 'SET_USERS', payload: data })
+        // } else if (!response.ok)  {
+        //   throw new Error('Request failed with status ' + response.status);
+        // }
+        // setLoadTable(false)
+      } catch (error) {
+        console.error('Error:', error);
+      }
     }
-  }
-
-  // fetchSingleUser("662a8662adbe8bc252d7f3d4")
+  
+    // fetchSingleUser("662a8662adbe8bc252d7f3d4")
+  }, [])
 
   const createdDate = (dateData) => {
     const date = dayjs(dateData);
