@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import edit from '../../../../assets/edit.svg'
+import trash from '../../../../assets/trash.svg'
 import { useValueContext } from '../../../../context/ContextProvider';
 import { AuthLoader2 } from '../../../../components/Loader/Loaders';
 import dayjs from 'dayjs'
@@ -99,8 +99,7 @@ const UsersTable = () => {
                   </td>
                   <td onClick={() => handleDelete(_id)}>
                     <figure className='cursor-pointer'>
-                      {/* <img src={edit} /> */}
-                      DEL
+                      <img src={trash} />
                     </figure>
                   </td>
                   <UserEdit open={openEdit} onClose={() => setOpenEdit(false)} id={_id} />
