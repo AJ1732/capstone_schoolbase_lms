@@ -4,14 +4,12 @@ import { useValueContext } from '../../../../context/ContextProvider';
 import { AuthLoader2 } from '../../../../components/Loader/Loaders';
 import dayjs from 'dayjs'
 import UserEdit from './UserEdit';
-import UserDelete from './UserDelete';
 
 const UsersTable = () => {
-  const { state, dispatch } = useValueContext();
+  const { state, dispatch, del } = useValueContext();
+
   const [ loadTable, setLoadTable ] = useState(false);
   const [ openEdit, setOpenEdit ] = useState(false);
-  const [ openDelete, setOpenDelete ] = useState(false);
-  const [ singleUser, setSingleUser ] = useState('');
 
   const users = state.users
 
@@ -53,28 +51,6 @@ const UsersTable = () => {
     }
   }
 
-  useEffect(() => {
-    const fetchSingleUser = async (id) => {
-      try {
-        // setLoadTable(true)
-        const response = await fetch('https://capstone-schoolbase-server.onrender.com/api/users/' + id);
-        const data = await response.json();
-        console.log(data)
-        setSingleUser(data)
-        // if (response.ok) {
-        //   dispatch({ type: 'SET_USERS', payload: data })
-        // } else if (!response.ok)  {
-        //   throw new Error('Request failed with status ' + response.status);
-        // }
-        // setLoadTable(false)
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
-  
-    // fetchSingleUser("662a8662adbe8bc252d7f3d4")
-  }, [])
-
   const createdDate = (dateData) => {
     const date = dayjs(dateData);
     return (
@@ -82,7 +58,6 @@ const UsersTable = () => {
     )
   }
 
-  console.log(users.length);
   return (
     <div className='w-full flex flex-col justify-start items-start gap-10'>
       <fieldset className='self-end space-x-4'>
@@ -111,7 +86,7 @@ const UsersTable = () => {
                   <td className='pl-3'>
                     <input id={`check-${_id}`} type="checkbox" className='size-5 mt-1' />
                   </td>
-                  <td className='min-w-60' onDoubleClick={() => setOpenDelete(true)}>
+                  <td className='min-w-60' onDoubleClick={() => setOpenEdit(true)}>
                     <label htmlFor={`check-${_id}`}>
                       <span className='capitalize'>{firstname} </span> 
                       <span className='capitalize'>{surname}</span>
@@ -122,13 +97,13 @@ const UsersTable = () => {
                   <td>
                     <button className='bg-primary-10 text-primary-900 font-bold | px-2 py-1 rounded'>active</button>
                   </td>
-                  <td>
-                    <figure onClick={() => setOpenEdit(true)}>
-                      <img src={edit} />
+                  <td onClick={() => handleDelete(_id)}>
+                    <figure className='cursor-pointer'>
+                      {/* <img src={edit} /> */}
+                      DEL
                     </figure>
                   </td>
-                  <UserEdit open={openEdit} onClose={() => setOpenEdit(false)} id={_id} user={singleUser}  />
-                  <UserDelete open={openDelete} onClose={() => setOpenDelete(false)} id={_id} user={singleUser}  />
+                  <UserEdit open={openEdit} onClose={() => setOpenEdit(false)} id={_id} />
                 </tr>
               )) 
               : 

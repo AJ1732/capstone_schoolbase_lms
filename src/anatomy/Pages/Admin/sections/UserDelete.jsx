@@ -1,7 +1,10 @@
 import React from 'react'
 import { createPortal } from 'react-dom'
+import { useValueContext } from '../../../../context/ContextProvider';
 
 const UserDelete = ({ open, onClose, id, user }) => {
+  const { setDel } = useValueContext();
+
   if (!open) return null;
   
   return createPortal(
@@ -10,6 +13,8 @@ const UserDelete = ({ open, onClose, id, user }) => {
         {/* CLOSE MODAL BUTTON */}
         <div onClick={onClose} className='absolute top-5 right-5 | bg-black text-white px-10 rounded'>X</div>
         UserDelete {id}
+
+        <button>Delele?</button>
       </div> 
     </div>,
     document.getElementById('portal')

@@ -4,13 +4,16 @@ export const Context = createContext(undefined);
 
 export const ContextProvider = ({ children }) => {
   const [ expand, setExpand ] = useState(false);
+  const [ singleUser, setSingleUser ] = useState('');
   const [ state, dispatch ] = useReducer(userReducer, { users: [] })
 
   const value = {
     expand,
     setExpand,
     state,
-    dispatch
+    dispatch,
+    singleUser,
+    setSingleUser,
   }
 
   return (
