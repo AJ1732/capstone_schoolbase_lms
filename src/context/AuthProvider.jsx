@@ -17,9 +17,11 @@ export const AuthProvider = ({ children }) => {
   // User State
   const [user, setUser] = useState('');
   const [loading, setLoading] = useState(true);
-
+  console.log(user)
   // Auth Functions
   const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
+
+  const deleteUser = () => deleteUser(auth, user)
 
   const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
   

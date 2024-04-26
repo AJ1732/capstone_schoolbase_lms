@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react'
 import edit from '../../../../assets/edit.svg'
 import { useValueContext } from '../../../../context/ContextProvider';
 import { AuthLoader2 } from '../../../../components/Loader/Loaders';
-import { months } from '../../../../utils/calenderData'
 import dayjs from 'dayjs'
 import UserEdit from './UserEdit';
-import { DataSnapshot } from 'firebase/database';
 
 const UsersTable = () => {
   const { state, dispatch } = useValueContext();
@@ -81,6 +79,7 @@ const UsersTable = () => {
     )
   }
 
+  console.log(users.length);
   return (
     <div className='w-full flex flex-col justify-start items-start gap-10'>
       <fieldset className='self-end space-x-4'>
@@ -138,7 +137,7 @@ const UsersTable = () => {
 
             {/* To view if no data in the database */}
             {
-              users.length < 0 && 
+              users.length < 1 && 
               <tr className='text-2xl'>
                 <td>No Users</td>
               </tr>
