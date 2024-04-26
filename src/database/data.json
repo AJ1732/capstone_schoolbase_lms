@@ -2,28 +2,28 @@
   "features": [
     {
       "id": 1,
-      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
       "heading": "Student Information System (SIS)",
       "title": "Comprehensive Student Profiles and Admissions",
-      "content": "Manage student profiles with personal details, academic records, attendance, and medical history. Streamline admissions with features for application submission, document verification, and enrollment tracking."
+      "content": "Manage student profiles with personal details, academic records, attendance, and medical history. Streamline admissions with features for application submission, document verification, and enrollment tracking.",
+      "img": "https://i.imghippo.com/files/jH8ED1714160395.png"
     },
+
+
     {
       "id": 2,
-      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
       "heading": "Attendance Management",
       "title": "Student and Staff Attendance Tracking",
       "content": "Easily track daily student attendance, generate reports, and notify parents of absenteeism. Record and manage staff attendance to ensure organizational efficiency."
     },
+
     {
       "id": 3,
-      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
       "heading": "Communication and Collaboration",
       "title": "Parent-Teacher Communication and Announcements",
       "content": "Facilitate seamless communication between parents and teachers through messaging and appointment scheduling. Share important school announcements, news, and events. Create online forums for engaging student and teacher discussions to foster collaboration and knowledge sharing."
     },
     {
       "id": 4,
-      "img": "https://i.imghippo.com/files/JPsu91711215583.png",
       "heading": "Academic Management",
       "title": "Efficient Curriculum and Grade Management",
       "content": "Define and organize the school's curriculum, courses, subjects, and class schedules. Record grades, calculate GPAs, and generate transcripts seamlessly within the system. Manage exams, assignments, and quizzes efficiently."
@@ -46,7 +46,7 @@
   "testimonials": [
     {
       "id": 1,
-      "img": "https://i.imghippo.com/files/e84GL1711215750.png",
+      "img": "https://i.imghippo.com/files/PGpmf1714149666.png",
       "author": {
         "name": "Mrs. Adeyemi Olalekan",
         "title": "School Principal"
@@ -55,7 +55,7 @@
     },
     {
       "id": 2,
-      "img": "https://i.imghippo.com/files/eBNut1711236265.png",
+      "img": "https://i.imghippo.com/files/bHL9t1714149525.png",
       "author": {
         "name": "Miss Sarah Daniels",
         "title": "High School Student"
@@ -64,7 +64,7 @@
     },
     {
       "id": 3,
-      "img": "https://i.imghippo.com/files/4n3VN1711236377.png",
+      "img": "https://i.imghippo.com/files/VM4hm1714149480.png",
       "author": {
         "name": "Mr. Ibrahim Haruna",
         "title": "Parent"
@@ -93,27 +93,31 @@
   "chooses": [
     {
       "id": 1,
-      "img": "https://i.imghippo.com/files/wTp5k1711236572.png",
+      "img": "https://i.imghippo.com/files/C4aGC1714114675.png",
       "heading": "Cutting-Edge Technology",
       "content": "We are committed to staying at the forefront of technological advancements. Our team of experts is constantly exploring new ways to enhance the learning experience, ensuring our platform evolves with the needs of modern education."
     },
     {
       "id": 2,
-      "img": "https://i.imghippo.com/files/wTp5k1711236572.png",
+      "img": "https://i.imghippo.com/files/lJswu1714114598.png",
       "heading": "Data Security and Privacy",
       "content": "We understand the sensitivity of educational data. Our platform employs state-of-the-art security measures to safeguard your information, giving you peace of mind."
     },
+    
     {
       "id": 3,
-      "img": "https://i.imghippo.com/files/DlZkf1711236651.png",
-      "heading": "Customer-Centric Approach",
-      "content": " Your success is our success. We are dedicated to providing exceptional customer service, ensuring that you receive the support you need every step of the way."
-    },
-    {
-      "id": 4,
-      "img": "https://i.imghippo.com/files/DlZkf1711236651.png",
+      "img": "https://i.imghippo.com/files/R5lJx1714115040.png",
       "heading": "Tailored Solutions",
       "content": "We understand that every educational institution is unique. That’s why we offer customizable solutions to meet specific needs. Whether you're a small primary school or a sprawling university, our platform adapts to your requirements."
+    },
+
+    {
+      "id": 4,
+      "img": "https://i.imghippo.com/files/nGCds1714115528.png",
+      "heading": "Customer-Centric Approach",
+      "content": " Your success is our success. We are dedicated to providing exceptional customer service, ensuring that you receive the support you need every step of the way."
     }
+
+    
   ]
 }

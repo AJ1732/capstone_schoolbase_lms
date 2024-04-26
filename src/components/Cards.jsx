@@ -1,14 +1,15 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react'
 import data from '../database/data.json'
 import testimonial_icon from '../assets/testimonial_icon.png'
 // import image from '../assets/feature.png'
 
-export const FeatureCard = ({ img, heading, title, content, className}) => {
+export const FeatureCard = ({heading, title, content, className}) => {
+  const [dropDownopen, setDropDownopen] = useState(false)
+  
   return (
     <article className={`max-w-[610px] w-full text-left flex justify-start items-center gap-7 ${className}`}>
-      <figure className='min-w-[300px] h-[225px] bg-dark-gray'>
-        <img src={img} alt="feature image" />
-      </figure>
+      
       <div className='flex flex-col justify-start items-start gap-3'>
         <h3 className='font-bold'>{heading}</h3>
         <p className='text-sm'>
@@ -58,16 +59,20 @@ export const TeamCard = ({ img, author, className }) => {
 
 export const ChooseCard = ({ img, heading, content, className}) => {
   return (
-    <article className={`w-[615px] h-[130px] font-generalSans text-left flex justify-start items-center gap-5 ${className}`}>
-      <figure className='w-[215px] h-full'>
-        <img src={img} alt="choose image" />
+    <article className={`w-[600px] h-[130px] font-generalSans text-start grid grid-cols-2 items-center ${className}`}>
+      <div>
+        <figure className='w-[215px] h-full'>
+        <img src={img} alt="choose image" className="w-12 mb-10" />
       </figure>
-      <div className='w-[390px] flex flex-col gap-3'>
+      </div>
+      
+      <div className='w-[390px] grid grid-cols-1 gap-3 -ml-52'>
         <h3 className='font-semibold'>{heading}</h3>
-        <p className='text-sm'>
+        <p className='text-xs'>
           {content}
         </p>
       </div>
     </article>
   )
 }
+

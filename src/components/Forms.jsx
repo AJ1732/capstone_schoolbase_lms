@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DarkButton } from './Buttons';
+import { DarkButton, WhiteButton3 } from './Buttons';
 import './form.css'
 
 // Utilities
@@ -42,9 +42,9 @@ export const HeroForm = () => {
     <form 
       action="" 
       onSubmit={handleSubmit} 
-      className='max-w-[380px] bg-white p-8 text-black space-y-6'
+      className='max-w-[380px] bg-white p-8 text-black space-y-6 mr-5'
     >
-      <h2 className='font-semibold text-2xl text-center'>Request Demo Access</h2>
+      <h2 className='font-medium text-xl text-center'>Request Demo Access</h2>
 
       <fieldset className='space-y-8'>
           <div className='space-y-4'>
@@ -77,7 +77,7 @@ export const HeroForm = () => {
             />
           </div>
 
-          <DarkButton type={`submit`} disabled={!getIsFormValid()} className={`w-full bg-light-gray`}>Submit</DarkButton>
+          <DarkButton type={`submit`} disabled={!getIsFormValid()} className={`w-full`}>Submit</DarkButton>
       </fieldset>
     </form>
   )
@@ -107,9 +107,9 @@ export const NewsForm = () => {
     <form 
       action="" 
       onSubmit={handleSubmit} 
-      className='max-w-[380px] bg-black-gray font-manrope text-white p-[15px] rounded-[10px] space-y-6'
+      className='max-w-[380px] bg-[#D9E0FF] font-manrope text-white p-[15px] rounded-[10px] space-y-6 mr-10'
     >
-      <h2 className='font-bold text-left'>Join Our Newsletter</h2>
+      <h2 className='font-bold text-left text-[#0B1A3A]'>Join Our Newsletter</h2>
 
       <fieldset className='flex'>
           <div>
@@ -123,10 +123,10 @@ export const NewsForm = () => {
             />
           </div>
 
-          <DarkButton type={`submit`} disabled={!getIsFormValid()} className={`w-1/3 bg-blacker-gray text-white text-center rounded-l-none py-[10px] px-0`}>Submit</DarkButton>
+          <WhiteButton3 type={`submit`} disabled={!getIsFormValid()} className={`w-1/3 bg-[#0B1A3A] text-white text-center rounded-l-none py-[10px] px-0`}>Subscribe</WhiteButton3>
       </fieldset>
 
-      <p className='font-manrope font-medium text-xs text-text-gray'>We will send you weekly updates for your better tool management</p>
+      <p className='font-manrope font-medium text-xs text-[#0B1A3A]'>We will send you weekly updates for your better tool management</p>
     </form>
   )
 }

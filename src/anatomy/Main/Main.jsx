@@ -11,14 +11,18 @@ import './main.css'
 
 const Main = () => {
   return (
-    <main className="full-width content-grid | w-full h-fit text-center border border-black ">
+    <main className="full-width content-grid | w-full h-fit text-center border border-black">
       {/* HERO SECTION */}
       <HeroSection />
       <Divider />
 
+      {/* WHY CHOOSE US? */}
+      <ChooseSection />
+      <Divider />
+
       {/* KEY FEATURES SECTION */}
       <FeatureSection />
-      <Divider />
+      <Divider /> 
 
       {/* TESTIMONIALS */}
       <TestimonialSection />
@@ -28,9 +32,7 @@ const Main = () => {
       <AboutSection />
       <Divider />
 
-      {/* WHY CHOOSE US? */}
-      <ChooseSection />
-      <Divider />
+      
 
       {/* DOWNLOAD */}
       <DownloadSection />
@@ -38,6 +40,7 @@ const Main = () => {
 
       {/* CALL TO ACTION */}
       <CallToSection />
+      
     </main>
   )
 }

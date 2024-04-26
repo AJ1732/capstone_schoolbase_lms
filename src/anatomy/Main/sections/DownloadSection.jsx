@@ -1,35 +1,41 @@
 import React from 'react'
 import { BorderButton } from '../../../components/Buttons'
 // import window from '../../../assets/window.png'
+import laptop from "../../../assets/top view of laptop, headphones, perfume, cup, stapler, and sticky notes.png"
+import { WhiteButton } from '../../../components/Buttons'
+
+
 
 const DownloadSection = () => {
   return (
     <section className="content | w-full min-h-[420px] py-7">
-      <div className='font-generalSans space-y-9'>
-        <div className='space-y-5'>
-          <h4 className="heading">Get Started with Our LMS</h4>
-          <p>Welcome to our Download section! Here, you can access our versatile Learning Management System (LMS) software, designed to revolutionize teaching and learning experiences in K-12 education. Whether you're an educator, student, or parent, our LMS offers powerful tools and resources to enhance your educational journey. Choose your preferred platform below to download the LMS software and embark on a new era of education:</p>
+      <div className='grid grid-cols-2 gap-5'>
+        <div>
+          <img src={laptop} alt="top view of laptop, headphones, perfume, cup, stapler, and sticky notes" className="w-[500px] ml-20" />
         </div>
-        <div className='max-w-[960px] mx-auto flex justify-between '>
-          <div className='flex-center flex-col gap-4'>
-            <figure className='size-[136px] bg-dark-gray'>
-              {/* <img src={window} alt="" /> */}
-            </figure>
-            <a href="https://schoolbase-lms.netlify.app/" target='_blank'>
-              <BorderButton>Download for Windows</BorderButton>
-            </a>
-          </div>
+        
+        <div className='font-generalSans space-y-9 text-start'>
+        <div className='space-y-6'>
+          <h2 className="heading">
+            GET STARTED WITH SCHOOLBASE
+            <div className='mt-1 h-1 w-[50px] bg-[#007BFF]'>
+             </div>
+          </h2>
+          <h3 className="font-semibold">Student Grade Book</h3>
+          <p className="text-sm">At Schoolbase we ensure that each students report card is as detailed as expected. Should different classes have different reporting style ? Absolutely </p>
 
-          <div className='flex-center flex-col gap-4'>
-            <figure className='size-[136px] bg-dark-gray'>
-              {/* <img src={window} alt="" /> */}
-            </figure>
-            <a href="https://schoolbase-lms.netlify.app/" target='_blank'>
-              <BorderButton>Download for MacOS</BorderButton>
+          <h4  className="font-semibold">Student Performance Tracking</h4>
+          <p className="text-sm">We have different charts to help you analyze your wards performance on the platform. Be it per term, per subject or otherwise. You are sure to stay on top </p>
+          
+        </div>
+        <div className='flex justify-end mr-11'>
+        <a href="https://schoolbase-lms.netlify.app/" target='_blank' >
+              <WhiteButton className={`px-[70px]`} >Get Started</WhiteButton>
             </a>
-          </div>
         </div>
       </div>
+      </div>
+      
     </section>
   )
 }
