@@ -57,7 +57,7 @@ const Attendance = () => {
   return (
     <section className="space-y-5">
       {/* HEADLINE */}
-      <div className='bg-primary-50 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
+      <div className='bg-primary-10 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
         <h1 className='font-semibold text-lg tracking-wide'>Attendance</h1>
         <figure className="flex justify-center items-center gap-4">
           <img src={attendance} alt="" />

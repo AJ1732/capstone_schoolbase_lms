@@ -1,6 +1,6 @@
 import React from 'react'
 import feeImg from "../../../assets/fee.svg"
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 
 const feeData = [
@@ -31,7 +31,7 @@ const feeData = [
 const Fee = () => {
   return (
     <section className='space-y-9'>
-      <div className='bg-primary-50 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
+      <div className='bg-primary-10 py-5 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
         <h1 className='font-semibold text-lg tracking-wide'>Fee Management</h1>
         <img src={feeImg} alt="" />
       </div>
@@ -49,9 +49,11 @@ const Fee = () => {
                   <p>{term}</p>
                   <p>{session}</p>
                 </div>
-                <button className='w-full bg-purple-50 text-primary-00 py-2.5 rounded-[0.625rem] '>
-                  <NavLink to={"/software/paystackcheckout"}>Make Payment</NavLink>
-                </button>
+                <Link to={"/software/paystackcheckout"}>
+                  <button className='w-full bg-purple-50 text-primary-00 py-2.5 rounded-[0.625rem] '>
+                    Make Payment
+                  </button>
+                </Link>
               </div>
             ))}
           </div>

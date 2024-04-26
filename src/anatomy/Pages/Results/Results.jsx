@@ -42,7 +42,7 @@ const Results = () => {
 
   return (
     <section className="flex flex-col gap-5">
-      <div className='bg-primary-50 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
+      <div className='bg-primary-10 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
         <h1 className='font-semibold text-lg tracking-wide'>Results</h1>
         <img src={result} alt="" />
       </div>

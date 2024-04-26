@@ -5,6 +5,7 @@ import WelcomeSection from "./sections/WelcomeSection"
 
 import { WeekCalender } from '../../../components/Calender/Calender'
 import TodoList from "../../../components/TodoList/TodoList"
+import { Link } from "react-router-dom"
 
 function Dashboard() {
   return (
@@ -14,7 +15,9 @@ function Dashboard() {
       <CBTSection />
       <CoursesSection />
       <div className="grid grid-rows-[8rem_1fr] gap-10">
-        <WeekCalender />
+        <Link to={`/software/calendar`}>
+          <WeekCalender />
+        </Link>
         <TodoList />
       </div>
     </div>

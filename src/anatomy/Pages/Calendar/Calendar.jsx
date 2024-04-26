@@ -7,7 +7,7 @@ import longlogo from "../../../assets/logo-full.svg"
 const Calendar = () => {
   return (
     <section className='flex flex-col'>
-      <div className='bg-primary-50 py-4 px-12 h-[220px] rounded-md | flex justify-start items-center'>
+      <div className='bg-primary-10 py-4 px-12 h-[220px] rounded-md | flex justify-start items-center'>
         <h1 className='font-semibold text-lg tracking-wide'>Calendar</h1>
       </div>
 

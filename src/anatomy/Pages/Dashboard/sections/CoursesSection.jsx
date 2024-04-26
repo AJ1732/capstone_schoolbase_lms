@@ -95,8 +95,8 @@ const CoursesSection = () => {
                 <td>{description}</td>
                 <td>
                   <span className={`
-                    text-center text-xs p-3 rounded-md
-                    ${status === 'Enrolled'? 'bg-primary-100 text-primary-900': 'bg-primary-00 text-white'}
+                    font-bold text-center text-xs p-3 rounded-md
+                    ${status === 'Enrolled'? 'bg-primary-10 text-primary-900': 'bg-[#FFCBCC] text-[#360D11]'}
                   `}>
                     {status}
                   </span>

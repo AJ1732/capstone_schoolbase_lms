@@ -44,7 +44,7 @@ const Communication = () => {
   return (
     <section className='flex flex-col justify-start items-start gap-9 mb-10'>
       {/* CHAT HEADER */}
-      <div className='md:col-span-3 | w-full bg-primary-50 p-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
+      <div className='md:col-span-3 | w-full bg-primary-10 p-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
         <h1 className='font-semibold text-lg tracking-wide'>Chat</h1>
         <img src={chat} alt="" />
       </div>
@@ -52,7 +52,7 @@ const Communication = () => {
       {/* CHATS */}
       <div className='w-full flex flex-col justify-start items-center gap-5'>
         {chatData.map( ({id, title, date, timeSent, read}) => (
-          <div key={id} className='w-full bg-primary-50 p-3 rounded-md | flex justify-between items-center'>
+          <div key={id} className='w-full bg-primary-10 p-3 rounded-md | flex justify-between items-center'>
             <h3 className='font-semibold text-text-black'>
               <span>{title}</span> 
               {date && <span> - {date}</span>}
@@ -67,10 +67,10 @@ const Communication = () => {
 
       {/* CHAT BUTTONS */}
       <div className='mt-20 text-xs sm:self-end | flex flex-col sm:flex-row gap-5 sm:gap-10'>
-        <button onClick={() => setMessageOpen(true)} className='bg-primary-50 text-primary-00 py-3 px-12 rounded-md'>
+        <button onClick={() => setMessageOpen(true)} className='bg-primary-10 text-primary-900 py-3 px-12 rounded-md'>
           Send Message
         </button>
-        <button  onClick={() => setCallOpen(true)} className='text-white bg-primary-00 py-3 px-12 rounded-md'>
+        <button  onClick={() => setCallOpen(true)} className='text-white bg-primary-900 py-3 px-12 rounded-md'>
           Schedule Call
         </button>
       </div>

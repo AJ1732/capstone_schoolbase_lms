@@ -12,7 +12,7 @@ const Lessons = () => {
 
   return (
     <section className="grid gap-5">
-      <div className='bg-primary-50 py-8 px-5 md:px-12 h-[220px] rounded-md | flex flex-col md:flex-row justify-between items-center'>
+      <div className='bg-primary-10 py-8 px-5 md:px-12 h-[220px] rounded-md | flex flex-col md:flex-row justify-between items-center'>
         <h1 className='font-semibold text-lg tracking-wide'>Lessons</h1>
         <img src={lesson} alt="" />
       </div>

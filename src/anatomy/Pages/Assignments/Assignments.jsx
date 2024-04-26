@@ -1,7 +1,6 @@
 
 import assignmnent from "../../../assets/assignment.svg"
 import dropdown from "../../../assets/arrow_drop_down.png"
-import dot from "../../../assets/green-dot.png"
 
 const Assignments = () => {
   const assignmentData = [
@@ -67,7 +66,7 @@ const Assignments = () => {
 
   return (
     <section>
-      <div className='bg-primary-50 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
+      <div className='bg-primary-10 py-8 px-5 md:px-12 rounded-md gap-5 | flex flex-col md:flex-row justify-between items-center'>
         <h1 className='font-semibold text-lg tracking-wide'>Assignment</h1>
         <img src={assignmnent} alt="" />
       </div>
@@ -87,9 +86,9 @@ const Assignments = () => {
         {/* ASSIGNMENT CARDS */}
         {assignmentData.map( data => (
           <div key={data.id} className="rounded border border-primary-50 mt-7 py-[30px] px-5 w-56 h-72 | flex flex-col justify-between items-center">
-            <div className="grid grid-cols-2 gap-32 mt-3 mb-5">
+            <div className="grid grid-cols-2 gap-32 mt-3 mb-5 mx-auto">
               <p className="text-xs">{data.class}</p>
-              <img src={dot} alt="" className="w-3" />
+              <div className="size-3.5 bg-red-900 rounded-full"></div>
             </div>
             <div className="flex flex-col justify-center items-center text-center gap-5">
               <p className="text-base font-bold leading-[3rem]">{data.subject}</p>

@@ -81,7 +81,6 @@ const ModalForm = ({ open, onClose }) => {
         console.log(json.error);
       }
 
-      console.log(newUser);
       onClose()
     } catch (e) {
       alert(e.message);
@@ -92,7 +91,6 @@ const ModalForm = ({ open, onClose }) => {
 
   // RETURN MODAL
   if (!open) return null
-  console.log(newUser.password === newUser.confirmpassword);
 
   return createPortal(
     <div className='fixed inset-0 z-50 | bg-slate-50 bg-opacity-70 p-2 md:py-5 md:px-20 lg:px-32 flex justify-center items-center overflow-y-scroll'>
