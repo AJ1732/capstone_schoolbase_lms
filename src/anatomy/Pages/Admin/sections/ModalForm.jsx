@@ -35,6 +35,9 @@ const ModalForm = ({ open, onClose }) => {
     confirmpassword: false,
     role: false,
   })
+
+  const [ passwordShow, setPasswordShow ] = useState(false);
+  const [ confirmPasswordShow, setConfirmPasswordShow ] = useState(false);
   const { setLoading, createUser } = useAuthContext();
 
   // HANDLE FORM INPUT CHANGE
@@ -51,10 +54,16 @@ const ModalForm = ({ open, onClose }) => {
       role: ""
     })
   }
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewUser(prev => ({ ...prev, [name]: value }));
   };
+  
+  // const handleShow = (e) => {
+  //   const { name, type } = e.target;
+  //   setPasswordShow(prev => ({ ...prev, [name]: value }));
+  // };
  
   const handleTouch = (e) => {
     const { name } = e.target;
@@ -89,6 +98,7 @@ const ModalForm = ({ open, onClose }) => {
     clearForm();
   }
 
+  console.log(passwordShow);
   // RETURN MODAL
   if (!open) return null
 
@@ -231,10 +241,10 @@ const ModalForm = ({ open, onClose }) => {
             </div>
 
             {/* PASSWORD INPUT */}
-            <div className='field min-h-32'>
+            <div className='field min-h-32 relative'>
               <label htmlFor="email">Password</label>
               <input 
-                type="password" 
+                type={passwordShow? 'text': 'password'}
                 name="password" 
                 id="password" 
                 required
@@ -243,6 +253,8 @@ const ModalForm = ({ open, onClose }) => {
                 onChange={handleChange}
                 onBlur={handleTouch}
               />
+              <span onClick={() => setPasswordShow(!passwordShow)} className='absolute top-[3.2rem] right-2 active:scale-[0.98] transition-all bg-light-gray font-semibold text-black-gray text-sm p-2 rounded-full'>SHOW</span>
+              
               {/* PASSWORD INPUT ERROR MESSAGE */}
               {
                 inputTouch.password && !validatePassword(newUser.password)? 
@@ -252,10 +264,10 @@ const ModalForm = ({ open, onClose }) => {
             </div>
            
             {/* CONFIRM PASSWORD INPUT */}
-            <div className='field min-h-32'>
+            <div className='field min-h-32 relative'>
               <label htmlFor="confirmpassword">Confirm Pasword</label>
               <input 
-                type="password" 
+                type={confirmPasswordShow? 'text': 'password'} 
                 name="confirmpassword" 
                 id="confirmpassword" 
                 required
@@ -264,6 +276,8 @@ const ModalForm = ({ open, onClose }) => {
                 onChange={handleChange}
                 onBlur={handleTouch}
               />
+              <span onClick={() => setConfirmPasswordShow(!confirmPasswordShow)} className='absolute top-[3.2rem] right-2 active:scale-[0.98] transition-all bg-light-gray font-semibold text-black-gray text-sm p-2 rounded-full'>SHOW</span>
+              
               {/* CONFIRM PASSWORD INPUT ERROR MESSAGE */}
               {
                 inputTouch.confirmpassword && !(newUser.password === newUser.confirmpassword)? 
