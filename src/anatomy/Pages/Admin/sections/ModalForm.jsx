@@ -253,7 +253,7 @@ const ModalForm = ({ open, onClose }) => {
                 onChange={handleChange}
                 onBlur={handleTouch}
               />
-              <span onClick={() => setPasswordShow(!passwordShow)} className='absolute top-[3.2rem] right-2 active:scale-[0.98] transition-all bg-light-gray font-semibold text-black-gray text-sm p-2 rounded-full'>SHOW</span>
+              <span onClick={() => setPasswordShow(!passwordShow)} className='absolute top-[3.2rem] right-2 active:scale-[0.98] transition-all bg-light-gray font-semibold text-black-gray text-sm p-2 rounded-full cursor-pointer'>SHOW</span>
               
               {/* PASSWORD INPUT ERROR MESSAGE */}
               {
@@ -276,7 +276,7 @@ const ModalForm = ({ open, onClose }) => {
                 onChange={handleChange}
                 onBlur={handleTouch}
               />
-              <span onClick={() => setConfirmPasswordShow(!confirmPasswordShow)} className='absolute top-[3.2rem] right-2 active:scale-[0.98] transition-all bg-light-gray font-semibold text-black-gray text-sm p-2 rounded-full'>SHOW</span>
+              <span onClick={() => setConfirmPasswordShow(!confirmPasswordShow)} className='absolute top-[3.2rem] right-2 active:scale-[0.98] transition-all bg-light-gray font-semibold text-black-gray text-sm p-2 rounded-full cursor-pointer'>SHOW</span>
               
               {/* CONFIRM PASSWORD INPUT ERROR MESSAGE */}
               {

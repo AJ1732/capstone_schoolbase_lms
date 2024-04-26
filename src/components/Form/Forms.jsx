@@ -19,7 +19,9 @@ export const LogInForm = () => {
     isTouched: false,
   });
   const [remember, setRemember] = useState(false);
+  const [ passwordShow, setPasswordShow ] = useState(false);
   const [error, setError] = useState('');
+
   
   const navigate = useNavigate();
 
@@ -132,13 +134,13 @@ export const LogInForm = () => {
           </div>
 
           {/* PASSWORD */}
-          <div className='field'>
+          <div className='field relative'>
             <div>
               <label htmlFor="signupPassword">Password </label>
             </div>
             <input 
               id='signupPassword'
-              type="password" 
+              type={passwordShow? 'text': 'password'}
               value={password.value}
               placeholder='Password'
               required
@@ -149,6 +151,8 @@ export const LogInForm = () => {
                 setPassword({ ...password, isTouched: true }); 
               }} 
             />
+            <span onClick={() => setPasswordShow(!passwordShow)} className='absolute top-[3.2rem] right-2 active:scale-[0.98] transition-all bg-light-gray font-semibold text-black-gray text-sm p-2 rounded-full cursor-pointer'>SHOW</span>
+
             {
               password.isTouched && password.value.length < 8 ? 
               ( <PasswordErrorMessage /> ) :
