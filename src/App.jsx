@@ -35,7 +35,7 @@ function App() {
             {/* HOME ROUTE */}
             <Route path="/" element={<HomeLayout />}>
               <Route index element={<Home />} />
-              <Route path="/signup" element={<SignUp />} />
+              {/* <Route path="/signup" element={<SignUp />} /> */}
               <Route path="/login" element={<Login />} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/superad" element={<Login/>} />
