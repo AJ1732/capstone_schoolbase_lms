@@ -15,7 +15,7 @@ const DownloadSection = () => {
         </div>
         
         <div className='font-generalSans space-y-9 text-start'>
-        <div className='space-y-6'>
+        <div className='space-y-6'>   
           <h2 className="heading">
             GET STARTED WITH SCHOOLBASE
             <div className='mt-1 h-1 w-[50px] bg-[#007BFF]'>

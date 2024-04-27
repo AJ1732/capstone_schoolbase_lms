@@ -4,7 +4,7 @@ import logo from "../../../assets/school-B-logo.png"
 
 const CallToSection = () => {
   return (
-    <section className="full-width content-grid | min-h-[150px] bg-[#D9E0FF] bg-opacity-80">
+    <section className="full-width content-grid | min-h-[150px] bg-[#D9E0FF] bg-opacity-80 mb-0">
       <div className="content | font-generalSans py-10 text-[#0B1A3A] size-full flex justify-between items-center">
         <div className='flex flex-col items-start justify-center gap-2 ml-10'>
           <h4 className='heading'>Subscribe to Our Newsletter</h4>

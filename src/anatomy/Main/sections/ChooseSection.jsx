@@ -10,7 +10,7 @@ const ChooseSection = () => {
 
   return (
   
-    <section className="full-width content-grid | min-h-[400px] bg-opacity-80 ">
+    <section className="full-width content-grid | min-h-[400px] bg-opacity-80 border-b-[1px] border-[#007BFF]">
      
       <div className="content | font-generalSans text-black size-full pb-5 space-y-8 grid grid-cols-2">
 

@@ -40,7 +40,7 @@ const Main = () => {
 
       {/* CALL TO ACTION */}
       <CallToSection />
-      
+  
     </main>
   )
 }
