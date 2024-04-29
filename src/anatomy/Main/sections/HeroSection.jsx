@@ -5,7 +5,7 @@ import "./HeroSection.css"
 
 const HeroSection = () => {
   return (
-    <section className="full-width content-grid | w-full min-h-[515px] bg-image ">
+    <section id='home' className="full-width content-grid | w-full min-h-[515px] bg-image ">
       <div className="content | size-full | flex justify-between items-center">
         <div className='z-10 flex flex-col justify-center items-start gap-5 ml-16'>
           <h2 className='font-generalSans font-extrabold text-5xl text-white tracking-wider mt-5 ml-3'>Transforming Education </h2>

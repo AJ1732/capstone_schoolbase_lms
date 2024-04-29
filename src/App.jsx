@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Footer from "./anatomy/Footer/Footer";
 import Header from "./anatomy/Header/Header";
 import Refer from "./anatomy/Header/Refer";
@@ -10,19 +11,28 @@ function App() {
   return (
   
     <div className='content-grid | min-h-dvh font-manrope divide-y-[8px]'>
-      {/* HEADER */}
-      <div className="full-width">
-      <Refer />
-      <Header />
-      </div>
-     
+      <Router>
+        <Routes>
+          <Route path='/'
+            element={
+              <>
+                {/* HEADER */}
+                <div className="full-width">
+                  <Refer />
+                  <Header />
+                </div>
+              
+                {/* MAIN */}
+                <Main />
 
-      {/* MAIN */}
-      <Main />
-
-      {/* FOOTER */}
-      <Footer />
-
+                {/* FOOTER */}
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+        
+      </Router>
     </div>
     
     

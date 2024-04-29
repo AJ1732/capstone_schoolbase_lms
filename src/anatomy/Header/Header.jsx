@@ -1,7 +1,9 @@
 import React from 'react'
+// import { HashLink  from 'react-router-hash-link'
 import { WhiteButton } from '../../components/Buttons'
 import logo from "../../assets/school-B-logo.png"
 import { Link} from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 
 const Header = () => {
@@ -14,10 +16,18 @@ const Header = () => {
 
         <div className='font-semibold text-xl text-[#1B1B1B] | flex justify-center items-center space-x-8 mr-12'>
           <ul className='flex-center gap-8'>
-            <li className='hover:text-[#007BFF]'><a href="/">Home</a></li>
-            <li className='hover:text-[#007BFF]'><a href="/features">Features</a></li>
-            <li className='hover:text-[#007BFF]'><a href="/testimonial">Testimonials</a></li>
-            <li className='hover:text-[#007BFF]'><a href="about">About Us</a></li>
+            <HashLink to={`/`} smooth>
+              <li className='hover:text-[#007BFF]'>Home</li>
+            </HashLink>
+            <HashLink to={`#features`} smooth>
+              <li className='hover:text-[#007BFF]'>Features</li>
+            </HashLink>
+            <HashLink to={`#testimonials`} smooth>
+              <li className='hover:text-[#007BFF]'>Testimonials</li>
+            </HashLink>
+            <HashLink to={`#about`} smooth>
+              <li className='hover:text-[#007BFF]'>About Us</li>
+            </HashLink>
           </ul>
           
           <a href="https://schoolbase-lms.netlify.app/" target='_blank' >
