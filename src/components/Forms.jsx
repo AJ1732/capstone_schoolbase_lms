@@ -42,7 +42,7 @@ export const HeroForm = () => {
     <form 
       action="" 
       onSubmit={handleSubmit} 
-      className='max-w-[380px] bg-white p-8 text-black space-y-6 mr-5'
+      className='z-10 max-w-[380px] bg-white p-8 text-black space-y-6 mr-5'
     >
       <h2 className='font-medium text-xl text-center'>Request Demo Access</h2>
 
@@ -77,7 +77,7 @@ export const HeroForm = () => {
             />
           </div>
 
-          <DarkButton type={`submit`} disabled={!getIsFormValid()} className={`w-full`}>Submit</DarkButton>
+          <DarkButton type={`submit`} disabled={!getIsFormValid()} className={`w-full hover:bg-[#007BFF] hover:text-white`}>Submit</DarkButton>
       </fieldset>
     </form>
   )

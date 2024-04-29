@@ -10,7 +10,7 @@ const FeatureSection = () => {
   const { features } = data;
 
   return (
-    <section id='features' className="content | w-full min-h-[400px] py-20">
+    <section id='features' className="content | w-full min-h-[400px] text-[#1b1b1b] py-20">
       <div className='space-y-7'>
        
           <div className='grid grid-cols-2 gap-30'>
@@ -26,7 +26,7 @@ const FeatureSection = () => {
             <div className="grid grid-cols-2 w-[600px] gap-10 dropdown dropdown-bottom">
                  <div>
                     <h1 className="font-semibold">Student Information System (SIS)</h1>
-                    <p tabIndex={0} className="card compact dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
+                    <p tabIndex={0} className="card compact text-white dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
                       <span className="font-bold mb-2">
                         Comprehensive Student Profiles and Admissions
                       </span>
@@ -42,7 +42,7 @@ const FeatureSection = () => {
             <div className="grid grid-cols-2 w-[600px] gap-10 dropdown dropdown-bottom">
                  <div>
                     <h1 className="font-semibold">Attendance Management</h1>
-                    <p tabIndex={0} className="card compact dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
+                    <p tabIndex={0} className="card compact text-white dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
                       <span className="font-bold mb-2">
                         Student and Staff Attendance Tracking
                       </span>
@@ -58,7 +58,7 @@ const FeatureSection = () => {
             <div className="grid grid-cols-2 w-[600px] gap-10 dropdown dropdown-bottom">
                  <div>
                     <h1 className="font-semibold">Communication and Collaboration</h1>
-                    <p tabIndex={0} className="card compact dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
+                    <p tabIndex={0} className="card compact text-white dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
                       <span className="font-bold mb-2">
                         Parent-Teacher Communication and Announcements
                       </span>
@@ -74,7 +74,7 @@ const FeatureSection = () => {
             <div className="grid grid-cols-2 w-[600px] gap-10 dropdown dropdown-bottom">
                  <div>
                     <h1 className="font-semibold">Academic Management</h1>
-                    <p tabIndex={0} className="card compact dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
+                    <p tabIndex={0} className="card compact text-white dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
                       <span className="font-bold mb-2">
                         Efficient Curriculum and Grade Management
                       </span>
@@ -90,7 +90,7 @@ const FeatureSection = () => {
             <div className="grid grid-cols-2 w-[600px] gap-10 dropdown dropdown-bottom">
                  <div>
                     <h1 className="font-semibold">Examination and Assessment</h1>
-                    <p tabIndex={0} className="card compact dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
+                    <p tabIndex={0} className="card compact text-white dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
                       <span className="font-bold mb-2">
                        Seamless Exam Scheduling and Assessment
                       </span>
@@ -105,7 +105,7 @@ const FeatureSection = () => {
             <div className="grid grid-cols-2 w-[600px] gap-10 dropdown dropdown-bottom">
                  <div>
                     <h1 className="font-semibold">Security and Access Control</h1>
-                    <p tabIndex={0} className="card compact dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
+                    <p tabIndex={0} className="card compact text-white dropdown-content z-[1] shadow bg-base-100 rounded-box w-[300px] text-sm mt-3 p-5">
                       <span className="font-bold mb-2">
                        Parent-Teacher Communication and Announcements
                       </span>

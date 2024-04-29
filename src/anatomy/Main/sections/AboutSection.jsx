@@ -6,7 +6,7 @@ const AboutSection = () => {
   const { teamMembers } = data;
 
   return (
-    <section id='about' className="content | w-full min-h-[300px] border-b-[1px] border-[#007BFF]">
+    <section id='about' className="content | w-full min-h-[300px] text-[#1B1B1B] border-b-[1px] border-[#007BFF]">
       <div className='font-generalSans | py-14 space-y-6'>
         <div className='space-y-5'>
           <h3 className="heading">
@@ -28,9 +28,6 @@ const AboutSection = () => {
             <p className="text-sm">Our Vision We envision a world where education is accessible, inclusive, and enriching for all. Through continued innovation and unwavering dedication, we aim to be a driving force in shaping the future of education.</p>
           </div>
         </div>
-
-        
-
       </div>
     </section>
   )

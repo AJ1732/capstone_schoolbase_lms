@@ -8,7 +8,7 @@ import { WhiteButton } from '../../../components/Buttons'
 
 const DownloadSection = () => {
   return (
-    <section className="content | w-full min-h-[420px] py-7">
+    <section className="content | w-full min-h-[420px] text-[#1b1b1b] py-7">
       <div className='grid grid-cols-2 gap-5'>
         <div>
           <img src={laptop} alt="top view of laptop, headphones, perfume, cup, stapler, and sticky notes" className="w-[500px] ml-20" />
@@ -30,7 +30,7 @@ const DownloadSection = () => {
         </div>
         <div className='flex justify-end mr-11'>
         <a href="https://schoolbase-lms.netlify.app/" target='_blank' >
-              <WhiteButton className={`px-[70px]`} >Get Started</WhiteButton>
+              <WhiteButton className={`px-[70px] hover:bg-[#007BFF] hover:text-white`} >Get Started</WhiteButton>
             </a>
         </div>
       </div>
