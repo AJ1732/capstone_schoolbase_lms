@@ -10,6 +10,7 @@ const Assignments = () => {
       subject: "Mathematics",
       date: "Jan 24, 2024",
       text: "View Assignment",
+      done: true
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ const Assignments = () => {
       subject: "Basic Science",
       date: "Feb 02, 2024",
       text: "View Assignment",
+      done: true
     },
     {
       id: 3,
@@ -24,6 +26,7 @@ const Assignments = () => {
       subject: "Fine Art",
       date: "Mar 04, 2024",
       text: "View Assignment",
+      done: true
     },
     {
       id: 4,
@@ -31,6 +34,7 @@ const Assignments = () => {
       subject: "Physics",
       date: "Mar 04, 2024",
       text: "View Assignment",
+      done: true
     },
     {
       id: 5,
@@ -38,6 +42,7 @@ const Assignments = () => {
       subject: "Biology",
       date: "Mar 04, 2024",
       text: "View Assignment",
+      done: true
     },
     {
       id: 6,
@@ -45,6 +50,7 @@ const Assignments = () => {
       subject: "Geography",
       date: "Mar 12, 2024",
       text: "View Assignment",
+      done: false
     },
     {
       id: 7,
@@ -52,6 +58,7 @@ const Assignments = () => {
       subject: "Civic Education",
       date: "Apr 01, 2024",
       text: "View Assignment",
+      done: false
     },
     {
       id: 8,
@@ -59,6 +66,7 @@ const Assignments = () => {
       subject: "Chemistry",
       date: "Apr 01, 2024",
       text: "View Assignment",
+      done: false
     },
   ]
 
@@ -88,7 +96,7 @@ const Assignments = () => {
           <div key={data.id} className="rounded border border-primary-50 mt-7 py-[30px] px-5 w-56 h-72 | flex flex-col justify-between items-center">
             <div className="grid grid-cols-2 gap-32 mt-3 mb-5 mx-auto">
               <p className="text-xs">{data.class}</p>
-              <div className="size-3.5 bg-red-900 rounded-full"></div>
+              <div className={`size-3.5 ${data.done? "bg-green-500": "bg-red-600"} rounded-full`}></div>
             </div>
             <div className="flex flex-col justify-center items-center text-center gap-5">
               <p className="text-base font-bold leading-[3rem]">{data.subject}</p>
