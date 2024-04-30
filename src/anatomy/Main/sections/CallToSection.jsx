@@ -10,7 +10,7 @@ const CallToSection = () => {
           <h4 className='heading'>Subscribe to Our Newsletter</h4>
           <p className='text-sm'>Subscribe to our Newsletter to receive our blog post, offers, promotions, etc.</p>
 
-          <WhiteButton3 className={`text-xs py-[10px] px-10 mt-2`}>Subscribe Now</WhiteButton3>
+          {/* <WhiteButton3 className={`text-xs py-[10px] px-10 mt-2`}>Subscribe Now</WhiteButton3> */}
         </div>
 
         <div className='w-[313px] h-[75px] mr-10'>
